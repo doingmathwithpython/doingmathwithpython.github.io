@@ -70,7 +70,7 @@ animation API which allows drawing animated figures. The trajectory of
 a projectile motion discussed elsewhere in various contexts is
 animated combining both these things.
 
-The second part of the book introduces the concept of geometric
+The second part of the chapter introduces the concept of geometric
 transformation. Combining that with the knowledge of generating random
 numbers learned earlier in Chapter 5, the reader will learn how to
 draw fractals such as the Barnsley Fern, Sierpinski triangle and

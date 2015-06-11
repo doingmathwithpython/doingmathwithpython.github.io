@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing Math with Python</title><link href="http://doingmathwithpython.github.io/" rel="alternate"></link><link href="http://doingmathwithpython.github.io/feeds/all-en.atom.xml" rel="self"></link><id>http://doingmathwithpython.github.io/</id><updated>2015-05-24T23:27:00+10:00</updated><entry><title>Introduction to "Doing Math with Python"</title><link href="http://doingmathwithpython.github.io/hello-world.html" rel="alternate"></link><updated>2015-05-24T23:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-05-24:hello-world.html</id><summary type="html">&lt;p&gt;Hi all, this is the blog for my book &amp;quot;Doing Math with Python&amp;quot;.&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="http://doingmathwithpython.github.io/images/cover.png" /&gt;&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing Math with Python</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2015-05-24T23:27:00+10:00</updated><entry><title>Introduction to "Doing Math with Python"</title><link href="/hello-world.html" rel="alternate"></link><updated>2015-05-24T23:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:,2015-05-24:hello-world.html</id><summary type="html">&lt;p&gt;Hi all, this is the blog for my book &amp;quot;Doing Math with Python&amp;quot;.&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="/images/cover.png" /&gt;&lt;/a&gt;
 &lt;p&gt;The first six chapters of the book are already available via the
 publisher's early access program. You can learn briefly about each
-chapter on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt; page.
+chapter on the &lt;a class="reference external" href="/pages/about.html"&gt;About&lt;/a&gt; page.
 Going forward, I will be sharing updates regarding the book and posting
 original content related to that discussed in the book.&lt;/p&gt;
 &lt;p&gt;You can stay connected with the book, its readers and me via the

@@ -12,4 +12,3 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
-THEME = 'notmyidea'

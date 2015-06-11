@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Doing Math with Python</title><link>http://doingmathwithpython.github.io/</link><description></description><atom:link href="http://doingmathwithpython.github.io/feeds/amit-saha.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 24 May 2015 23:27:00 +1000</lastBuildDate><item><title>Introduction to "Doing Math with Python"</title><link>http://doingmathwithpython.github.io/hello-world.html</link><description>&lt;p&gt;Hi all, this is the blog for my book &amp;quot;Doing Math with Python&amp;quot;.&lt;/p&gt;
-&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="http://doingmathwithpython.github.io/images/cover.png" /&gt;&lt;/a&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Doing Math with Python</title><link>/</link><description></description><atom:link href="/feeds/amit-saha.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 24 May 2015 23:27:00 +1000</lastBuildDate><item><title>Introduction to "Doing Math with Python"</title><link>/hello-world.html</link><description>&lt;p&gt;Hi all, this is the blog for my book &amp;quot;Doing Math with Python&amp;quot;.&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="/images/cover.png" /&gt;&lt;/a&gt;
 &lt;p&gt;The first six chapters of the book are already available via the
 publisher's early access program. You can learn briefly about each
-chapter on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt; page.
+chapter on the &lt;a class="reference external" href="/pages/about.html"&gt;About&lt;/a&gt; page.
 Going forward, I will be sharing updates regarding the book and posting
 original content related to that discussed in the book.&lt;/p&gt;
 &lt;p&gt;You can stay connected with the book, its readers and me via the
@@ -13,4 +13,4 @@ following channels:&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amit Saha</dc:creator><pubDate>Sun, 24 May 2015 23:27:00 +1000</pubDate><guid>tag:doingmathwithpython.github.io,2015-05-24:hello-world.html</guid></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amit Saha</dc:creator><pubDate>Sun, 24 May 2015 23:27:00 +1000</pubDate><guid>tag:,2015-05-24:hello-world.html</guid></item></channel></rss>

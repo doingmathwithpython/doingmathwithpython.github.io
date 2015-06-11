@@ -10,5 +10,5 @@ Standard library Resources
 Articles
 ========
 
-*
-* 
+* `Calculating Percentiles <http://web.stanford.edu/class/archive/anthsci/anthsci192/anthsci192.1064/handouts/calculating%20percentiles.pdf>`__
+

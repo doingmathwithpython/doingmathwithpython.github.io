@@ -2,16 +2,17 @@
 :pageno: 1
 
 `Doing Math with Python` is written by Amit Saha and published by `No
-Starch Press <http://www.nostarch.com/doingmathwithpython>`__.
+Starch Press <http://www.nostarch.com/doingmathwithpython>`__. The
+book is going to be available in print late August 2015.
 
 .. image:: {filename}/images/cover.png
    :align: center
    :target: http://www.nostarch.com/doingmathwithpython
    :alt: Book cover
 
-The book is in progress with six chapters already available to be
-purchased via the publisher's "Early Access" program. This is the
-author created companion website for the book.
+There are seven chapters and 2 Appendices in the book. A detailed
+table of contents is available from the `publisher's website
+<http://www.nostarch.com/download/Doing%20Math%20with%20Python_dTOC.pdf>`__.
 
 
 Chapter 1: Numbers
@@ -79,7 +80,23 @@ Mandelbrot set.
 Chapter 7: Solving Calculus Problems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Coming up.
+This chapter discusses solving differentiation and integration tasks
+using programs. As applications, the gradient ascent (and descent)
+methods and continuous probability are discussed.
+
+Appendix A
+~~~~~~~~~~
+
+This appendix covers the installation of software required to run the
+programs in the book on Microsoft Windows, Linux and Mac OS X.
+
+Appendix B
+~~~~~~~~~~
+
+This appendix discusses some Python topics which the reader may not be
+familiar with, but are needed to follow some parts of the book. It
+also includes topics which provide additional information beyond that
+required for the programs in the book.
 
 
 Stay in touch
@@ -97,4 +114,4 @@ You can contact me directly via:
 - Twitter: `@echorand <https://twitter.com/echorand>`__
 - Email : doingmathwithpython@gmail.com
 
-`Page last updated: May 25, 2015`
+`Page last updated: August 15, 2015`

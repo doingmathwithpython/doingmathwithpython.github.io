@@ -3,7 +3,9 @@
 
 `Doing Math with Python` is written by Amit Saha and published by `No
 Starch Press <http://www.nostarch.com/doingmathwithpython>`__. The
-book is going to be available in print late August 2015.
+book is now available in print and electronic formats (including
+Amazon Kindle). Please refer to the `Buy
+<{filename}pages/buy.rst>`__ page.
 
 .. image:: {filename}/images/cover.png
    :align: center
@@ -111,7 +113,7 @@ following channels:
 
 You can contact me directly via:
 
-- Twitter: `@echorand <https://twitter.com/echorand>`__
+- Twitter: `@mathwithpython <https://twitter.com/mathwithpython>`__
 - Email : doingmathwithpython@gmail.com
 
-`Page last updated: August 15, 2015`
+`Page last updated: August 29, 2015`

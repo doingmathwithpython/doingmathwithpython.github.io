@@ -29,8 +29,9 @@ Germany
   <http://www.amazon.de/Doing-Math-Python-Programming-Statistics/dp/1593276400/ref=tmm_pap_title_0?ie=UTF8&qid=1440817692&sr=8-1>`__
 
 U.K.
-===
+====
 
+- `Book Depository <http://www.bookdepository.com/Doing-Math-with-Python-Amit-Saha/9781593276409>`__
 - `Amazon UK
   <http://www.amazon.co.uk/Doing-Math-Python-Programming-Statistics/dp/1593276400/ref=tmm_pap_title_0?ie=UTF8&qid=1440817752&sr=8-1>`__
 

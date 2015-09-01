@@ -11,7 +11,7 @@ purchase in print and electronic formats from various online stores
 including `Amazon
 <http://www.amazon.com/Doing-Math-Python-Programming-Statistics/dp/1593276400>`__
 and `No Starch Press <https://www.nostarch.com/doingmathwithpython>`__.
-Please see the Buy `<{filename}pages/buy.rst>`__ page for others.
+Please see the `Buy <{filename}pages/buy.rst>`__ page for others.
 
 .. image:: {filename}/images/cover.png
    :align: center

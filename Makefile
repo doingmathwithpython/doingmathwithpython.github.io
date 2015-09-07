@@ -26,7 +26,7 @@ help:
 
 test:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-	cd $(OUTPUTDIR); python -m SimpleHTTPServer
+	cd $(OUTPUTDIR); python -m SimpleHTTPServer || python3 -m http.server
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)

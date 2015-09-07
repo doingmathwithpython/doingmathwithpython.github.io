@@ -27,7 +27,228 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../available-now.html">Doing Math with Python Available now!</a></h1>
+                    <h1 class="entry-title"><a href="../Sets-in-SymPy-and-built-in-Python-sets.html">Set operations with Python <tt class="docutils literal">set</tt> compared to SymPy's FiniteSet</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-09-05T23:00:00+10:00">
+                Published: Sat 05 September 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/amit-saha.html">Amit Saha</a>
+        </address>
+<p>In <a href="../category/articles.html">articles</a>.</p>
+
+</footer><!-- /.post-info --><p><cite>Chapter 5</cite> (<a class="reference external" href="../pages/about.html">About</a>) of the book discusses working with mathematical sets in
+Python. While writing the chapter, I had a choice of whether to
+use Python 3's built-in <a class="reference external" href="https://docs.python.org/3.3/library/stdtypes.html?highlight=union#set-types-set-frozenset">set</a>  data
+structure or use SymPy's (0.7.6 +) <tt class="docutils literal">FiniteSet</tt> class. I decided to go ahead
+with the latter. My choice is briefly explained towards the end of
+this post, but hopefully it will be clear before that.</p>
+<p>Next, I describe how you can use Python 3's built-in set data
+structure to create sets and perform set operations such as finding
+the union, intersection or cartesian product of sets. For comparison,
+I also show how you can do the same using SymPy's <tt class="docutils literal">FiniteSet</tt> class.</p>
+<div class="section" id="creating-a-set">
+<h2>Creating a set</h2>
+<p>We can create a set consisting of the elements <cite>{1, 2, 3}</cite> in Python 3
+as follows:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+<p>To create a set when the elements are already in a list (for
+example), we would use the following syntax:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+<p>The comparative operations using SymPy's <tt class="docutils literal">FiniteSet</tt> class are:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">FiniteSet</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="o">*</span><span class="n">items</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+<p>To create an <a class="reference external" href="https://en.wikipedia.org/wiki/Empty_set">empty set</a>,
+in Python 3 you would use create an empty <tt class="docutils literal">set</tt> object:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span>
+<span class="nb">set</span><span class="p">()</span>
+</pre></div>
+<p>In SymPy, an empty set is represented by an <tt class="docutils literal">EmptySet</tt> object. Thus,
+you can either create an empty set by directly creating an
+<tt class="docutils literal">EmptySet</tt> object or by creating a <tt class="docutils literal">FiniteSet</tt> object without
+specifying any set members, like so:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">EmptySet</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">EmptySet</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span>
+<span class="n">EmptySet</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span>
+<span class="n">EmptySet</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="cardinality-and-membership">
+<h2>Cardinality and Membership</h2>
+<p>The <tt class="docutils literal">len()</tt> function returns the number of set members for sets
+created using either of the above approaches.</p>
+<p>Similarly, to check if an item <tt class="docutils literal">x</tt> is present in a set, <tt class="docutils literal">s</tt>
+created using any of the above approaches, we can use the statement,
+<tt class="docutils literal">x in s</tt>.</p>
+</div>
+<div class="section" id="union-and-intersection">
+<h2>Union and intersection</h2>
+<p>The <tt class="docutils literal">union()</tt> method can be used in both cases to find the union of
+two or more sets:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+</pre></div>
+<p>Similary in the case of SymPy:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">FiniteSet</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+</pre></div>
+<p>The <tt class="docutils literal">intersection()</tt> method can be used to find the intersection of
+two or more sets created using either of the above approaches. Continuing
+with the above three sets:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+<p>Similary, in SymPy:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="cartesian-product">
+<h2>Cartesian product</h2>
+<p>To find the cartesian product of sets created via the built-in <tt class="docutils literal">set</tt>
+data structure, we have to use the <tt class="docutils literal">product()</tt> function in the
+<a class="reference external" href="https://docs.python.org/3/library/itertools.html#itertools.product">itertools</a>
+module:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">itertools</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10418c990</span><span class="o">&gt;</span>
+</pre></div>
+<p>However considering that the <cite>cartesian product</cite> of two sets <a class="reference external" href="http://mathinsight.org/definition/cartesian_product">should</a> be another set,
+the <tt class="docutils literal">product()</tt> function doesn't really then return the
+cartesian product itself, but (an iterator to) the elements in it. Hence, if we
+try to apply the result returned by the function directly to a method or
+function which is expected to be applicable to a set, it will fail. For
+example, <tt class="docutils literal">itertools.product(s1, <span class="pre">s2).union(s3)</span></tt> will result in an error, but
+<tt class="docutils literal">set(itertools.product(s1, <span class="pre">s2)).union(s3)</span></tt> will work.</p>
+<p>Using SymPy's <tt class="docutils literal">FiniteSet</tt>, you can use the <tt class="docutils literal">*</tt>
+(multiplication or product) operator to find the cartesian product
+and the result is a set itself. Thus, it is closer to what
+a cartesian product is mathematically. An example follows:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">s1</span><span class="o">*</span><span class="n">s2</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span> <span class="n">U</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="n">x</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+</pre></div>
+<p><strong>Cartesian product of a set with itself</strong></p>
+<p>To find the cartesian product of a set with itself, i.e. <cite>s1*s1</cite> for
+example, we pass in a keyword argument, <tt class="docutils literal">repeat</tt> while calling the
+<tt class="docutils literal">itertools.product()</tt> function. The value of <tt class="docutils literal">repeat</tt> is the
+<cite>power</cite> we want to raise the set to. Thus, <tt class="docutils literal">itertools.product(s1,
+repeat=2)</tt> will calculate the cartesian product, <cite>s1*s1</cite>:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+</pre></div>
+<p>In SymPy, the <tt class="docutils literal">**</tt> operator can be used for finding the cartesian
+product of a set with itself:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">**</span><span class="mi">2</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="n">x</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="subset-super-set-proper-subset-checking">
+<h2>Subset/super set/proper subset  checking</h2>
+<p>The <tt class="docutils literal">issubset()</tt> and <tt class="docutils literal">issuperset()</tt> methods are available for sets
+created via either approaches to check if a set is a subset and super
+set of another, respectively. Thus, <tt class="docutils literal">s1.issubset(s2)</tt> will check if
+<cite>s1</cite> is a subset of <cite>s2</cite>.</p>
+<p><strong>Checking for proper subset and superset</strong></p>
+<p>To check if a set, <cite>s1</cite> is a <a class="reference external" href="http://mathworld.wolfram.com/ProperSubset.html">proper subset</a> of another set,
+<cite>s2</cite> when using built-in set, we can do the following:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s1</span> <span class="o">!=</span> <span class="n">s2</span>
+<span class="bp">True</span>
+</pre></div>
+<p>We can do something similar for <a class="reference external" href="http://mathinsight.org/definition/proper_superset">proper superset</a>.</p>
+<p>In SymPy, we have <tt class="docutils literal">is_proper_subset()</tt> and <tt class="docutils literal">is_proper_superset()</tt>
+methods which can be used to check if a set is a proper subset or
+superset of another, respectively. Thus, the above would be written as
+<tt class="docutils literal">s1.is_proper_subset(s2)</tt>.</p>
+</div>
+<div class="section" id="calculating-the-powerset">
+<h2>Calculating the powerset</h2>
+<p>For sets created via built-in <tt class="docutils literal">set</tt> data structure, there is no
+direct method available to create the <a class="reference external" href="https://www.mathsisfun.com/sets/power-set.html">power set</a>. However, you can use the
+<tt class="docutils literal">powerset</tt> recipe described in the <a class="reference external" href="https://docs.python.org/3/library/itertools.html#recipes">itertools documentation</a>.</p>
+<p>On the other hand, in SymPy, there is a <tt class="docutils literal">powerset()</tt> method
+available which returns the power set:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="n">powerset</span><span class="p">()</span>
+<span class="p">{</span><span class="n">EmptySet</span><span class="p">(),</span> <span class="p">{</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}}</span>
+</pre></div>
+<p>You can see that the <tt class="docutils literal">powerset()</tt> method returns the power <cite>set</cite> and not the
+elements in it.</p>
+</div>
+<div class="section" id="choice-of-sympy-s-finiteset-over-set">
+<h2>Choice of SymPy's <tt class="docutils literal">FiniteSet</tt> over <tt class="docutils literal">set</tt></h2>
+<p>From the above comparison, we can see that SymPy's <tt class="docutils literal">FiniteSet</tt>
+provides us with nice features such as being able to use the <tt class="docutils literal">*</tt>
+operator to find the cartesian product, <tt class="docutils literal">**</tt> operator to calculate
+the cartesian product with itself and <tt class="docutils literal">powerset()</tt> method for calculating the
+power set. These are not present when using the built-in <tt class="docutils literal">set</tt> data
+structure. This was certainly a big driving factor in my choice,
+since SymPy was also being used in other chapters of the book.</p>
+<p>However, a <em>key</em> reason for my choice was that I wanted to show how we
+can create sets which did not allow addition or removal once created -
+like mathematical sets. This need was fulfilled by SymPy's
+<tt class="docutils literal">FiniteSet</tt> since it used Python's <tt class="docutils literal">frozenset</tt> data structure and
+not the <tt class="docutils literal">set</tt> data sturcture.</p>
+<p>The alternative to that would have
+been to use <tt class="docutils literal">frozenset</tt> directly, but I just did not like the idea
+of it and I would have also missed out on the nice features
+<tt class="docutils literal">FiniteSet</tt> would provide (eventually). I should note here that once
+I had made the decision to go with  <tt class="docutils literal">FiniteSet</tt>, I <a class="reference external" href="https://github.com/amitsaha/sympy/commits?author=amitsaha">contributed</a> patches
+to SymPy to make the methods of <tt class="docutils literal">FiniteSet</tt> more compatible with Python's built in set
+and also implement minor features I discussed above.</p>
+</div>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../available-now.html" rel="bookmark"
+                           title="Permalink to Doing Math with Python Available now!">Doing Math with Python Available now!</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-09-02T08:00:00+10:00">
                 Published: Wed 02 September 2015
@@ -38,38 +259,11 @@
         </address>
 <p>In <a href="../category/updates.html">updates</a>.</p>
 
-</footer><!-- /.post-info --><p>Hi all, I am very excited to announce that the book is now available for
-purchase in print and electronic formats from various online stores
-including <a class="reference external" href="http://www.amazon.com/Doing-Math-Python-Programming-Statistics/dp/1593276400">Amazon</a>
-and <a class="reference external" href="https://www.nostarch.com/doingmathwithpython">No Starch Press</a>.
-Please see the <a class="reference external" href="../pages/buy.html">Buy</a> page for others.</p>
-<a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"><img alt="Book cover" class="align-center" src="../images/cover.png" /></a>
-<p>If you are keen to take a look at the contents and read a sample
-chapter, please head over to <a class="reference external" href="https://www.nostarch.com/doingmathwithpython">No Starch's book page</a>.</p>
-<p>Alternatively, if you are keen to recieve a review copy, please email
-<cite>doingmathwithpython&#64;gmail.com</cite> and I will try to request one from the
-publishers.</p>
-<div class="section" id="stay-in-touch">
-<h2>Stay in touch</h2>
-<p>You can stay connected with the book, its readers and me via the
-following channels:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://www.facebook.com/doingmathwithpython">Facebook page</a></li>
-<li><a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232">G+ Community</a></li>
-<li><a class="reference external" href="https://twitter.com/mathwithpython">Twitter</a></li>
-</ul>
-<p>You can contact me directly via:</p>
-<ul class="simple">
-<li>Twitter: <a class="reference external" href="https://twitter.com/mathwithpython">&#64;mathwithpython</a></li>
-<li>Email : <a class="reference external" href="mailto:doingmathwithpython&#64;gmail.com">doingmathwithpython&#64;gmail.com</a></li>
-</ul>
-</div>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p class="first last">Available now!</p>
+
+                <a class="readmore" href="../available-now.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

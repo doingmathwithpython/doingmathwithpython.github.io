@@ -11,7 +11,7 @@ You can find the chapter programs and snippets linked from the `programs
 from any error mentioned on the `errata <{filename}pages/errata.rst>`__) page.
 
 Stay in touch
-=============
+~~~~~~~~~~~~~
 
 You can stay connected with the book, its readers and me via the
 following channels:

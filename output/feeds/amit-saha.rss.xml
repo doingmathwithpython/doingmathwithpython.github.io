@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Doing Math with Python</title><link>http://doingmathwithpython.github.io/</link><description></description><atom:link href="http://doingmathwithpython.github.io/feeds/amit-saha.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 05 Sep 2015 23:00:00 +1000</lastBuildDate><item><title>Set operations with Python set compared to SymPy's FiniteSet</title><link>http://doingmathwithpython.github.io/Sets-in-SymPy-and-built-in-Python-sets.html</link><description>&lt;p&gt;&lt;cite&gt;Chapter 5&lt;/cite&gt; (&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt;) of the book discusses working with mathematical sets in
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Doing Math with Python</title><link>http://doingmathwithpython.github.io/</link><description></description><atom:link href="http://doingmathwithpython.github.io/feeds/amit-saha.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 11 Sep 2015 08:20:00 +1000</lastBuildDate><item><title>Chapter code and Errata</title><link>http://doingmathwithpython.github.io/chapter-code-errata.html</link><description>&lt;p&gt;You can find the chapter programs and snippets linked from the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;programs&lt;/a&gt; page. They should be free
+from any error mentioned on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/errata.html"&gt;errata&lt;/a&gt;) page.&lt;/p&gt;
+&lt;div class="section" id="stay-in-touch"&gt;
+&lt;h2&gt;Stay in touch&lt;/h2&gt;
+&lt;p&gt;You can stay connected with the book, its readers and me via the
+following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me directly via:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter: &lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;&amp;#64;mathwithpython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email : &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amit Saha</dc:creator><pubDate>Fri, 11 Sep 2015 08:20:00 +1000</pubDate><guid>tag:doingmathwithpython.github.io,2015-09-11:chapter-code-errata.html</guid></item><item><title>Set operations with Python set compared to SymPy's FiniteSet</title><link>http://doingmathwithpython.github.io/Sets-in-SymPy-and-built-in-Python-sets.html</link><description>&lt;p&gt;&lt;cite&gt;Chapter 5&lt;/cite&gt; (&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt;) of the book discusses working with mathematical sets in
 Python. While writing the chapter, I had a choice of whether to
 use Python 3's built-in &lt;a class="reference external" href="https://docs.python.org/3.3/library/stdtypes.html?highlight=union#set-types-set-frozenset"&gt;set&lt;/a&gt;  data
 structure or use SymPy's (0.7.6 +) &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class. I decided to go ahead

@@ -8,7 +8,7 @@ Chapter code and Errata
 
 You can find the chapter programs and snippets linked from the `programs
 <{filename}pages/chapter_programs.rst>`__ page. They should be free
-from any error mentioned on the `errata <{filename}pages/errata.rst>`__) page.
+from any error mentioned on the `errata <{filename}pages/errata.rst>`__ page.
 
 Stay in touch
 ~~~~~~~~~~~~~

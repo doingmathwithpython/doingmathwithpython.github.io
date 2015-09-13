@@ -10,5 +10,4 @@ SymPy documentation
 Articles
 ========
 
-*
-*
+* `Set operations with Python set compared to SymPy's FiniteSet <http://doingmathwithpython.github.io/Sets-in-SymPy-and-built-in-Python-sets.html>`__

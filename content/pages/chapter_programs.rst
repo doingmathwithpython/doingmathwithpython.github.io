@@ -11,3 +11,8 @@
 - `Chapter 5 <https://github.com/doingmathwithpython/code/blob/master/chapter5/Chapter5.ipynb>`__
 - `Chapter 6 <https://github.com/doingmathwithpython/code/blob/master/chapter6/Chapter6.ipynb>`__
 - `Chapter 7 <https://github.com/doingmathwithpython/code/blob/master/chapter7/Chapter7.ipynb>`__
+
+
+Solutions to Challenges
+
+- Coming soon

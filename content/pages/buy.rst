@@ -1,5 +1,5 @@
 :Title: Buy
-:pageno: 7
+:pageno: 6
 
 You can buy the book via the publisher's website, Amazon, OReilly:
 

@@ -1,5 +1,5 @@
 :Title: Help
-:pageno: 6
+:pageno: 5
 
 Chapter specific Resources
 ==========================

@@ -19,4 +19,13 @@ available freely for Microsoft Windows, Linux and Mac OS X.
 - `Mac OS X Yosemite <{filename}install/macosx.rst>`__
   (Thanks to David Ash for lending me his Mac)
 
-`Page last updated: June 12, 2015`
+Updating your existing installation
+===================================
+
+Once you have installed Anaconda, over time you can keep it updated to the latest version using the following commands from your terminal::
+
+    $  conda update conda
+    $  conda update anaconda
+
+
+`Page last updated: September 18, 2015`

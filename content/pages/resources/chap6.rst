@@ -14,3 +14,4 @@ Articles
 * `Drawing and Animating Shapes with Matplotlib <https://nickcharlton.net/posts/drawing-animating-shapes-matplotlib.html>`__
 * `Defining the Mandelbrot Set <http://yozh.org/2010/11/19/mset004/>`__
 * `Circle packing in a square <http://en.wikipedia.org/wiki/Circle_packing_in_a_square>`__
+* `Fractal trees <http://www.codingmath.com/?p=137>`__

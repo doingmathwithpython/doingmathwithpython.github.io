@@ -61,7 +61,10 @@ You can even do this:
         + x**6/6 + x**7/7
         + x**8/8)
 
-** Use the implicit continuation operator **
+**Use the implicit continuation operator**
+
+Dealing with long strings
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 

@@ -81,7 +81,7 @@ The line continuation operator, ``\`` can be used to split long statements over 
       
 At the end of every line (except the last), we just add a ``\`` indicating that the next line is also a part of the same statement.
 
-**Breaking up those long ``if ..`` statements**
+**Breaking up those long if statements**
 
 Often I have to break long ``if`` statements and is in fact one of the most common cases I face at work where I have to break the statement into multiple lines. Here is an example using both the approaches above:
 

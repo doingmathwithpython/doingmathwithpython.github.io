@@ -23,7 +23,7 @@ This is really the following single statement:
               
 The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up. 
 
-In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in `PEP 8 <https://www.python.org/dev/peps/pep-0008/`__. 
+In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`__. 
 
 Note that the examples below will for illustrative purposes break lines waaaaay less than 80 characters.
 
@@ -144,7 +144,3 @@ You can contact me directly via:
 
 - Twitter: `@mathwithpython <https://twitter.com/mathwithpython>`__
 - Email : doingmathwithpython@gmail.com
-
-
-
-

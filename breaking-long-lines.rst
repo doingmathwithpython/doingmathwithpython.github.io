@@ -1,3 +1,12 @@
+Breaking long lines in Python
+=============================
+
+:date: 2015-11-04 11:00
+:category: tips
+:slug: breaking-long-lines-in-python
+:summary: Breaking long lines in Python
+
+
 In some of the programs discussed in the book including the sample solutions, you will see statements like:
 
 .. code::

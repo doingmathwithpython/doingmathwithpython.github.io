@@ -46,6 +46,7 @@ This is exactly how we break the long statement in the example we started this a
 This essentially just creates the string ``s``. If we were to split this statement over multiple lines, we would do the following:
 
 .. code::
+
     s = ('Area: {0}, Estimated ({1}): {2}'
          .format(area_of_circle, points, estimate(radius, points)))
 

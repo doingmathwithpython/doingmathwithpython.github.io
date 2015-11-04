@@ -1,5 +1,5 @@
 Breaking long lines in Python
-=============================
+-----------------------------
 :date: 2015-11-04 12:00
 :category: articles
 :slug: breaking-long-lines-in-python

@@ -21,6 +21,56 @@ Note that the examples below will for illustrative purposes break lines waaaaay 
 How do you break?
 =================
 
+When not calling function
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you are not calling a function, you essentially have two choices: 
+
+**Use paranthesis**
+
+This is exactly how we break the long statement in the example we started this article with. For the moment ignore the call to ``print()`` and assume that the statement is:
+
+.. code::
+
+    s = 'Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points))
+    
+This essentially just creates the string ``s``. If we were to split this statement over multiple lines, we would do the following:
+
+.. code::
+    s = ('Area: {0}, Estimated ({1}): {2}'
+         .format(area_of_circle, points, estimate(radius, points)))
+
+Note the extra beginning and the ending parenthesis.
+
+Here is another example:
+
+.. code::
+
+   s1 = x + x**2/2 + x**3/3 + x**4/4 + x**5/5 + x**6/6 + x**7/7 + x**8/8
+
+Here is how we can use split the above statment into multiple lines using parentheses:
+
+.. code::
+
+   s3 = (x + x**2/2 + x**3/3
+        + x**4/4 + x**5/5
+        + x**6/6 + x**7/7
+        + x**8/8)
+
+**Use the implicit continuation operator**
+
+The implicit continuation operator, ``\`` can be used to split long statements over multiple lines. Here is how we could split the above statement using ``\`` instead:
+
+.. code::
+
+  s3 = x + x**2/2 + x**3/3 \
+      + x**4/4 + x**5/5 \
+      + x**6/6 + x**7/7 \
+      + x**8/8
+      
+      
+At the end of every line (except the last), we just add a ``\`` indicating that the next line is also a part of the same statement.
+
 When calling functions
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,36 +82,6 @@ By default, when calling functions you can just press enter and without doing an
    print(x,
          x)
    
-When not calling function
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When you are not calling a function, you essentially have two choices: 
-
-**Use parantheses**
-
-This is exactly how we break the long statement in the example we started this article with. Here is another example:
-
-.. code::
-
-   s1 = x + x**2/2 + x**3/3 + x**4/4 + x**5/5 + x**6/6 + x**7/7 + x**8/8
-
-Let's say we want to write the above statement over multiple lines. Here is how we can use parentheses to do so:
-
-.. code::
-
-   s2 = (x + x**2/2 + x**3/3 + x**4/4 + x**5/5
-         + x**6/6 + x**7/7 + x**8/8)
-      
-You can even do this:
-
-.. code::
-
-   s3 = (x + x**2/2 + x**3/3
-        + x**4/4 + x**5/5
-        + x**6/6 + x**7/7
-        + x**8/8)
-
-**Use the implicit continuation operator**
 
 Dealing with long strings
 ~~~~~~~~~~~~~~~~~~~~~~~~~

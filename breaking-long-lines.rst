@@ -82,10 +82,13 @@ By default, when calling functions you can just press enter and without doing an
    print(x,
          x)
    
+   
+Hence, we `could` have broken the first example we saw as:
 
-Dealing with long strings
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code::
 
+   print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle,
+                                                 points,
+                                                 estimate(radius, points)))
 
-
-
+When calling ``format()`` we put the arguments over separate lines.

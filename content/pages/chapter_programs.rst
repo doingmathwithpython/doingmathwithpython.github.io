@@ -24,13 +24,13 @@ the zip file and you will find the solutions in the ``solutions`` sub-directory.
 
 Alternatively, you can view the code for the solutions here:
 
-- `Chapter 1 <https://github.com/doingmathwithpython/code/tree/master/chapter1/solutions>`
-- `Chapter 2 <https://github.com/doingmathwithpython/code/tree/master/chapter2/solutions>`
-- `Chapter 3 <https://github.com/doingmathwithpython/code/tree/master/chapter3/solutions>`
-- `Chapter 4 <https://github.com/doingmathwithpython/code/tree/master/chapter4/solutions>`
-- `Chapter 5 <https://github.com/doingmathwithpython/code/tree/master/chapter5/solutions>`
-- `Chapter 6 <https://github.com/doingmathwithpython/code/tree/master/chapter6/solutions>`
-- `Chapter 7 <https://github.com/doingmathwithpython/code/tree/master/chapter7/solutions>`
+- `Chapter 1 <https://github.com/doingmathwithpython/code/tree/master/chapter1/solutions>`__
+- `Chapter 2 <https://github.com/doingmathwithpython/code/tree/master/chapter2/solutions>`__
+- `Chapter 3 <https://github.com/doingmathwithpython/code/tree/master/chapter3/solutions>`__
+- `Chapter 4 <https://github.com/doingmathwithpython/code/tree/master/chapter4/solutions>`__
+- `Chapter 5 <https://github.com/doingmathwithpython/code/tree/master/chapter5/solutions>`__
+- `Chapter 6 <https://github.com/doingmathwithpython/code/tree/master/chapter6/solutions>`__
+- `Chapter 7 <https://github.com/doingmathwithpython/code/tree/master/chapter7/solutions>`__
 
 For code accompanied by explanations, please see the solutions chapter provided via the
 `publisher's website <https://www.nostarch.com/doingmathwithpython>`__.

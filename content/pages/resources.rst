@@ -1,6 +1,13 @@
 :Title: Help
 :pageno: 5
 
+If you have any specific issue while following the book, please get in
+touch via email at doingmathwithpython@gmail.com, or you can post a
+query on the `Google plus page
+<https://plus.google.com/u/0/communities/113121562865298236232>`__ or
+`Facebook page <https://www.facebook.com/doingmathwithpython>`__.
+
+
 Chapter specific Resources
 ==========================
 

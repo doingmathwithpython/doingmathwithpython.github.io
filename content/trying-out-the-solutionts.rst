@@ -22,6 +22,9 @@ above and open the file ``mandelbrot.py``.
 
    Snapshot of the source code
 
+Running the program
+~~~~~~~~~~~~~~~~~~~
+
 To run the program, click on ``Run > Run Module`` and you should see
 the Mandelbrot set in the matplotlib window.
 
@@ -31,9 +34,11 @@ the Mandelbrot set in the matplotlib window.
 
    Mandelbrot set
 
-If you face any issues trying out the solutions, feel free to email me
-at ``doingmathwithpython@gmail.com`` or post your query to any of the
-following:
+All the solutions should be ready to run, try them out, make changes
+to experiment and let me know what you come up with!
+
+Email me at ``doingmathwithpython@gmail.com`` or post your query/tip to any of the
+following community forums:
 
 - `Facebook page <https://www.facebook.com/doingmathwithpython>`__
 - `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__

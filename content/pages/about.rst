@@ -1,7 +1,8 @@
 :Title: About
 :pageno: 1
 
-`Doing Math with Python` is written by Amit Saha and published by `No
+`Doing Math with Python` is written by `Amit Saha
+<https://echorand.me>`__ and published by `No
 Starch Press <http://www.nostarch.com/doingmathwithpython>`__. The
 book is now available in print and electronic formats (including
 Amazon Kindle). Please refer to the `Buy <{filename}buy.rst>`__ page.

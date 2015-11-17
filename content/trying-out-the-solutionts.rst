@@ -16,10 +16,11 @@ the Mandelbrot set. Start ``IDLE`` and click on the menu item ``File >
 Open`` and navigate to the location where you extracted the directory
 above and open the file ``mandelbrot.py``.
 
-.. image:: {filename}/images/idle-1.png
+.. figure:: {filename}/images/idle-1.png
    :align: center
    :alt: IDLE window
 
+   Snapshot of the source code
 
 To run the program, click on ``Run > Run Module`` and you should see
 the Mandelbrot set in the matplotlib window.

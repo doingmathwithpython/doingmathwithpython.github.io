@@ -13,8 +13,8 @@ find the solutions for each chapter in the corresponding sub-directory.
    :align: center
    :alt: Extracted ZIP archive
 
- The **PDF** file contains explanations for each of the solutions
- similar to the explanations for the programs in the book.
+The **PDF** file contains explanations for each of the solutions
+similar to the explanations for the programs in the book.
 
 Before you can try the programs out, you will have to open them first in IDLE.
 Let's consider the solution to a challenge posed in Chapter 6 to draw

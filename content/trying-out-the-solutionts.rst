@@ -5,8 +5,9 @@ Trying out the solutions in IDLE
 :slug: trying-out-solutions
 :summary: Trying out the solutions
 
-Once you download the solutions ZIP file, and extracted it you will
-find the solutions for each chapter in the corresponding
+Once you `download
+<https://www.nostarch.com/download/doingmath_code.zip>`__ the solutions ZIP file, and extract it you will
+find the solutions for each chapter in the corresponding 
 sub-directory. Before you can try them out, you will have to open
 them first in IDLE.
 

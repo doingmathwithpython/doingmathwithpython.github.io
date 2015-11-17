@@ -25,9 +25,11 @@ above and open the file ``mandelbrot.py``.
 To run the program, click on ``Run > Run Module`` and you should see
 the Mandelbrot set in the matplotlib window.
 
-.. image:: {filename}/images/idle-2.png
+.. figure:: {filename}/images/idle-2.png
    :align: center
    :alt: Mandelbrot Set
+
+   Mandelbrot set
 
 If you face any issues trying out the solutions, feel free to email me
 at ``doingmathwithpython@gmail.com`` or post your query to any of the

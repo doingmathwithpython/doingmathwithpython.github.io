@@ -1,18 +1,24 @@
 Trying out the solutions in IDLE
 ================================
-:date: 2015-11-17 20:20
+:date: 2015-11-18 08:20
 :category: updates
 :slug: trying-out-solutions
 :summary: Trying out the solutions
 
 Once you `download
 <https://www.nostarch.com/download/doingmath_code.zip>`__ the solutions ZIP file, and extract it you will
-find the solutions for each chapter in the corresponding 
-sub-directory. Before you can try them out, you will have to open
-them first in IDLE.
+find the solutions for each chapter in the corresponding sub-directory.
 
+.. figure:: {filename}/images/zip-extracted.png
+   :align: center
+   :alt: Extracted ZIP archive
+
+ The **PDF** file contains explanations for each of the solutions
+ similar to the explanations for the programs in the book.
+
+Before you can try the programs out, you will have to open them first in IDLE.
 Let's consider the solution to a challenge posed in Chapter 6 to draw
-the Mandelbrot set. Start ``IDLE`` and click on the menu item ``File >
+the Mandelbrot set - ``mandelbrot.py``. Start ``IDLE`` and click on the menu item ``File >
 Open`` and navigate to the location where you extracted the directory
 above and open the file ``mandelbrot.py``.
 

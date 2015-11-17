@@ -18,9 +18,8 @@
 Solutions to Challenges
 =======================
 
-All the chapter programs (as notebooks above) including the solutions are available as a
-zip `file <https://github.com/doingmathwithpython/code/archive/1.0.zip>`__. Extract
-the zip file and you will find the solutions in the ``solutions`` sub-directory.
+See the `blog post <http://doingmathwithpython.github.io/trying-out-solutions.html>`__
+for instructions to download the solutions including the explanations.
 
 Alternatively, you can view the code for the solutions here:
 
@@ -31,6 +30,3 @@ Alternatively, you can view the code for the solutions here:
 - `Chapter 5 <https://github.com/doingmathwithpython/code/tree/master/chapter5/solutions>`__
 - `Chapter 6 <https://github.com/doingmathwithpython/code/tree/master/chapter6/solutions>`__
 - `Chapter 7 <https://github.com/doingmathwithpython/code/tree/master/chapter7/solutions>`__
-
-For code accompanied by explanations, please see the solutions chapter provided via the
-`publisher's website <https://www.nostarch.com/doingmathwithpython>`__.

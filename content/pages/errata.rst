@@ -2,6 +2,14 @@
 :pageno: 4
 
 
+Chapter 4
+=========
+
+On page 97, in the section "Factorizing and Expanding Expressions", the 
+expand function should be imported before we can use it via
+``from sympy import expand``.
+
+
 Chapter 5
 =========
 

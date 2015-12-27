@@ -5,7 +5,10 @@
 <https://echorand.me>`__ and published by `No
 Starch Press <http://www.nostarch.com/doingmathwithpython>`__. The
 book is now available in print and electronic formats (including
-Amazon Kindle). Please refer to the `Buy <{filename}buy.rst>`__ page.
+Amazon Kindle). Please refer to the `Buy <{filename}buy.rst>`__
+page. Some readers have taken the time out to post a review of the
+book on Amazon and elsewhere. Please refer to the `Reviews
+<{filename}reviews.rst>`__ page.
 
 .. image:: {filename}/images/cover.png
    :align: center

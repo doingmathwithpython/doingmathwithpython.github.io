@@ -17,7 +17,6 @@ available freely for Microsoft Windows, Linux and Mac OS X.
 - `Windows <{filename}install/windows.rst>`__
 - `Linux <{filename}install/linux.rst>`__
 - `Mac OS X Yosemite <{filename}install/macosx.rst>`__
-  (Thanks to David Ash for lending me his Mac)
 
 Updating your existing installation
 ===================================

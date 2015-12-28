@@ -13,6 +13,10 @@ expand function should be imported before we can use it via
 Chapter 5
 =========
 
+On page 132, in the section "Probability", the program should start
+with the import statment ``from sympy import FiniteSet``. (Thanks to
+Dexter Edge)
+
 On page 132, in the section "Probability," the code line above the one
 marked with a (3), which reads ``for num in s:`` should instead read:
 ``for num in space``.

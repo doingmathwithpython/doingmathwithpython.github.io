@@ -1,7 +1,7 @@
 :Title: Software Installation on Mac OS X Yosemite
 :status: hidden
 
-`Download <http://continuum.io/downloads#py34>`__ the Anaconda GUI
+`Download <http://continuum.io/downloads#_macosx>`__ the Anaconda GUI
 installer for Python 3. Start the installation by double clicking on
 the .pkg file:
 

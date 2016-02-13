@@ -15,6 +15,7 @@ No Starch Press
 Blog posts/elsewhere
 ====================
 
+- https://www.goodreads.com/review/show/1485573224?book_show_action=false&from_review_page=1
 - http://www.moorepants.info/blog/doing-math-with-python-review.html
 - https://asmeurer.github.io/blog/posts/doing-math-with-python-by-amit-saha-book-review/
 - http://fullcirclemagazine.org/issue-104/

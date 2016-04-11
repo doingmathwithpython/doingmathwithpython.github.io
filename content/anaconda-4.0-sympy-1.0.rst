@@ -8,8 +8,9 @@ SymPy 1.0 and Anaconda 4.0 releases
 
 `SymPy 1.0 <http://sympy.org>`__ was released recently and `Anaconda 4.0
 <https://www.continuum.io/blog/developer-blog/anaconda-4-release>`__
-was just released. I tried all the sample solutions and everything
-works as expected. The `chapter programs
+was just released. I tried all the `sample solutions
+<http://doingmathwithpython.github.io/trying-out-solutions.html>`__
+and everything works as expected. The `chapter programs
 <http://doingmathwithpython.github.io/pages/programs.html>`__ should
 keep working as well.
 

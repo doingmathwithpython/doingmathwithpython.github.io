@@ -3,7 +3,7 @@
 :pageno: 2
 
 The programs in the book and the proposed solutions are tested to run
-on ``Python 3.4``, ``matplotlib 1.4.2``, ``matplotlib-venn 0.11`` and ``sympy
+on ``Python 3.5``, ``matplotlib 1.4.2``, ``matplotlib-venn 0.11`` and ``sympy
 0.7.6``. The version numbers stated are the minimum requirements and the
 programs should also work with higher versions of the
 software. However, if there is any change, it will be noted
@@ -25,6 +25,11 @@ Once you have installed Anaconda, over time you can keep it updated to the lates
 
     $  conda update conda
     $  conda update anaconda
+
+Related blog posts
+==================
+
+- Coming up
 
 
 `Page last updated: September 18, 2015`

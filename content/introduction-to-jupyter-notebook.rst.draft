@@ -1,0 +1,41 @@
+Introduction to Jupyter Notebook
+================================
+
+:date: 2016-05-24 19:50
+:category: articles
+:slug: introduction-to-jupyter-notebook
+:summary: Introduction to Jupyter Notebook
+
+Jupyter Notebook (formerly known as IPython notebook) is a browser based tool for Python programming. At the most basic level, it enables a rich browser based coding experience, letting you interleave code as well as the output. An example of a notebook containing the code from Chapter 6 of the book is `here <https://github.com/doingmathwithpython/code/blob/master/chapter6/Chapter6.ipynb>`__.
+
+Starting the Jupyter Notebook server
+------------------------------------
+
+First, we need to start the Jupyter Notebok "server". If you have `Anaconda 4.x installed <{filename}post/anaconda-4.0-sympy-1.0.rst>`__ , you can start it using the "jupyter-notebook" command::
+
+.. code::
+
+   $ jupyter-notebook
+   [I 16:19:09.747 NotebookApp] Serving notebooks from local directory: /Users/asaha/work/dmwp/doingmathwithpython.github.io/content/notebooks
+   [I 16:19:09.747 NotebookApp] 0 active kernels
+   [I 16:19:09.747 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/
+   [I 16:19:09.747 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+
+A browser tab/window should open similar to:
+
+.. figure:: {filename}/images/jupyter-notebook1/figure1.png
+   :align: center
+   :alt: Jupyter Notebook "homepage"
+
+Currently there are no notebooks in the directory  ``/Users/asaha/work/dmwp/doingmathwithpython.github.io/content/notebooks`` which is where I started the server from, and hence we see an empty list in the browser window.
+
+Creating a notebook
+-------------------
+
+- Talk about cells
+- Code cell
+- Markdown cell
+- matplotlib inline
+- exporting
+- sharing
+- slides

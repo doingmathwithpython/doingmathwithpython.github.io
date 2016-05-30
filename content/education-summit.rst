@@ -6,6 +6,10 @@ Python 2016 Education Summit Notes
 :slug: education-summit-pycon-2016
 :summary: Education Summit Summary
 
+I participated in the education summit today. My talk slides for "Doing Math with Python"  is available `here <https://doingmathwithpython.github.io/pycon-us-2016/#/>`__.
+
+Here are some notes on the other talks I attended.
+
 Keynote
 ~~~~~~~
 

@@ -14,11 +14,17 @@ I am very excited to share that I am doing a webcast this coming week with O'Rei
 Here are the date and time of the webcast:
 
 Wed, June 29th at 7 PM, San Francisco
+
 Wed, June 29th at 10pm, New York
+
 Thu, Jun 30th at 3am - London
+
 Thu, Jun 30th at 7:30am - Mumbai
+
 Thu, Jun 30th at 10am - Beijing
+
 Thu, Jun 30th at 11am - Tokyo
+
 Thu, Jun 30th at 12pm - Sydney
 
 I have created a `GitHub repository

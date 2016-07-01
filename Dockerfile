@@ -12,6 +12,6 @@ RUN dnf -y install python3-pip wget git make bash
 RUN git config --global user.name $git_username && git config --global user.email $git_useremail
 RUN pip3 install pelican pelican-youtube beautifulsoup4
 WORKDIR /site
-RUN git clone --recursive https://github.com/getpelican/pelican-plugins 
+RUN git clone --recursive https://github.com/getpelican/pelican-plugins /site/pelican-plugins
 USER $user
 ENTRYPOINT ["make", "build"]

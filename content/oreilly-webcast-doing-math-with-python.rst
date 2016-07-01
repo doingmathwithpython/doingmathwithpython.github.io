@@ -18,27 +18,36 @@ An ``IDE`` or Integrated Development Environment is a software application where
 
 For beginners, I recommend starting with text editors. I think that doesn't overwhelm someone who is learning with the IDE features. That said, `IDLE <https://docs.python.org/3/library/idle.html>`__ is a good in-between choice for beginners and one that I personally use in the book and definitely would be my first choice.
 
-**Question**: What library do we use for importing metric units that works well with sympy?
+**Q: What library do we use for importing metric units that works well with sympy?**
 
-**Question**: Do you use notebook for exploratory work?
+I would recommend taking a look at SymPy's `Units <http://docs.sympy.org/dev/modules/physics/units.html#>`__ module and see if it has what you need. In addition, and if you already don't know about it, `pint <https://github.com/hgrecco/pint>`__ would be another library to look at.
+
+**Q: Do you use notebook for exploratory work?**
 
 Yes, I use notebook for exploratory work. I think notebooks are great when you want the code and result together in a single document. It's great for sharing too. I recently created `slides <http://echorand.me/presentation-slides-with-jupyter-notebook.html#.V3XhNe0yphE>`__ as a Notebook.
 
-**Question**: Can Sympy be used for the development in a engineering software (i.e. Finite Element Method)? Would the computational speed be (good)? (Not sure about the second part of the question)
+**Q: Can Sympy be used for the development in a engineering software (i.e. Finite Element Method)? Would the computational speed be (good)? (Not sure about the second part of the question)**
 
+You may be interested in taking a look at `SfePy <http://sfepy.org/doc-devel/index.html>`__ 
 
-**Question**: Thoughts on Cython? Sagemath?
+**Q: Thoughts on Cython? Sagemath?**
 
-**Question**: Should students use IDLE or a notebook format?
+I haven't worked much with Cython. I know about it and what it can useful for. So, I guess if you are looking for speed, definitely look into it. I would also recommend looking at `Numba <http://numba.pydata.org/>`__. Sagemath is more of a system itself than a library. It integrates popular Python libraries and would definitely be something to explore.
 
-**Question**: Any recommendations for introducing 3D graphics e.g. polyhedrons on screen?
+**Q: Should students use IDLE or a notebook format?**
 
-**Question**: How well do SymPy and Numpy work together?
+I would recommend using IDLE to start with. It gives the opportunity for the student to at least get an idea of the cycle of editing code and running it. I would only introduce notebook later and in addition to IDLE. Both have their merits, but Notebook just introduces one more thing to grasp in the beginning.
 
-**Question**: You are working in Jupyter - can the "app"s you should be embedded in a regular HTML web page?
+**Q: Any recommendations for introducing 3D graphics e.g. polyhedrons on screen?**
 
+**Q: How well do SymPy and Numpy work together?**
 
+**Q: You are working in Jupyter - can the "app"s you should be embedded in a regular HTML web page?**
 
+*Resources to learn more*
+
+- `SymPy <http://www.sympy.org/en/features.html>`__
+- `Interactive Jupyter Notebooks <>`__
 
 *Announcement post*
 

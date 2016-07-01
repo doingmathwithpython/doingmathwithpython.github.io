@@ -2,7 +2,7 @@
 O'Reilly Webcast: Doing Math with Python
 ========================================
 
-:date: 2016-07-01 19:00
+:date: 2016-07-01 14:00
 :category: updates
 :slug: oreilly-webcast-doing-math
 :summary: O'Reilly Webcast

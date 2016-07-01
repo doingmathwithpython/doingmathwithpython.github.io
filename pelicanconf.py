@@ -13,5 +13,5 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
-PLUGIN_PATHS = [os.path.join('.', 'pelican-plugins')]
+PLUGIN_PATHS = [os.path.join('/site', 'pelican-plugins')]
 PLUGINS = ['share_post']

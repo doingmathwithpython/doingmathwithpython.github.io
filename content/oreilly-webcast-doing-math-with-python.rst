@@ -44,10 +44,22 @@ I would recommend using IDLE to start with. It gives the opportunity for the stu
 
 **Q: Any recommendations for introducing 3D graphics e.g. polyhedrons on screen?**
 
+I haven't explored them, you may want to look at `Pi3D <https://pi3d.github.io/html/>`__ or `VPython <http://vpython.org/>`__.
+
 **Q: How well do SymPy and Numpy work together?**
+
+No personal experience, but searching a bit, it looks like you may want to look at SymPy's `Lambdify <http://docs.sympy.org/dev/modules/utilities/lambdify.html>`__ feature. The `SymPy google group <https://groups.google.com/forum/#!forum/sympy>`__ may give you a better answer.
+
 
 **Q: You are working in Jupyter - can the "app"s you should be embedded in a regular HTML web page?**
 
+I haven't personally tried this. I think this `post <https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/>`__ may give you clues to do it. 
+
+*Links*
+
+- `Webcast Recording <http://www.oreilly.com/pub/e/3712>`__
+- `Slides, Transcript and Demos <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__
+- `Doing Math with Python book <https://www.nostarch.com/doingmathwithpython>__
 
 *Announcement post*
 

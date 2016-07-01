@@ -7,7 +7,7 @@ O'Reilly Webcast: Doing Math with Python
 :slug: oreilly-webcast-doing-math
 :summary: O'Reilly Webcast
 
-**Updated post after the webcast**
+*Updated post after the webcast*
 
 A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:
 
@@ -40,7 +40,7 @@ Yes, I use notebook for exploratory work. I think notebooks are great when you w
 
 
 
-**Announcement post**
+*Announcement post*
 
 I am very excited to share that I am doing a webcast this coming week with O'Reilly titled
 "Doing Math with Python". You can register for it on the `event page <http://www.oreilly.com/pub/e/3712>`__.

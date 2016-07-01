@@ -9,9 +9,9 @@ O'Reilly Webcast: Doing Math with Python
 
 **Updated post after the webcast**
 
-A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will write those below.
+A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:
 
-**Question**: What is the difference between an interpreter, ide and text editor? And what do you recommend for beginners?
+**What is the difference between an interpreter, ide and text editor? And what do you recommend for beginners?**
 
 An ``interpreter`` is what runs your program. Without going into the details, the Python interpreter is what converts a statement such as ``print("Hello")`` to a form that can be understood by the computer to finally print ``Hello`` on screen. 
 An ``IDE`` or Integrated Development Environment is a software application where we can write programs and run them usually via  Graphical User Interface. IDEs generally feature helpful features such as code completion and can be useful when working with large projects. A ``text editor`` is for writing our programs or other text. It usually doesn't support features that an IDE would support but of course, you can configure and enhance text editors to give you IDE-like features. 

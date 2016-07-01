@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-import os
 
 AUTHOR = u'Amit Saha'
 SITENAME = u'Doing Math with Python'
@@ -13,5 +12,5 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
-PLUGIN_PATHS = [os.path.join('/site', 'pelican-plugins')]
+PLUGIN_PATHS = ['/pelican-plugins']
 PLUGINS = ['share_post']

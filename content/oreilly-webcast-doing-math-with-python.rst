@@ -13,6 +13,14 @@ A big thank you to all of you who turned up for the webcast across the world. I 
 
 The slides, transcript and the demos are all available at the `GitHub repository <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__. Feel free to use them in any capacity you find useful. If you already have `Anaconda installed <https://doingmathwithpython.github.io/pages/software-installation.html>`__, get the above code, and run `jupyter-notebook` from the same directory to be able to play with the code. 
 
+*Links of Interest*
+
+- `Webcast Recording <http://www.oreilly.com/pub/e/3712>`__
+- `Slides, Transcript and Demos <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__
+- `Doing Math with Python book <https://www.nostarch.com/doingmathwithpython>`__
+
+
+
 Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:
 
 **Q: What is the difference between an interpreter, ide and text editor? And what do you recommend for beginners?**
@@ -55,11 +63,6 @@ No personal experience, but searching a bit, it looks like you may want to look 
 
 I haven't personally tried this. I think this `post <https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/>`__ may give you clues to do it. 
 
-*Links*
-
-- `Webcast Recording <http://www.oreilly.com/pub/e/3712>`__
-- `Slides, Transcript and Demos <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__
-- `Doing Math with Python book <https://www.nostarch.com/doingmathwithpython>__
 
 *Announcement post*
 

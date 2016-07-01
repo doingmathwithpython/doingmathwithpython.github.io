@@ -9,7 +9,9 @@ O'Reilly Webcast: Doing Math with Python
 
 *Updated post after the webcast*
 
-A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. The slides, transcript and the demos are all available at the `GitHub repository <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__. Feel free to use them in any capacity you find useful. If you already have `Anaconda installed <https://doingmathwithpython.github.io/pages/software-installation.html>`__, get the above code, and run `jupyter-notebook` from the same directory to be able to play with the code.
+A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. For those who didn't make it to the webcast, it's now available for `viewing <http://www.oreilly.com/pub/e/3712>`__.
+
+The slides, transcript and the demos are all available at the `GitHub repository <https://github.com/doingmathwithpython/oreilly-webcast-2016>`__. Feel free to use them in any capacity you find useful. If you already have `Anaconda installed <https://doingmathwithpython.github.io/pages/software-installation.html>`__, get the above code, and run `jupyter-notebook` from the same directory to be able to play with the code. 
 
 Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:
 

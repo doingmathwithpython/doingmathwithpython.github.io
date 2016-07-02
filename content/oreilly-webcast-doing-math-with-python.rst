@@ -61,7 +61,7 @@ No personal experience, but searching a bit, it looks like you may want to look 
 
 **Q: You are working in Jupyter - can the "app"s you should be embedded in a regular HTML web page?**
 
-I haven't personally tried this. I think this `post <https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/>`__ may give you clues to do it. 
+I haven't personally tried this. I think this `post <https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/>`__ may give you clues to do it. O'Reilly Media's project `thebe <https://github.com/oreillymedia/thebe>`__ may be another option to look at.
 
 
 **Announcement post**

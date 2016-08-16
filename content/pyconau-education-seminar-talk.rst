@@ -1,4 +1,3 @@
-
 PyCon Australia 2016 Education Seminar: Doing Math with Python
 ==============================================================
 

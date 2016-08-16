@@ -19,8 +19,6 @@ India
 =====
 - `Amazon India
   <http://www.amazon.in/Doing-Math-Python-Programming-Statistics-ebook/dp/B014EELUFQ/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=>`__
-- `Flipkart
-  <http://www.flipkart.com/doing-math-python/p/itmefpaezbbgyb6k?pid=9781593276409&icmpid=reco_pp_historyFooter_book_na_1>`__
 
 Germany
 =======

@@ -14,4 +14,4 @@ THEME='theme/blue-penguin/'
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
 PLUGIN_PATHS = ['/pelican-plugins']
-PLUGINS = ['share_post']
+PLUGINS = ['share_post', 'pelican_youtube']

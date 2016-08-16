@@ -3,7 +3,7 @@ Video: Doing Math with Python
 
 :date: 2016-08-16 12:00
 :category: updates
-:slug: pyconau-dmwp
+:slug: video-pyconau-dmwp
 :summary: PyConAU2016
 
 

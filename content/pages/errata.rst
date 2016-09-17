@@ -29,7 +29,29 @@ On page 139, in the code for simulating a fictional ATM, the statement
 Chapter 6
 =========
 
-On page 164, the second equation under Transformation 1 should be
--0.04xn + 0.85yn + 1.6. Similarly, in the second equation under
-Transformation 2, the first term of the second equation should be
-0.23xn not 0.23yn. (Thanks to Dexter Edge)
+On page 164 and 165, the transformation equations have some errors in the text
+(not in the program). The eequations should be:
+
+**Transformation 1**
+
+ x1 = 0.85*x + 0.04*y
+ y1 = -0.04*x + 0.85*y + 1.6
+
+
+**Transformation 2**
+
+x1 = 0.2*x - 0.26*y
+y1 = 0.23*x + 0.22*y + 1.6
+
+**Transformation 3**
+
+x1 = -0.15*x + 0.28*y
+y1 = 0.26*x  + 0.24*y + 0.44
+
+
+**Transformation 4**
+
+x1 = 0
+y1 = 0.16*y
+
+(Thanks to Dexter Edge, Toshiaki Kurokawa and Twitter @mkamimura)

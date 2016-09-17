@@ -34,9 +34,9 @@ On page 164 and 165, the transformation equations have some errors in the text
 
 **Transformation 1**
 
- x1 = 0.85*x + 0.04*y
+x1 = 0.85*x + 0.04*y
 
- y1 = -0.04*x + 0.85*y + 1.6
+y1 = -0.04*x + 0.85*y + 1.6
 
 
 **Transformation 2**

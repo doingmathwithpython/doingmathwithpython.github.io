@@ -8,13 +8,15 @@ Trying out the code on Ubuntu 16.04
 
 If you are using Ubuntu 16.04 and don't want to install the Anaconda
 Python distribution for trying out the book's 
-`programs <http://doingmathwithpython.github.io/pages/programs.html>` or 
+`programs <http://doingmathwithpython.github.io/pages/programs.html>`__ or 
 the `sample solutions
 <http://doingmathwithpython.github.io/trying-out-solutions.html>`__, this
 post is for you.
 
 Ubuntu 16.04 already comes with Python 3 installed, so we only need to install
-the following packages:
+the following packages - matplotlib, matplotlib-venn, sympy and idle3. 
+
+Open a terminal and do the following:
 
 .. code::
 
@@ -23,8 +25,16 @@ the following packages:
 
 
 It's worth noting that this will install sympy 0.7.6 and matplotlib 1.5.1 which are
-both sufficient for the book's programs.   
+both sufficient for the book's programs. 
 
+Starting IDLE editor
+~~~~~~~~~~~~~~~~~~~~
+
+You can now start the IDLE editor by typing in "idle3" from the terminal and then it's ready 
+for your programs!
+
+Contact
+~~~~~~~
 
 If you find any issues please email me at
 ``doingmathwithpython@gmail.com`` or post your query/tip to any of the  

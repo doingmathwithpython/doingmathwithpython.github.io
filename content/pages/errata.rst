@@ -58,4 +58,4 @@ x1 = 0
 
 y1 = 0.16*y
 
-(Thanks to Dexter Edge, Toshiaki Kurokawa and Twitter @mkamimura)
+(Thanks to Dexter Edge, Fatih Kürşat Cansu, Toshiaki Kurokawa and Twitter @mkamimura)

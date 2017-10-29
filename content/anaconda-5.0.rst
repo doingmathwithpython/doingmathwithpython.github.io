@@ -32,7 +32,7 @@ for earlier versions.
 .. figure:: {filename}/images/anaconda-5.png
    :align: center
    :alt: Anaconda 5
-   :scale: 50%
+   :scale: 30%
 
 .. figure:: {filename}/images/anaconda-install-1.png
    :align: center

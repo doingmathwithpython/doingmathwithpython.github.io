@@ -29,6 +29,7 @@ Once you have installed Anaconda, over time you can keep it updated to the lates
 Related blog posts
 ==================
 
+- `Anaconda 5.0 release <https://doingmathwithpython.github.io/anaconda-5.0.html>`__
 - `SymPy 1.0 and Anaconda 4.0 releases <http://doingmathwithpython.github.io/sympy-1.0-anaconda-4.0.html>`__
 
 `Page last updated: April 11, 2016`

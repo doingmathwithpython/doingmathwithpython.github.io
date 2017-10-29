@@ -30,7 +30,7 @@ A fresh installation of Anaconda 5.0 should still be similar to the `instruction
 for earlier versions.
 
 .. figure:: {filename}/images/anaconda-5.png
-   :align: center
+   :align: left
    :alt: Anaconda 5
    :scale: 30%
 

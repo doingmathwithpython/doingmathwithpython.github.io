@@ -30,7 +30,7 @@ A fresh installation of Anaconda 5.0 should still be similar to the `instruction
 for earlier versions.
 
 .. figure:: {filename}/images/anaconda-5.png
-   :align: left
+   :align: center
    :alt: Anaconda 5
 
 .. figure:: {filename}/images/anaconda-install-1.png

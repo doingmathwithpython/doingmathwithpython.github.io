@@ -34,6 +34,28 @@ for earlier versions.
    :alt: Anaconda 5
    :scale: 50%
 
+.. figure:: {filename}/images/anaconda-install-1.png
+   :align: center
+   :alt: Anaconda 5
+   :scale: 50%
+
+.. figure:: {filename}/images/anaconda-install-2.png
+   :align: center
+   :alt: Anaconda 5
+   :scale: 50%
+
+.. figure:: {filename}/images/anaconda-install-3.png
+   :align: center
+   :alt: Anaconda 5
+   :scale: 50%
+
+.. figure:: {filename}/images/anaconda-install-4.png
+   :align: center
+   :alt: Anaconda 5
+   :scale: 50%
+
+
+
 I have so far verified both on Mac OS X and Linux. If you find any
 issues on Windows, please email me at
 ``doingmathwithpython@gmail.com`` or post your query/tip to any of the  

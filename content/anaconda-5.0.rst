@@ -26,6 +26,8 @@ You can update your existing installation using:
    $ conda update conda
    $ conda install anaconda=5.0
 
+(Thanks to Dan Wolfe for informing me of the incorrect command to install `anaconda=5.0`)
+
 A fresh installation of Anaconda 5.0 should still be similar to the `instructions <https://doingmathwithpython.github.io/pages/software-installation.html>`__
 for earlier versions.
 

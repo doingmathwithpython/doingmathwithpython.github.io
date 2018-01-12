@@ -19,6 +19,15 @@ It should be:
 
 (Thanks to Taylan Yemliha)
 
+On page 112, an import is missing - `SympifyError` used later in the
+`try..except` block. The initial import statement should hence be:
+
+.. code::
+   
+   from sympy import Symbol, sympify, solve, SympifyError
+
+(Thanks to Robert Buckley for pointing it out)
+
 
 Chapter 5
 =========

@@ -9,6 +9,16 @@ On page 97, in the section "Factorizing and Expanding Expressions", the
 expand function should be imported before we can use it via
 ``from sympy import expand``.
 
+On page 99, in the code snippet on Line (2) and the following, the indentation is wrong.
+It should be:
+
+.. code::
+
+   for i in range(2, n+1):
+       series = series + (x**i)/i
+
+(Thanks to Taylan Yemliha)
+
 
 Chapter 5
 =========

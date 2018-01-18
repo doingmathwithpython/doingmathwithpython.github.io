@@ -49,7 +49,7 @@ Chapter 6
 =========
 
 On page 164 and 165, the transformation equations have some errors in the text
-(not in the program). The eequations should be:
+(not in the program). The equations should be:
 
 **Transformation 1**
 
@@ -78,3 +78,17 @@ x1 = 0
 y1 = 0.16*y
 
 (Thanks to Dexter Edge, Fatih Kürşat Cansu, Toshiaki Kurokawa and Twitter @mkamimura)
+
+Chapter 7
+=========
+
+On page 195, an import is missing - `SympifyError` used later in the
+`try..except` block. The initial import statement should hence be:
+
+.. code::
+   
+   from sympy import Derivative, Symbol, sympify, SympifyError
+ 
+(Thanks to Robert Buckley for pointing it out)
+
+

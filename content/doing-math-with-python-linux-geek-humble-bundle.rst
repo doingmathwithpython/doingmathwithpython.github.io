@@ -12,7 +12,7 @@ running for the next 7 days. Your purchases will help support EFF or a charity o
 .. figure:: {filename}/images/humble-bundle-2.png
    :align: center
    :alt: Humble Bundle
-   :scale: 50%
+   :scale: 25%
 
 
 Get the bundle `here <https://www.humblebundle.com/books/linux-geek-books>`__!

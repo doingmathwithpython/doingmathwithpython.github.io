@@ -8,10 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-DEBUG ?= 0
-ifeq ($(DEBUG), 1)
-	PELICANOPTS += -D
-endif
+PELICANOPTS += -D
 
 help:
 	@echo 'Makefile for a pelican Web site                                        '
@@ -33,8 +30,12 @@ clean:
 
 build:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	cp 404.md $(OUTPUTDIR)/
 
 # Commit changes in site, push, update master, commit, push
+# Not used any more since we use travis' github pages
+# deployment option
+
 github: 
 	cp -r $(OUTPUTDIR) /tmp/
 	git add -A .

@@ -1,17 +1,8 @@
-FROM fedora:24
+FROM ubuntu:latest
 
-ARG git_username
-ARG git_useremail
-ARG gid
-ARG group
-ARG uid
-ARG user
-RUN groupadd -g $gid  $group || true && useradd -u $uid -g $gid -d /home/$user $user
-
-RUN dnf -y install python3-pip wget git make bash
-RUN git config --global user.name $git_username && git config --global user.email $git_useremail
-RUN pip3 install pelican pelican-youtube beautifulsoup4
-RUN git clone --recursive https://github.com/getpelican/pelican-plugins /pelican-plugins 
+RUN apt-get update && apt-get -y install python3-pip make bash git
+RUN pip3 install pelican pelican-youtube markdown pelican-gist beautifulsoup4
+RUN git clone https://github.com/amitsaha/pelican-svbhack /tmp/pelican-svbhack
+RUN git clone --recursive https://github.com/getpelican/pelican-plugins /tmp/pelican-plugins
 WORKDIR /site
-USER $user
 ENTRYPOINT ["make", "build"]

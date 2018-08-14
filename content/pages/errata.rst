@@ -2,6 +2,24 @@
 :pageno: 4
 
 
+Chapter 3
+=========
+
+On Page 77, in the program for finding the correlation coefficient, the last `for` loop has an extra space infront of
+it. It should be:
+
+.. code::
+
+   ..
+   y_square = []
+   for yi in y:
+       y_square.append(yi**2)
+   ...
+   
+
+(Thanks to Elmar Bucher for pointing this out)
+
+           
 Chapter 4
 =========
 

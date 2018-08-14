@@ -46,7 +46,6 @@ On page 112, an import is missing - `SympifyError` used later in the
 
 (Thanks to Robert Buckley for pointing it out)
 
-
 Chapter 5
 =========
 
@@ -57,6 +56,10 @@ Dexter Edge)
 On page 132, in the section "Probability," the code line above the one
 marked with a (3), which reads ``for num in s:`` should instead read:
 ``for num in space``.
+
+On page 135, in "Can You Roll That Score?" there is no need for `import matplotlib.pyplot as plt`.
+
+(Thanks to Elmar Bucher for the above)
 
 On page 139, in the code for simulating a fictional ATM, the statement
 ``probability = [1/6, 1/6, 1/3, 2/3]`` should be ``probability = [1/6,

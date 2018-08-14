@@ -46,6 +46,11 @@ On page 112, an import is missing - `SympifyError` used later in the
 
 (Thanks to Robert Buckley for pointing it out)
 
+On page 115, in the first paragram, "using the first letter of the color.." is not correct for black, since we use `k`
+for `black` color.
+
+(Thanks to Elmar Bucher for pointing this out)
+
 Chapter 5
 =========
 
@@ -112,4 +117,6 @@ On page 195, an import is missing - `SympifyError` used later in the
  
 (Thanks to Robert Buckley for pointing it out)
 
+On page 204, in the first paragraph, the first property should be "..the function value for x is always greater then or equal 0".
 
+(Thanks to Elmar Bucher for pointing this out)

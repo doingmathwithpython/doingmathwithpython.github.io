@@ -10,17 +10,11 @@ Of course, you get No Starch Press's other excellent Python books as part of the
 
 
 .. figure:: {filename}/images/python-humble-bundle.png
-   :align: center
+   :align: left
    :alt: Humble Bundle
    :scale: 10%
 
 Your purchases will help support the No Starch Foundation and Python Software Foundation.
-
-
-.. figure:: {filename}/images/python-humble-bundle-2.png
-   :align: center
-   :alt: Humble Bundle
-   :scale: 10%
 
 
 Get the bundle `here <https://www.humblebundle.com/books/python-programming-no-starch-books>`__.

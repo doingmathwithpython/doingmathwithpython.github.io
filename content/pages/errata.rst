@@ -1,6 +1,14 @@
 :Title: Errata
 :pageno: 4
 
+Chapter 2
+=========
+
+On Page 52, in the paragraph starting with "In this program...", the book currently states, 
+".. we calculate the time of flight and then call the frange() function with the values for start, final, and 
+increment set to 0,". "increment" should be "interval".
+
+(Thanks to a lovely Japanese reader for pointing this out).
 
 Chapter 3
 =========

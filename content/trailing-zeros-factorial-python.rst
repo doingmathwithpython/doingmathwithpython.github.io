@@ -31,7 +31,6 @@ explains the process in `detail <https://brilliant.org/wiki/trailing-number-of-z
 The key bit there in is this formula:
 
 .. figure:: {filename}/images/trailing_zeros_formula.png
-   :scale:120%
 
 
 where, ``n`` is the number for whose factorial we want to find the number of trailing zeros.

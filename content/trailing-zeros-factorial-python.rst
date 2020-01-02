@@ -6,12 +6,12 @@ Number of trailing zeros in the factorial of an integer
 :slug: trailing-zeros-factorial
 :summary: Use Python to find the number of trailing zeros in the factorial of an integer
 
-Hi all, I recently learned about a cool formula to calculate the number of
+I recently learned about a cool formula to calculate the number of
 trailing zeros in the factorial of a number. It has been a while since I 
 wrote a program to do something like this. So, I decided to change that and
-write this blog post. 
+write this blog post. Let's jump in.
 
-In the spirit of wring various "calculators", we will
+In the spirit of wring various "calculators" in the book, we will
 write a "number of trailing zero" calculator. First up though, let's refresh 
 some key relevant concepts.
 
@@ -31,6 +31,7 @@ explains the process in `detail <https://brilliant.org/wiki/trailing-number-of-z
 The key bit there in is this formula:
 
 .. figure:: {filename}/images/trailing_zeros_formula.png
+   :scale:120%
 
 
 where, ``n`` is the number for whose factorial we want to find the number of trailing zeros.
@@ -107,5 +108,3 @@ Besides the above, we use the `is_integer()` function defined on a floating poin
 if the floating point object is actually an integer.
 
 The latest version of the code is available `here <https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py>`__.
-
-

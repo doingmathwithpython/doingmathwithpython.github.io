@@ -2,7 +2,7 @@ Number of trailing zeros in the factorial of an integer
 =======================================================
 
 :date: 2020-01-02 19:50
-:category: tips
+:category: articles
 :slug: trailing-zeros-factorial
 :summary: Use Python to find the number of trailing zeros in the factorial of an integer
 

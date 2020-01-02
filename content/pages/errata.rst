@@ -4,6 +4,15 @@
 Chapter 2
 =========
 
+On Page 47, in the second last sentence of the second last paragraph, the book currently states "The x-axis of the 
+graph displays the force, and the y-axis displays the distance.". It should be "The x-axis of the graph displays the distance
+and the y-axis displays force". 
+
+(Thanks to Mike Beasley for pointing this out)
+
+On Page 47, Figure 2-12 caption should be "2-12: Visualization of the relationship between the gravitational force and 
+the distance" anot not "..squared distance".
+
 On Page 52, in the paragraph starting with "In this program...", the book currently states, 
 ".. we calculate the time of flight and then call the frange() function with the values for start, final, and 
 increment set to 0,". "increment" should be "interval".

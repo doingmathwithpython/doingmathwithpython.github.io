@@ -14,4 +14,4 @@ DISPLAY_CATEGORIES_ON_MENU = False
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
 PLUGIN_PATHS = ['/pelican-plugins']
-PLUGINS = ['share_post', 'pelican_youtube']
+PLUGINS = ['share_post', 'pelican_youtube', 'pelican_render_math']

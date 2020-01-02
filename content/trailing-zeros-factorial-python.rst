@@ -99,11 +99,11 @@ Some key standard library functions we use in the above program are:
 - ``math.log``: This function is used to find the logarithm of a number for a specified base (defaults to 10)
 - ``math.pow``: This function is used to find out the power of a number raised to another
 
-The above functions are defined in the `math module<https://docs.python.org/3/library/math.html>`__.
+The above functions are defined in the `math module <https://docs.python.org/3/library/math.html>`__.
 
 Besides the above, we use the `is_integer()` function defined on a floating point object to check
 if the floating point object is actually an integer.
 
-The latest version of the code is available `here<https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py>`__.
+The latest version of the code is available `here <https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py>`__.
 
 

@@ -28,13 +28,10 @@ and that of 3.5 is 3 and the floor of 3 is 3 as well.
 Now, coming back to the focus of this post, this document at brilliant.org wiki 
 explains the process in `detail <https://brilliant.org/wiki/trailing-number-of-zeros/>`__.
 
-The key bit there in is this formula:
+The key bit there in is this formula: :math:`\sum_{i=0}^{k}\floor*{\frac{n}{5^i}}`
 
-.. math::
-
-   \sum_{i=0}^{k}\floor*{\frac{n}{5^i}}
-
-where, ``n`` is the number for whose factorial we want to find the number of trailing zeros in and ``k`` 
+where, ``n`` is the number for whose factorial we want to find the number of trailing zeros in and ``k``
+is defined as:
 
 The following Python program implements the above formula:
 
@@ -67,7 +64,7 @@ The following Python program implements the above formula:
 		    zeros = zeros + math.floor(num/math.pow(5, i))
 		return zeros 
 	    else:
-		print("Factorial of a non-positive integer is undefined")
+		print("Factorial of a non-positive non-integer is undefined")
 
 
 	if __name__ == "__main__":
@@ -77,4 +74,36 @@ The following Python program implements the above formula:
 	    num_zeros = trailing_zeros(fact_num)
 	    print("Number of trailing zeros: {0}".format(num_zeros))
 	 
+
+When we run this program using Python 3, it will ask for the number whose factorial's number of trailing
+zeros we want to find and then print it out, like so:
+
+.. code::
+
+   Enter the number whose factorial's trailing zeros you want to find: 5
+   Number of trailing zeros: 1
+
+If you enter a number which is not a positive integer, you will get an error message:
+
+.. code::
+
+   Enter the number whose factorial's trailing zeros you want to find: 5.1
+   Factorial of a non-positive integer is undefined
+   Number of trailing zeros: None
+
+
+
+Some key standard library functions we use in the above program are:
+
+- ``math.floor``: This function is used to find the floor of a number
+- ``math.log``: This function is used to find the logarithm of a number for a specified base (defaults to 10)
+- ``math.pow``: This function is used to find out the power of a number raised to another
+
+The above functions are defined in the `math module<https://docs.python.org/3/library/math.html>`__.
+
+Besides the above, we use the `is_integer()` function defined on a floating point object to check
+if the floating point object is actually an integer.
+
+The latest version of the code is available `here<https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py>`__.
+
 

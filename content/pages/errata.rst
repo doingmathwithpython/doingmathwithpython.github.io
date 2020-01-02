@@ -10,7 +10,7 @@ and the y-axis displays force".
 
 (Thanks to Mike Beasley for pointing this out)
 
-On Page 48, Figure 2-12 caption should be "2-12: Visualization of the relationship between the gravitational force and 
+On Page 48, Figure 2-12 caption should be "Figure 2-12: Visualization of the relationship between the gravitational force and 
 the distance" anot not "..squared distance".
 
 On Page 52, in the paragraph starting with "In this program...", the book currently states, 

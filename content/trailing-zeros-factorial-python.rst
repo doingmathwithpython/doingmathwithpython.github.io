@@ -6,12 +6,12 @@ Number of trailing zeros in the factorial of an integer
 :slug: trailing-zeros-factorial
 :summary: Use Python to find the number of trailing zeros in the factorial of an integer
 
-Please note, the math expressions are broken. I will be fixing it soon.
-
 Hi all, I recently learned about a cool formula to calculate the number of
 trailing zeros in the factorial of a number. It has been a while since I 
 wrote a program to do something like this. So, I decided to change that and
-write this blog post. In the spirit of wring various "calculators", we will
+write this blog post. 
+
+In the spirit of wring various "calculators", we will
 write a "number of trailing zero" calculator. First up though, let's refresh 
 some key relevant concepts.
 
@@ -28,10 +28,12 @@ and that of 3.5 is 3 and the floor of 3 is 3 as well.
 Now, coming back to the focus of this post, this document at brilliant.org wiki 
 explains the process in `detail <https://brilliant.org/wiki/trailing-number-of-zeros/>`__.
 
-The key bit there in is this formula: :math:`\sum_{i=0}^{k}\floor*{\frac{n}{5^i}}`
+The key bit there in is this formula:
 
-where, ``n`` is the number for whose factorial we want to find the number of trailing zeros in and ``k``
-is defined as:
+.. figure:: {filename}/images/trailing_zeros_formula.png
+
+
+where, ``n`` is the number for whose factorial we want to find the number of trailing zeros.
 
 The following Python program implements the above formula:
 

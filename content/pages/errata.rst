@@ -1,5 +1,5 @@
 :Title: Errata
-:date: 2015-04-04 08:06
+:date: 2015-04-04
 :pageno: 4
 
 Chapter 2

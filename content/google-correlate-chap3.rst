@@ -1,7 +1,7 @@
 Chapter 3 - Google Correlate example update
 ===========================================
 
-:date: 2020-07-11 08:20
+:date: 2020-07-11
 :category: updates
 
 In Chapter 3 on Page 87, the book refers to the Google Correlate service. However, as of December 2019, the service has been shutdown. 

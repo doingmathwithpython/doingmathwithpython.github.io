@@ -40,7 +40,7 @@ it. It should be:
 On Page 87, the book refers to the Google Correlate service. However, as of December 2019,
 the service has been shutdown. Since the chapter requires you to download a CSV formatted data,
 it is no longer possible. However, you can instead download a version of the data that I had
-used 5 years back when writing the book from `here < https://github.com/doingmathwithpython/code/blob/master/chapter3/solutions/correlate-summer.csv>`__.
+used 5 years back when writing the book from `here <https://github.com/doingmathwithpython/code/blob/master/chapter3/solutions/correlate-summer.csv>`__.
 
 (Thanks to Tuomo Kalliokoski)
 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Errata</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+        <link href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Doing Math with Python Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">Doing Math with Python </a></h1>
+                <nav><ul>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/software-installation.html">Software Installation</a></li>
+                    <li><a href="../pages/programs.html">Programs</a></li>
+                    <li class="active"><a href="../pages/errata.html">Errata</a></li>
+                    <li><a href="../pages/help.html">Help</a></li>
+                    <li><a href="../pages/buy.html">Buy</a></li>
+                    <li><a href="../pages/reviews.html">Reviews</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Errata</h1>
+    
+    <div class="section" id="chapter-2">
+<h2>Chapter 2</h2>
+<p>On Page 47, in the second last sentence of the second last paragraph, the book currently states &quot;The x-axis of the
+graph displays the force, and the y-axis displays the distance.&quot;. It should be &quot;The x-axis of the graph displays the distance
+and the y-axis displays force&quot;.</p>
+<p>(Thanks to Mike Beasley for pointing this out)</p>
+<p>On Page 48, Figure 2-12 caption should be &quot;Figure 2-12: Visualization of the relationship between the gravitational force and
+the distance&quot; and not &quot;..squared distance&quot;.</p>
+<p>On Page 52, in the paragraph starting with &quot;In this program...&quot;, the book currently states,
+&quot;.. we calculate the time of flight and then call the frange() function with the values for start, final, and
+increment set to 0,&quot;. &quot;increment&quot; should be &quot;interval&quot;.</p>
+<p>(Thanks to a lovely Japanese reader for pointing this out).</p>
+</div>
+<div class="section" id="chapter-3">
+<h2>Chapter 3</h2>
+<p>On Page 77, in the program for finding the correlation coefficient, the last <cite>for</cite> loop has an extra space infront of
+it. It should be:</p>
+<pre class="code literal-block">
+..
+y_square = []
+for yi in y:
+    y_square.append(yi**2)
+...
+</pre>
+<p>(Thanks to Elmar Bucher for pointing this out)</p>
+<p>On Page 87, the book refers to the Google Correlate service. However, as of December 2019,
+the service has been shutdown. Since the chapter requires you to download a CSV formatted data,
+it is no longer possible. However, you can instead download a version of the data that I had
+used 5 years back when writing the book from <a class="reference external" href="https://github.com/doingmathwithpython/code/blob/master/chapter3/solutions/correlate-summer.csv">here</a>.</p>
+<p>(Thanks to Tuomo Kalliokoski)</p>
+</div>
+<div class="section" id="chapter-4">
+<h2>Chapter 4</h2>
+<p>On page 97, in the section &quot;Factorizing and Expanding Expressions&quot;, the
+expand function should be imported before we can use it via
+<tt class="docutils literal">from sympy import expand</tt>.</p>
+<p>On page 99, in the code snippet on Line (2) and the following, the indentation is wrong.
+It should be:</p>
+<pre class="code literal-block">
+for i in range(2, n+1):
+    series = series + (x**i)/i
+</pre>
+<p>(Thanks to Taylan Yemliha)</p>
+<p>On page 112, an import is missing - <cite>SympifyError</cite> used later in the
+<cite>try..except</cite> block. The initial import statement should hence be:</p>
+<pre class="code literal-block">
+from sympy import Symbol, sympify, solve, SympifyError
+</pre>
+<p>(Thanks to Robert Buckley for pointing it out)</p>
+<p>On page 115, in the first paragram, &quot;using the first letter of the color..&quot; is not correct for black, since we use <cite>k</cite>
+for <cite>black</cite> color.</p>
+<p>(Thanks to Elmar Bucher for pointing this out)</p>
+</div>
+<div class="section" id="chapter-5">
+<h2>Chapter 5</h2>
+<p>On page 132, in the section &quot;Probability&quot;, the program should start
+with the import statment <tt class="docutils literal">from sympy import FiniteSet</tt>. (Thanks to
+Dexter Edge)</p>
+<p>On page 132, in the section &quot;Probability,&quot; the code line above the one
+marked with a (3), which reads <tt class="docutils literal">for num in s:</tt> should instead read:
+<tt class="docutils literal">for num in space</tt>.</p>
+<p>On page 135, in &quot;Can You Roll That Score?&quot; there is no need for <cite>import matplotlib.pyplot as plt</cite>.</p>
+<p>(Thanks to Elmar Bucher for the above)</p>
+<p>On page 139, in the code for simulating a fictional ATM, the statement
+<tt class="docutils literal">probability = [1/6, 1/6, 1/3, 2/3]</tt> should be <tt class="docutils literal">probability = [1/6,
+1/6, 1/3, 1/3]</tt>.  (Thanks to Luis Soares)</p>
+</div>
+<div class="section" id="chapter-6">
+<h2>Chapter 6</h2>
+<p>On page 164 and 165, the transformation equations have some errors in the text
+(not in the program). The equations should be:</p>
+<p><strong>Transformation 1</strong></p>
+<p>x1 = 0.85*x + 0.04*y</p>
+<p>y1 = -0.04*x + 0.85*y + 1.6</p>
+<p><strong>Transformation 2</strong></p>
+<p>x1 = 0.2*x - 0.26*y</p>
+<p>y1 = 0.23*x + 0.22*y + 1.6</p>
+<p><strong>Transformation 3</strong></p>
+<p>x1 = -0.15*x + 0.28*y</p>
+<p>y1 = 0.26*x  + 0.24*y + 0.44</p>
+<p><strong>Transformation 4</strong></p>
+<p>x1 = 0</p>
+<p>y1 = 0.16*y</p>
+<p>(Thanks to Dexter Edge, Fatih Kürşat Cansu, Toshiaki Kurokawa and Twitter &#64;mkamimura)</p>
+</div>
+<div class="section" id="chapter-7">
+<h2>Chapter 7</h2>
+<p>On page 195, an import is missing - <cite>SympifyError</cite> used later in the
+<cite>try..except</cite> block. The initial import statement should hence be:</p>
+<pre class="code literal-block">
+from sympy import Derivative, Symbol, sympify, SympifyError
+</pre>
+<p>(Thanks to Robert Buckley for pointing it out)</p>
+<p>On page 204, in the first paragraph, the first property should be &quot;..the function value for x is always greater then or equal 0&quot;.</p>
+<p>(Thanks to Elmar Bucher for pointing this out)</p>
+</div>
+
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67534179-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Breaking long lines in Python</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+        <link href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Doing Math with Python Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">Doing Math with Python </a></h1>
+                <nav><ul>
+                    <li><a href="./pages/about.html">About</a></li>
+                    <li><a href="./pages/software-installation.html">Software Installation</a></li>
+                    <li><a href="./pages/programs.html">Programs</a></li>
+                    <li><a href="./pages/errata.html">Errata</a></li>
+                    <li><a href="./pages/help.html">Help</a></li>
+                    <li><a href="./pages/buy.html">Buy</a></li>
+                    <li><a href="./pages/reviews.html">Reviews</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./breaking-long-lines-in-python.html" rel="bookmark"
+           title="Permalink to Breaking long lines in Python">Breaking long lines in Python</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-11-04T12:00:00+10:00">
+                Published: Wed 04 November 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/amit-saha.html">Amit Saha</a>
+        </address>
+<p>In <a href="./category/articles.html">articles</a>.</p>
+
+</footer><!-- /.post-info -->      <p>In some of the programs discussed in the book including the sample solutions, you will see statements like:</p>
+<pre class="code literal-block">
+print('Area: {0}, Estimated ({1}): {2}'.
+           format(area_of_circle, points, estimate(radius, points)))
+</pre>
+<p>This is really the following single statement:</p>
+<pre class="code literal-block">
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points)))
+</pre>
+<p>The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up.</p>
+<p>In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>.</p>
+<p>Note that the examples below will for illustrative purposes break lines waaaaay less than 80 characters.</p>
+<div class="section" id="how-do-you-break">
+<h2>How do you break?</h2>
+<div class="section" id="when-not-calling-function">
+<h3>When not calling function</h3>
+<p>When you are not calling a function, you essentially have two choices:</p>
+<p><strong>Use paranthesis</strong></p>
+<p>This is exactly how we break the long statement in the example we started this article with. For the moment ignore the call to <tt class="docutils literal">print()</tt> and assume that the statement is:</p>
+<pre class="code literal-block">
+s = 'Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points))
+</pre>
+<p>This essentially just creates the string <tt class="docutils literal">s</tt>. If we were to split this statement over multiple lines, we would do the following:</p>
+<pre class="code literal-block">
+s = ('Area: {0}, Estimated ({1}): {2}'
+     .format(area_of_circle, points, estimate(radius, points)))
+</pre>
+<p>Note the extra beginning and the ending parenthesis.</p>
+<p>Here is another example:</p>
+<pre class="code literal-block">
+s1 = x + x**2/2 + x**3/3 + x**4/4 + x**5/5 + x**6/6 + x**7/7 + x**8/8
+</pre>
+<p>Here is how we can use split the above statment into multiple lines using parentheses:</p>
+<pre class="code literal-block">
+s3 = (x + x**2/2 + x**3/3
+     + x**4/4 + x**5/5
+     + x**6/6 + x**7/7
+     + x**8/8)
+</pre>
+<p><strong>Use the line continuation operator</strong></p>
+<p>The line continuation operator, <tt class="docutils literal">\</tt> can be used to split long statements over multiple lines. Here is how we could split the above statement using <tt class="docutils literal">\</tt> instead:</p>
+<pre class="code literal-block">
+s3 = x + x**2/2 + x**3/3 \
+    + x**4/4 + x**5/5 \
+    + x**6/6 + x**7/7 \
+    + x**8/8
+</pre>
+<p>At the end of every line (except the last), we just add a <tt class="docutils literal">\</tt> indicating that the next line is also a part of the same statement.</p>
+<p><strong>Breaking up those long if statements</strong></p>
+<p>Often I have to break long <tt class="docutils literal">if</tt> statements and is in fact one of the most common cases I face at work where I have to break the statement into multiple lines. Here is an example using both the approaches above:</p>
+<pre class="code literal-block">
+# Using parenthesis
+if (cond1 and cond2 and cond3
+    and cond4):
+    # True block
+else:
+    # False block
+
+# Using line continuation operator
+if cond1 and cond2 and cond3 \
+   and cond4:
+    # True block
+else:
+    # False block
+</pre>
+</div>
+<div class="section" id="when-calling-functions">
+<h3>When calling functions</h3>
+<p>By default, when calling functions you can just press enter and without doing anything more keep writing your statement over multiple lines. For example:</p>
+<pre class="code literal-block">
+x = 1
+print(x,
+      x)
+</pre>
+<p>Hence, we <cite>could</cite> have broken the first example we saw as:</p>
+<pre class="code literal-block">
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle,
+                                              points,
+                                              estimate(radius, points)))
+</pre>
+<p>When calling <tt class="docutils literal">format()</tt> we put the arguments over separate lines.</p>
+</div>
+</div>
+<div class="section" id="learning-more-about-python-coding-style">
+<h2>Learning more about Python coding style</h2>
+<p>If you liked reading this article, you may also find it worth your time going over the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Python style guide</a>. You may even find instances where I have not followed a guideline when writing the programs in the book. If you find one, let me know.</p>
+</div>
+<div class="section" id="getting-in-touch">
+<h2>Getting in touch</h2>
+<p>Stay updated or get in touch:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.facebook.com/doingmathwithpython">Facebook page</a></li>
+<li><a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232">G+ Community</a></li>
+<li><a class="reference external" href="https://twitter.com/mathwithpython">Twitter</a></li>
+</ul>
+<p>You can contact me directly via:</p>
+<ul class="simple">
+<li>Twitter: <a class="reference external" href="https://twitter.com/mathwithpython">&#64;mathwithpython</a></li>
+<li>Email : <a class="reference external" href="mailto:doingmathwithpython&#64;gmail.com">doingmathwithpython&#64;gmail.com</a></li>
+</ul>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67534179-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

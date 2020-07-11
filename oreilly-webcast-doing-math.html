@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>O'Reilly Webcast: Doing Math with Python</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+        <link href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Doing Math with Python Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">Doing Math with Python </a></h1>
+                <nav><ul>
+                    <li><a href="./pages/about.html">About</a></li>
+                    <li><a href="./pages/software-installation.html">Software Installation</a></li>
+                    <li><a href="./pages/programs.html">Programs</a></li>
+                    <li><a href="./pages/errata.html">Errata</a></li>
+                    <li><a href="./pages/help.html">Help</a></li>
+                    <li><a href="./pages/buy.html">Buy</a></li>
+                    <li><a href="./pages/reviews.html">Reviews</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./oreilly-webcast-doing-math.html" rel="bookmark"
+           title="Permalink to O'Reilly Webcast: Doing Math with Python">O'Reilly Webcast: Doing Math with Python</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-07-01T14:00:00+10:00">
+                Published: Fri 01 July 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/amit-saha.html">Amit Saha</a>
+        </address>
+<p>In <a href="./category/updates.html">updates</a>.</p>
+
+</footer><!-- /.post-info -->      <p><strong>Updated post after the webcast</strong></p>
+<p>A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. For those who didn't make it to the webcast, it's now available for <a class="reference external" href="http://www.oreilly.com/pub/e/3712">viewing</a>.</p>
+<p>The slides, transcript and the demos are all available at the <a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016">GitHub repository</a>. Feel free to use them in any capacity you find useful. If you already have <a class="reference external" href="https://doingmathwithpython.github.io/pages/software-installation.html">Anaconda installed</a>, get the above code, and run <cite>jupyter-notebook</cite> from the same directory to be able to play with the code.</p>
+<p><em>Links of Interest</em></p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.oreilly.com/pub/e/3712">Webcast Recording</a></li>
+<li><a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016">Slides, Transcript and Demos</a></li>
+<li><a class="reference external" href="https://www.nostarch.com/doingmathwithpython">Doing Math with Python book</a></li>
+</ul>
+<p>Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:</p>
+<p><strong>Q: What is the difference between an interpreter, ide and text editor? And what do you recommend for beginners?</strong></p>
+<p>An <tt class="docutils literal">interpreter</tt> is what runs your program. Without going into the details, the Python interpreter is what converts a statement such as <tt class="docutils literal"><span class="pre">print(&quot;Hello&quot;)</span></tt> to a form that can be understood by the computer to finally print <tt class="docutils literal">Hello</tt> on screen.
+An <tt class="docutils literal">IDE</tt> or Integrated Development Environment is a software application where we can write programs and run them usually via  Graphical User Interface. IDEs generally feature helpful features such as code completion and can be useful when working with large projects. A <tt class="docutils literal">text editor</tt> is for writing our programs or other text. It usually doesn't support features that an IDE would support but of course, you can configure and enhance text editors to give you IDE-like features.</p>
+<p>For beginners, I recommend starting with text editors. I think that doesn't overwhelm someone who is learning with the IDE features. That said, <a class="reference external" href="https://docs.python.org/3/library/idle.html">IDLE</a> is a good in-between choice for beginners and one that I personally use in the book and definitely would be my first choice.</p>
+<p><strong>Q: What library do we use for importing metric units that works well with sympy?</strong></p>
+<p>I would recommend taking a look at SymPy's <a class="reference external" href="http://docs.sympy.org/dev/modules/physics/units.html#">Units</a> module and see if it has what you need. In addition, and if you already don't know about it, <a class="reference external" href="https://github.com/hgrecco/pint">pint</a> would be another library to look at.</p>
+<p><strong>Q: Do you use notebook for exploratory work?</strong></p>
+<p>Yes, I use notebook for exploratory work. I think notebooks are great when you want the code and result together in a single document. It's great for sharing too. I recently created <a class="reference external" href="http://echorand.me/presentation-slides-with-jupyter-notebook.html#.V3XhNe0yphE">slides</a> as a Notebook.</p>
+<p><strong>Q: Can Sympy be used for the development in a engineering software (i.e. Finite Element Method)? Would the computational speed be (good)? (Not sure about the second part of the question)</strong></p>
+<p>You may be interested in taking a look at <a class="reference external" href="http://sfepy.org/doc-devel/index.html">SfePy</a></p>
+<p><strong>Q: Thoughts on Cython? Sagemath?</strong></p>
+<p>I haven't worked much with Cython. I know about it and what it can useful for. So, I guess if you are looking for speed, definitely look into it. I would also recommend looking at <a class="reference external" href="http://numba.pydata.org/">Numba</a>. Sagemath is more of a system itself than a library. It integrates popular Python libraries and would definitely be something to explore.</p>
+<p><strong>Q: Should students use IDLE or a notebook format?</strong></p>
+<p>I would recommend using IDLE to start with. It gives the opportunity for the student to at least get an idea of the cycle of editing code and running it. I would only introduce notebook later and in addition to IDLE. Both have their merits, but Notebook just introduces one more thing to grasp in the beginning.</p>
+<p><strong>Q: Any recommendations for introducing 3D graphics e.g. polyhedrons on screen?</strong></p>
+<p>I haven't explored them, you may want to look at <a class="reference external" href="https://pi3d.github.io/html/">Pi3D</a> or <a class="reference external" href="http://vpython.org/">VPython</a>.</p>
+<p><strong>Q: How well do SymPy and Numpy work together?</strong></p>
+<p>No personal experience, but searching a bit, it looks like you may want to look at SymPy's <a class="reference external" href="http://docs.sympy.org/dev/modules/utilities/lambdify.html">Lambdify</a> feature. The <a class="reference external" href="https://groups.google.com/forum/#!forum/sympy">SymPy google group</a> may give you a better answer.</p>
+<p><strong>Q: You are working in Jupyter - can the &quot;app&quot;s you should be embedded in a regular HTML web page?</strong></p>
+<p>I haven't personally tried this. I think this <a class="reference external" href="https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/">post</a> may give you clues to do it. O'Reilly Media's project <a class="reference external" href="https://github.com/oreillymedia/thebe">thebe</a> may be another option to look at.</p>
+<p><strong>Announcement post</strong></p>
+<p>I am very excited to share that I am doing a webcast this coming week with O'Reilly titled
+&quot;Doing Math with Python&quot;. You can register for it on the <a class="reference external" href="http://www.oreilly.com/pub/e/3712">event page</a>.</p>
+<p>Here are the date and time of the webcast:</p>
+<ul class="simple">
+<li>Wed, June 29th at 7 PM, San Francisco</li>
+<li>Wed, June 29th at 10pm, New York</li>
+<li>Thu, Jun 30th at 3am - London</li>
+<li>Thu, Jun 30th at 7:30am - Mumbai</li>
+<li>Thu, Jun 30th at 10am - Beijing</li>
+<li>Thu, Jun 30th at 11am - Tokyo</li>
+<li>Thu, Jun 30th at 12pm - Sydney</li>
+</ul>
+<p>I have created a <a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016">GitHub repository</a> which
+will have the rough transcript, final slides and the code examples as Jupyter Notebooks.</p>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://doingmathwithpython.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67534179-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

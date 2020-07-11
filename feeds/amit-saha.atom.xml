@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing Math with Python - Amit Saha</title><link href="http://doingmathwithpython.github.io/" rel="alternate"></link><link href="http://doingmathwithpython.github.io/feeds/amit-saha.atom.xml" rel="self"></link><id>http://doingmathwithpython.github.io/</id><updated>2020-07-11T00:00:00+10:00</updated><entry><title>Chapter 3 - Google Correlate example update</title><link href="http://doingmathwithpython.github.io/chapter-3-google-correlate-example-update.html" rel="alternate"></link><published>2020-07-11T00:00:00+10:00</published><updated>2020-07-11T00:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2020-07-11:/chapter-3-google-correlate-example-update.html</id><summary type="html">&lt;p&gt;In Chapter 3 on Page 87, the book refers to the Google Correlate service. However, as of December 2019, the service has been shutdown.
+Since the chapter requires you to download a CSV formatted data, it is no longer possible. However, you can instead download a version of
+the data …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In Chapter 3 on Page 87, the book refers to the Google Correlate service. However, as of December 2019, the service has been shutdown.
+Since the chapter requires you to download a CSV formatted data, it is no longer possible. However, you can instead download a version of
+the data that I had used 5 years back when writing the book from
+&lt;a class="reference external" href="https://github.com/doingmathwithpython/code/blob/master/chapter3/solutions/correlate-summer.csv"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks to a reader for pointing me to this issue.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Coding Starter Kit Humble Bundle</title><link href="http://doingmathwithpython.github.io/humble-bundle-coding-starter.html" rel="alternate"></link><published>2020-03-17T00:00:00+10:00</published><updated>2020-03-17T00:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2020-03-17:/humble-bundle-coding-starter.html</id><summary type="html">&lt;p&gt;I am very excited to share that &amp;quot;Doing Math with Python&amp;quot; is part of No Starch Press's  &lt;a class="reference external" href="https://www.humblebundle.com/books/coding-starter-kit-no-starch-press-books?mc_cid=01272437d1&amp;amp;mc_eid=a8fa0cb420"&gt;Coding Starter Humble Bundle&lt;/a&gt;.
+Of course, you get No Starch Press's other excellent coding books as part of the bundle.&lt;/p&gt;
+&lt;p&gt;It's on for the next 20 days!&lt;/p&gt;
+&lt;div class="figure align-left"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/coding-starter-humble-bundle.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Your purchases will help support the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am very excited to share that &amp;quot;Doing Math with Python&amp;quot; is part of No Starch Press's  &lt;a class="reference external" href="https://www.humblebundle.com/books/coding-starter-kit-no-starch-press-books?mc_cid=01272437d1&amp;amp;mc_eid=a8fa0cb420"&gt;Coding Starter Humble Bundle&lt;/a&gt;.
+Of course, you get No Starch Press's other excellent coding books as part of the bundle.&lt;/p&gt;
+&lt;p&gt;It's on for the next 20 days!&lt;/p&gt;
+&lt;div class="figure align-left"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/coding-starter-humble-bundle.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Your purchases will help support the No Starch Foundation and Scratch Foundation.&lt;/p&gt;
+&lt;p&gt;Get the bundle &lt;a class="reference external" href="https://www.humblebundle.com/books/coding-starter-kit-no-starch-press-books?mc_cid=01272437d1&amp;amp;mc_eid=a8fa0cb420"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Number of trailing zeros in the factorial of an integer</title><link href="http://doingmathwithpython.github.io/trailing-zeros-factorial.html" rel="alternate"></link><published>2020-01-02T19:50:00+10:00</published><updated>2020-01-02T19:50:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2020-01-02:/trailing-zeros-factorial.html</id><summary type="html">&lt;p class="first last"&gt;Use Python to find the number of trailing zeros in the factorial of an integer&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I recently learned about a cool formula to calculate the number of
+trailing zeros in the factorial of a number. It has been a while since I
+wrote a program to do something like this. So, I decided to change that and
+write this blog post. Let's jump in.&lt;/p&gt;
+&lt;p&gt;In the spirit of wring various &amp;quot;calculators&amp;quot; in the book, we will
+write a &amp;quot;number of trailing zero&amp;quot; calculator. First up though, let's refresh
+some key relevant concepts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Factorial&lt;/strong&gt;: The factorial of a number, &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; denoted by &lt;tt class="docutils literal"&gt;n!&lt;/tt&gt; is the product &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;n*(n-1)*(n-2)...*1&lt;/span&gt;&lt;/tt&gt;.
+For example, &lt;tt class="docutils literal"&gt;5! = 5*4*3*2*1 = 120&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Trailing zeros&lt;/strong&gt;: The trailing zeros of a number is the number of zeros at the end of a number. For example,
+the number 567100 has &lt;strong&gt;two&lt;/strong&gt; trailing zeros.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Floor&lt;/strong&gt;: The floor of a number is the greatest integer less than or equal to x. That is floor of 3.2 is 3
+and that of 3.5 is 3 and the floor of 3 is 3 as well.&lt;/p&gt;
+&lt;p&gt;Now, coming back to the focus of this post, this document at brilliant.org wiki
+explains the process in &lt;a class="reference external" href="https://brilliant.org/wiki/trailing-number-of-zeros/"&gt;detail&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The key bit there in is this formula:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://doingmathwithpython.github.io/images/trailing_zeros_formula.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;where, &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; is the number for whose factorial we want to find the number of trailing zeros.&lt;/p&gt;
+&lt;p&gt;The following Python program implements the above formula:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+import math
+
+
+def is_positive_integer(x):
+    try:
+        x = float(x)
+    except ValueError:
+        return False
+    else:
+        if x.is_integer() and x &amp;gt; 0:
+            return True
+        else:
+            return False
+
+
+def trailing_zeros(num):
+    if is_positive_integer(num):
+        # The above function call has done all the sanity checks for us
+        # so we can just convert this into an integer here
+        num = int(num)
+
+        k = math.floor(math.log(num, 5))
+        zeros = 0
+        for i in range(1, k + 1):
+            zeros = zeros + math.floor(num/math.pow(5, i))
+        return zeros
+    else:
+        print(&amp;quot;Factorial of a non-positive non-integer is undefined&amp;quot;)
+
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    fact_num = input(
+        &amp;quot;Enter the number whose factorial's trailing zeros you want to find: &amp;quot;
+    )
+    num_zeros = trailing_zeros(fact_num)
+    print(&amp;quot;Number of trailing zeros: {0}&amp;quot;.format(num_zeros))
+&lt;/pre&gt;
+&lt;p&gt;When we run this program using Python 3, it will ask for the number whose factorial's number of trailing
+zeros we want to find and then print it out, like so:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+Enter the number whose factorial's trailing zeros you want to find: 5
+Number of trailing zeros: 1
+&lt;/pre&gt;
+&lt;p&gt;If you enter a number which is not a positive integer, you will get an error message:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+Enter the number whose factorial's trailing zeros you want to find: 5.1
+Factorial of a non-positive integer is undefined
+Number of trailing zeros: None
+&lt;/pre&gt;
+&lt;p&gt;Some key standard library functions we use in the above program are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.floor&lt;/tt&gt;: This function is used to find the floor of a number&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.log&lt;/tt&gt;: This function is used to find the logarithm of a number for a specified base (defaults to 10)&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.pow&lt;/tt&gt;: This function is used to find out the power of a number raised to another&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The above functions are defined in the &lt;a class="reference external" href="https://docs.python.org/3/library/math.html"&gt;math module&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Besides the above, we use the &lt;cite&gt;is_integer()&lt;/cite&gt; function defined on a floating point object to check
+if the floating point object is actually an integer.&lt;/p&gt;
+&lt;p&gt;The latest version of the code is available &lt;a class="reference external" href="https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content><category term="articles"></category></entry><entry><title>Doing Math with Python in Python Humble Bundle</title><link href="http://doingmathwithpython.github.io/humble-bundle-python.html" rel="alternate"></link><published>2019-08-23T00:00:00+10:00</published><updated>2019-08-23T00:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2019-08-23:/humble-bundle-python.html</id><summary type="html">&lt;p class="first last"&gt;Humble bundle Python&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&amp;quot;Doing Math with Python&amp;quot; is part of No Starch Press's  &lt;a class="reference external" href="https://www.humblebundle.com/books/python-programming-no-starch-books"&gt;Python Humble Bundle&lt;/a&gt;.
+Of course, you get No Starch Press's other excellent Python books as part of the bundle. It's still on for the next 10 days!&lt;/p&gt;
+&lt;div class="figure align-left"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/python-humble-bundle.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Your purchases will help support the No Starch Foundation and Python Software Foundation.&lt;/p&gt;
+&lt;p&gt;Get the bundle &lt;a class="reference external" href="https://www.humblebundle.com/books/python-programming-no-starch-books"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Doing Math with Python in Coder's Bookshelf Humble Bundle</title><link href="http://doingmathwithpython.github.io/humble-bundle-coders-bookshelf.html" rel="alternate"></link><published>2019-03-29T00:00:00+10:00</published><updated>2019-03-29T00:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2019-03-29:/humble-bundle-coders-bookshelf.html</id><summary type="html">&lt;p class="first last"&gt;Humble bundle&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&amp;quot;Doing Math with Python&amp;quot; is part of No Starch Press's  &amp;quot;Pay what you want&amp;quot; &lt;a class="reference external" href="https://www.humblebundle.com/books/coders-bookshelf-books"&gt;Coder's Bookshelf Bundle&lt;/a&gt;.
+Your purchases will help support a charity of your choice.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/humble-bundle-3.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Get the bundle &lt;a class="reference external" href="https://www.humblebundle.com/books/coders-bookshelf-books"&gt;here&lt;/a&gt;!&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Doing Math with Python in Linux Geek Humble Bundle</title><link href="http://doingmathwithpython.github.io/humble-bundle-linux-geek.html" rel="alternate"></link><published>2018-07-24T13:20:00+10:00</published><updated>2018-07-24T13:20:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2018-07-24:/humble-bundle-linux-geek.html</id><summary type="html">&lt;p class="first last"&gt;Humble bundle&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&amp;quot;Doing Math with Python&amp;quot; is part of No Starch Press's  &amp;quot;Pay what you want&amp;quot; &lt;a class="reference external" href="https://www.humblebundle.com/books/linux-geek-books"&gt;Linux Geek Humble Bundle&lt;/a&gt;
+running for the next 7 days. Your purchases will help support EFF or a charity of your choice.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/humble-bundle-2.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Get the bundle &lt;a class="reference external" href="https://www.humblebundle.com/books/linux-geek-books"&gt;here&lt;/a&gt;!&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Anaconda 5.0 release</title><link href="http://doingmathwithpython.github.io/anaconda-5.0.html" rel="alternate"></link><published>2017-10-29T19:50:00+10:00</published><updated>2017-10-29T19:50:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2017-10-29:/anaconda-5.0.html</id><summary type="html">&lt;p class="first last"&gt;Anaconda 5.0 release&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://www.anaconda.com/blog/developer-blog/announcing-the-release-of-anaconda-distribution-5-0/"&gt;Anaconda 5.0&lt;/a&gt;
+was released a few days back. I tried all the &lt;a class="reference external" href="http://doingmathwithpython.github.io/trying-out-solutions.html"&gt;sample solutions&lt;/a&gt;
+and everything works as expected. The &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;chapter programs&lt;/a&gt; should
+keep working as well.&lt;/p&gt;
+&lt;p&gt;The versions of the relevant software in this release are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Python 3.6&lt;/li&gt;
+&lt;li&gt;sympy 1.1.1&lt;/li&gt;
+&lt;li&gt;matplotlib 2.1.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can update your existing installation using:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+$ conda update conda
+$ conda install anaconda=5.0
+&lt;/pre&gt;
+&lt;p&gt;(Thanks to Dan Wolfe for informing me of the incorrect command to install &lt;cite&gt;anaconda=5.0&lt;/cite&gt;)&lt;/p&gt;
+&lt;p&gt;A fresh installation of Anaconda 5.0 should still be similar to the &lt;a class="reference external" href="https://doingmathwithpython.github.io/pages/software-installation.html"&gt;instructions&lt;/a&gt;
+for earlier versions.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Anaconda 5" src="http://doingmathwithpython.github.io/images/anaconda-5.png" /&gt;
+&lt;/div&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Anaconda 5" src="http://doingmathwithpython.github.io/images/anaconda-install-1.png" /&gt;
+&lt;/div&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Anaconda 5" src="http://doingmathwithpython.github.io/images/anaconda-install-2.png" /&gt;
+&lt;/div&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Anaconda 5" src="http://doingmathwithpython.github.io/images/anaconda-install-3.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;I have so far verified both on Mac OS X and Linux. If you find any
+issues on Windows, please email me at
+&lt;tt class="docutils literal"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/tt&gt; or post your query/tip to any of the
+following community forums:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="updates"></category></entry><entry><title>Doing Math with Python Humble Bundle</title><link href="http://doingmathwithpython.github.io/humble-bundle.html" rel="alternate"></link><published>2017-04-06T08:20:00+10:00</published><updated>2017-04-06T08:20:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2017-04-06:/humble-bundle.html</id><summary type="html">&lt;p class="first last"&gt;Humble bundle&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;No Starch Press has launched a &amp;quot;Pay what you want&amp;quot; &lt;a class="reference external" href="https://www.humblebundle.com/books/python-book-bundle"&gt;Python Humble Bundle&lt;/a&gt; running from April 5th - April 19th!
+Your purchases will help support the Python Software Foundation and I am excited to announce that Doing Math with Python is part of it.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Humble Bundle" src="http://doingmathwithpython.github.io/images/humble-bundle.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;For 1+ USD you can get three books including &amp;quot;Doing Math with Python&amp;quot;! For 15+ USD you get nine excellent Python books!&lt;/p&gt;
+&lt;p&gt;Get the bundle &lt;a class="reference external" href="https://www.humblebundle.com/books/python-book-bundle"&gt;here&lt;/a&gt;!&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Trying out the code on Ubuntu 16.04</title><link href="http://doingmathwithpython.github.io/install-on-ubuntu16.04.html" rel="alternate"></link><published>2016-10-05T09:00:00+10:00</published><updated>2016-10-05T09:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-10-05:/install-on-ubuntu16.04.html</id><summary type="html">&lt;p class="first last"&gt;Code on Ubuntu 15.04&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;If you are using Ubuntu 16.04 and don't want to install the Anaconda
+Python distribution for trying out the book's
+&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;programs&lt;/a&gt; or
+the &lt;a class="reference external" href="http://doingmathwithpython.github.io/trying-out-solutions.html"&gt;sample solutions&lt;/a&gt;, this
+post is for you.&lt;/p&gt;
+&lt;p&gt;Ubuntu 16.04 already comes with Python 3 installed, so we only need to install
+the following packages - matplotlib, matplotlib-venn, sympy and idle3.&lt;/p&gt;
+&lt;p&gt;Open a terminal and do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+$ sudo apt-get update
+$ sudo apt-get install python3-matplotlib python3-matplotlib-venn python3-sympy idle3
+&lt;/pre&gt;
+&lt;p&gt;It's worth noting that this will install sympy 0.7.6 and matplotlib 1.5.1 which are
+both sufficient for the book's programs.&lt;/p&gt;
+&lt;div class="section" id="starting-idle-editor"&gt;
+&lt;h2&gt;Starting IDLE editor&lt;/h2&gt;
+&lt;p&gt;You can now start the IDLE editor by typing in &amp;quot;idle3&amp;quot; from the terminal and then it's ready
+for your programs!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="contact"&gt;
+&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;If you find any issues please email me at
+&lt;tt class="docutils literal"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/tt&gt; or post your query/tip to any of the
+following community forums:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="tips"></category></entry><entry><title>Video: Doing Math with Python</title><link href="http://doingmathwithpython.github.io/video-pyconau-dmwp.html" rel="alternate"></link><published>2016-08-16T12:00:00+10:00</published><updated>2016-08-16T12:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-08-16:/video-pyconau-dmwp.html</id><summary type="html">&lt;p class="first last"&gt;PyConAU2016&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I spoke at the PyCon Australia Education Seminar on August 12, 2016. The video of the talk is now up.
+Thanks to Next Day Video!&lt;/p&gt;
+&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/XJOt4QQgx0A" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;The PDF slides and the demos as Jupyter Notebooks (Python 3) are &lt;a class="reference external" href="https://github.com/doingmathwithpython/pycon-au-2016"&gt;here&lt;/a&gt;. I have some instructions to download them and try them out. If you face any issues, or have a question, please let me know.&lt;/p&gt;
+&lt;p&gt;Thank you to all the PyCon Australia organizers and the Education seminar organizers for a great mini conference
+and the opportunity to be a part of it.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>PyCon Australia 2016 Education Seminar</title><link href="http://doingmathwithpython.github.io/pycon-au-edu-summit-talk.html" rel="alternate"></link><published>2016-08-12T11:27:00+10:00</published><updated>2016-08-12T11:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-08-12:/pycon-au-edu-summit-talk.html</id><summary type="html">&lt;p class="first last"&gt;PyCon AU education summit talk&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I attended the PyCon Australia 2016 Education seminar held on 12th August at Melbourne, Australia.
+I loved the energy of the seminar and was great to hear about all the ways educators in Australia are
+using Python for their teaching. Here are some notes I took, which I also link with the videos. You can
+find all the videos &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="python-at-monash"&gt;
+&lt;h2&gt;Python at Monash&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Faculty of IT&lt;/li&gt;
+&lt;li&gt;Python close to pseudocode&lt;/li&gt;
+&lt;li&gt;Jupyter Notebooks&lt;/li&gt;
+&lt;li&gt;Jupyter Hub installation at Monash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="keynote-smart-city-from-earth-to-mars-and-back"&gt;
+&lt;h2&gt;Keynote: Smart City - From earth to mars and back&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=BZExUKogvjQ&amp;amp;list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR&amp;amp;index=8"&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Find a social mission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="teaching-python"&gt;
+&lt;h2&gt;Teaching Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=7oIwVjEVn0c&amp;amp;list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR&amp;amp;index=9"&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Teaching isn't easy&lt;/li&gt;
+&lt;li&gt;Programming isn't easy, it's new&lt;/li&gt;
+&lt;li&gt;Grok learning, interactivepython.org, coursera, codecadaemy..&lt;/li&gt;
+&lt;li&gt;Emphasise the fundamentals, don't assume anything, be explicit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="python-with-minecraft"&gt;
+&lt;h2&gt;Python with Minecraft&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=WwKkA9YV1K8&amp;amp;list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR&amp;amp;index=7"&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get kids excited&lt;/li&gt;
+&lt;li&gt;Consumers to creators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="micropython"&gt;
+&lt;h2&gt;MicroPython&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=oCEZyJqkMrE&amp;amp;list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR&amp;amp;index=6"&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Groklearning Microbit&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://groklearning.com/competition/codequest-microbit-2016/"&gt;https://groklearning.com/competition/codequest-microbit-2016/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="teaching-geometry-using-logo-python-turtle-module"&gt;
+&lt;h2&gt;Teaching Geometry using Logo/Python turtle module&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=gu3QDizt-_Y&amp;amp;list=PLs4CJRBY5F1Jh6fFqT1p5TZRx5q06CcaR&amp;amp;index=5"&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Don't teach subjects in silos&lt;/li&gt;
+&lt;li&gt;Show students you can do real useful stuff with programming&lt;/li&gt;
+&lt;li&gt;Turtle powered Geometry&lt;/li&gt;
+&lt;li&gt;Grok learning lessons (turtle in your browser)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="updates"></category></entry><entry><title>PyCon Australia 2016 Education Seminar: Doing Math with Python</title><link href="http://doingmathwithpython.github.io/pyconau-dmwp.html" rel="alternate"></link><published>2016-08-06T18:00:00+10:00</published><updated>2016-08-06T18:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-08-06:/pyconau-dmwp.html</id><summary type="html">&lt;p class="first last"&gt;PyConAU2016&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Hello everyone, I will be &lt;a class="reference external" href="https://2016.pycon-au.org/schedule/83/view_talk?day=friday"&gt;speaking&lt;/a&gt; at the PyCon AU education seminar coming August 12, 2016 at Melbourne, Australia (3.00 - 3.40 PM).&lt;/p&gt;
+&lt;p&gt;I have put up my in progress slides (PDF) and the demos as Jupyter Notebooks (Python 3), I plan to use during the talk on &lt;a class="reference external" href="https://github.com/doingmathwithpython/pycon-au-2016"&gt;GitHub&lt;/a&gt;. If you are coming along, please let me know if there is anything specific I can share and discuss.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://2016.pycon-au.org/schedule/83/view_talk?day=friday"&gt;Talk abstract&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/doingmathwithpython/pycon-au-2016"&gt;Slides and Demos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="updates"></category></entry><entry><title>O'Reilly Webcast: Doing Math with Python</title><link href="http://doingmathwithpython.github.io/oreilly-webcast-doing-math.html" rel="alternate"></link><published>2016-07-01T14:00:00+10:00</published><updated>2016-07-01T14:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-07-01:/oreilly-webcast-doing-math.html</id><summary type="html">&lt;p class="first last"&gt;O'Reilly Webcast&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;strong&gt;Updated post after the webcast&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A big thank you to all of you who turned up for the webcast across the world. I really had a great time and hope the session was informative to all of you. For those who didn't make it to the webcast, it's now available for &lt;a class="reference external" href="http://www.oreilly.com/pub/e/3712"&gt;viewing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The slides, transcript and the demos are all available at the &lt;a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016"&gt;GitHub repository&lt;/a&gt;. Feel free to use them in any capacity you find useful. If you already have &lt;a class="reference external" href="https://doingmathwithpython.github.io/pages/software-installation.html"&gt;Anaconda installed&lt;/a&gt;, get the above code, and run &lt;cite&gt;jupyter-notebook&lt;/cite&gt; from the same directory to be able to play with the code.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Links of Interest&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.oreilly.com/pub/e/3712"&gt;Webcast Recording&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016"&gt;Slides, Transcript and Demos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.nostarch.com/doingmathwithpython"&gt;Doing Math with Python book&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of you asked a number of questions which I couldn't answer as well as I would have wanted to during the webcast, so I will make a better attempt below:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What is the difference between an interpreter, ide and text editor? And what do you recommend for beginners?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;An &lt;tt class="docutils literal"&gt;interpreter&lt;/tt&gt; is what runs your program. Without going into the details, the Python interpreter is what converts a statement such as &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;print(&amp;quot;Hello&amp;quot;)&lt;/span&gt;&lt;/tt&gt; to a form that can be understood by the computer to finally print &lt;tt class="docutils literal"&gt;Hello&lt;/tt&gt; on screen.
+An &lt;tt class="docutils literal"&gt;IDE&lt;/tt&gt; or Integrated Development Environment is a software application where we can write programs and run them usually via  Graphical User Interface. IDEs generally feature helpful features such as code completion and can be useful when working with large projects. A &lt;tt class="docutils literal"&gt;text editor&lt;/tt&gt; is for writing our programs or other text. It usually doesn't support features that an IDE would support but of course, you can configure and enhance text editors to give you IDE-like features.&lt;/p&gt;
+&lt;p&gt;For beginners, I recommend starting with text editors. I think that doesn't overwhelm someone who is learning with the IDE features. That said, &lt;a class="reference external" href="https://docs.python.org/3/library/idle.html"&gt;IDLE&lt;/a&gt; is a good in-between choice for beginners and one that I personally use in the book and definitely would be my first choice.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What library do we use for importing metric units that works well with sympy?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I would recommend taking a look at SymPy's &lt;a class="reference external" href="http://docs.sympy.org/dev/modules/physics/units.html#"&gt;Units&lt;/a&gt; module and see if it has what you need. In addition, and if you already don't know about it, &lt;a class="reference external" href="https://github.com/hgrecco/pint"&gt;pint&lt;/a&gt; would be another library to look at.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Do you use notebook for exploratory work?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Yes, I use notebook for exploratory work. I think notebooks are great when you want the code and result together in a single document. It's great for sharing too. I recently created &lt;a class="reference external" href="http://echorand.me/presentation-slides-with-jupyter-notebook.html#.V3XhNe0yphE"&gt;slides&lt;/a&gt; as a Notebook.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Can Sympy be used for the development in a engineering software (i.e. Finite Element Method)? Would the computational speed be (good)? (Not sure about the second part of the question)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You may be interested in taking a look at &lt;a class="reference external" href="http://sfepy.org/doc-devel/index.html"&gt;SfePy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Thoughts on Cython? Sagemath?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I haven't worked much with Cython. I know about it and what it can useful for. So, I guess if you are looking for speed, definitely look into it. I would also recommend looking at &lt;a class="reference external" href="http://numba.pydata.org/"&gt;Numba&lt;/a&gt;. Sagemath is more of a system itself than a library. It integrates popular Python libraries and would definitely be something to explore.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Should students use IDLE or a notebook format?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I would recommend using IDLE to start with. It gives the opportunity for the student to at least get an idea of the cycle of editing code and running it. I would only introduce notebook later and in addition to IDLE. Both have their merits, but Notebook just introduces one more thing to grasp in the beginning.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Any recommendations for introducing 3D graphics e.g. polyhedrons on screen?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I haven't explored them, you may want to look at &lt;a class="reference external" href="https://pi3d.github.io/html/"&gt;Pi3D&lt;/a&gt; or &lt;a class="reference external" href="http://vpython.org/"&gt;VPython&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: How well do SymPy and Numpy work together?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;No personal experience, but searching a bit, it looks like you may want to look at SymPy's &lt;a class="reference external" href="http://docs.sympy.org/dev/modules/utilities/lambdify.html"&gt;Lambdify&lt;/a&gt; feature. The &lt;a class="reference external" href="https://groups.google.com/forum/#!forum/sympy"&gt;SymPy google group&lt;/a&gt; may give you a better answer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: You are working in Jupyter - can the &amp;quot;app&amp;quot;s you should be embedded in a regular HTML web page?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I haven't personally tried this. I think this &lt;a class="reference external" href="https://jakevdp.github.io/blog/2013/12/05/static-interactive-widgets/"&gt;post&lt;/a&gt; may give you clues to do it. O'Reilly Media's project &lt;a class="reference external" href="https://github.com/oreillymedia/thebe"&gt;thebe&lt;/a&gt; may be another option to look at.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Announcement post&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I am very excited to share that I am doing a webcast this coming week with O'Reilly titled
+&amp;quot;Doing Math with Python&amp;quot;. You can register for it on the &lt;a class="reference external" href="http://www.oreilly.com/pub/e/3712"&gt;event page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are the date and time of the webcast:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Wed, June 29th at 7 PM, San Francisco&lt;/li&gt;
+&lt;li&gt;Wed, June 29th at 10pm, New York&lt;/li&gt;
+&lt;li&gt;Thu, Jun 30th at 3am - London&lt;/li&gt;
+&lt;li&gt;Thu, Jun 30th at 7:30am - Mumbai&lt;/li&gt;
+&lt;li&gt;Thu, Jun 30th at 10am - Beijing&lt;/li&gt;
+&lt;li&gt;Thu, Jun 30th at 11am - Tokyo&lt;/li&gt;
+&lt;li&gt;Thu, Jun 30th at 12pm - Sydney&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have created a &lt;a class="reference external" href="https://github.com/doingmathwithpython/oreilly-webcast-2016"&gt;GitHub repository&lt;/a&gt; which
+will have the rough transcript, final slides and the code examples as Jupyter Notebooks.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Python 2016 Education Summit Notes</title><link href="http://doingmathwithpython.github.io/education-summit-pycon-2016.html" rel="alternate"></link><published>2016-05-29T17:00:00+10:00</published><updated>2016-05-29T17:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-05-29:/education-summit-pycon-2016.html</id><summary type="html">&lt;p class="first last"&gt;Education Summit Summary&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I participated in the education summit today. My talk slides for &amp;quot;Doing Math with Python&amp;quot;  is available &lt;a class="reference external" href="https://doingmathwithpython.github.io/pycon-us-2016/#/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are some notes on the other talks I attended.&lt;/p&gt;
+&lt;div class="section" id="keynote"&gt;
+&lt;h2&gt;Keynote&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Education WG&lt;/li&gt;
+&lt;li&gt;PythonZero&lt;/li&gt;
+&lt;li&gt;GPIO Zero&lt;/li&gt;
+&lt;li&gt;Network zero: &lt;a class="reference external" href="https://github.com/tjguk/networkzero/"&gt;https://github.com/tjguk/networkzero/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Zero: based on an established package, emphasis is on up-and-running use in a classroom, Relevant error messages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Micro:bit&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Mu, demos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lessons-learned-from-teaching-python"&gt;
+&lt;h2&gt;Lessons learned from teaching Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Put your work out there on the internet&lt;/li&gt;
+&lt;li&gt;Think about internationalization&lt;/li&gt;
+&lt;li&gt;Self publish Amazon's create space, Kindle&lt;/li&gt;
+&lt;li&gt;Quizzes, collect data, data mining&lt;/li&gt;
+&lt;li&gt;Instructor section&lt;/li&gt;
+&lt;li&gt;Online markup of code&lt;/li&gt;
+&lt;li&gt;EpicPen&lt;/li&gt;
+&lt;li&gt;YouTube channel&lt;/li&gt;
+&lt;li&gt;Libraries: Pygame, Arcade&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pyzero"&gt;
+&lt;h2&gt;Pyzero&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Demos&lt;/li&gt;
+&lt;li&gt;pzrun&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="minecraft-with-python"&gt;
+&lt;h2&gt;Minecraft with Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Use Python to interact with Minecraft&lt;/li&gt;
+&lt;li&gt;CoderDojo Minecraft bundle&lt;/li&gt;
+&lt;li&gt;Using Jupyter Notebooks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pycharm-edu"&gt;
+&lt;h2&gt;PyCharm Edu&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Courses&lt;/li&gt;
+&lt;li&gt;Checkout PyCharm EDU for creating courses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="teaching-data-structures-with-python"&gt;
+&lt;h2&gt;Teaching data structures with Python&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Python makes the teacher happy&lt;/li&gt;
+&lt;li&gt;Lab only&lt;/li&gt;
+&lt;li&gt;Algorithms in Python + C (Side by side)&lt;/li&gt;
+&lt;li&gt;Two languages worked well for them.&lt;/li&gt;
+&lt;li&gt;Low level language: easy to find the complexity of the algorithm&lt;/li&gt;
+&lt;li&gt;High level language: hard to find the complexity of the algorithm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="merlin-for-data-science-education"&gt;
+&lt;h2&gt;Merlin for Data Science Education&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Where to even start?&lt;/li&gt;
+&lt;li&gt;Effort justification&lt;/li&gt;
+&lt;li&gt;Spending 2hr out of a 8hr session in fixing something is not worth it&lt;/li&gt;
+&lt;li&gt;Shouldn't be proud of battling with tool set rather than not doing the real work&lt;/li&gt;
+&lt;li&gt;Merlin - &lt;a class="reference external" href="http://www.darklabsdatascience.com/project_merlin/"&gt;http://www.darklabsdatascience.com/project_merlin/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="updates"></category></entry><entry><title>PyCon Education Summit Talk</title><link href="http://doingmathwithpython.github.io/pycon-edu-summit-talk.html" rel="alternate"></link><published>2016-05-26T11:27:00+10:00</published><updated>2016-05-26T11:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-05-26:/pycon-edu-summit-talk.html</id><summary type="html">&lt;p class="first last"&gt;PyCon education summit talk&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Hi everyone, I have uploaded the &lt;a class="reference external" href="https://doingmathwithpython.github.io/pycon-us-2016/"&gt;slides&lt;/a&gt; for my upcoming talk at the PyCon Education Summit. If you are coming to the talk, feel free to have a look at the slides and have any questions/comments ready for me.&lt;/p&gt;
+&lt;p&gt;The slides are made using Jupyter Notebook + nbconvert magic. Thank you to everyone who makes these things happen. You can see the slides notebook &lt;a class="reference external" href="https://github.com/doingmathwithpython/pycon-us-2016"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As a PyCon special, No Starch Press has setup a discount code &lt;tt class="docutils literal"&gt;PYCONMATH&lt;/tt&gt; code which will give you 30 % off my book, &lt;a class="reference external" href="https://www.nostarch.com/doingmathwithpython"&gt;Doing Math with Python&lt;/a&gt; and is valid from May 26th - June 8th.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>SymPy 1.0 and Anaconda 4.0 releases</title><link href="http://doingmathwithpython.github.io/sympy-1.0-anaconda-4.0.html" rel="alternate"></link><published>2016-04-11T19:50:00+10:00</published><updated>2016-04-11T19:50:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-04-11:/sympy-1.0-anaconda-4.0.html</id><summary type="html">&lt;p class="first last"&gt;sympy 1.0 and Anaconda 4.0&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://sympy.org"&gt;SymPy 1.0&lt;/a&gt; was released recently and &lt;a class="reference external" href="https://www.continuum.io/blog/developer-blog/anaconda-4-release"&gt;Anaconda 4.0&lt;/a&gt;
+was just released. I tried all the &lt;a class="reference external" href="http://doingmathwithpython.github.io/trying-out-solutions.html"&gt;sample solutions&lt;/a&gt;
+and everything works as expected. The &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;chapter programs&lt;/a&gt; should
+keep working as well.&lt;/p&gt;
+&lt;p&gt;You can get both the updates when you install Anaconda 4.0 or updated
+your existing Anaconda installation:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+$ conda update conda
+$ conda update anaconda
+&lt;/pre&gt;
+&lt;p&gt;I have so far verified both on Mac OS X and Linux. If you find any
+issues on Windows, please email me at
+&lt;tt class="docutils literal"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/tt&gt; or post your query/tip to any of the
+following community forums:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="updates"></category></entry><entry><title>What readers are saying</title><link href="http://doingmathwithpython.github.io/what-readers-are-saying.html" rel="alternate"></link><published>2016-02-14T10:00:00+10:00</published><updated>2016-02-14T10:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-02-14:/what-readers-are-saying.html</id><summary type="html">&lt;p class="first last"&gt;Reviews of Doing Math with Python&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Readers have shared how they are finding &lt;em&gt;Doing Math with Python&lt;/em&gt; by
+posting reviews on Amazon and their own blog. You can view all of them
+on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/reviews.html"&gt;Reviews&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;Some readers have also been kind enough to let me know personally how the book
+has helped them to restart their programming, or looking at something
+they have been putting off. As the author, I think this is the highest
+level of appreciation that I could have hoped for.&lt;/p&gt;
+&lt;p&gt;Recently, Aaron Meurer (the lead developer of SymPy) mentioned the
+book in an &lt;a class="reference external" href="http://pythonpodcast.com/aaron-meurer-sympy.html"&gt;episode&lt;/a&gt; of
+Podcast.__init__ titled &amp;quot;SymPy with Aaron Meurer&amp;quot;. If you are curious
+to learn more about SymPy, I would recommend listening to it.&lt;/p&gt;
+&lt;p&gt;I am curious to hear more. If you want to get in touch personally,
+please do so via any of the following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can email me at &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Alternatively, if you just plan to write a review, please do so on
+Amazon, O'Reilly or your personal blog.&lt;/p&gt;
+</content><category term="updates"></category></entry><entry><title>Trying out the solutions in IDLE</title><link href="http://doingmathwithpython.github.io/trying-out-solutions.html" rel="alternate"></link><published>2015-11-18T08:20:00+10:00</published><updated>2015-11-18T08:20:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-11-18:/trying-out-solutions.html</id><summary type="html">&lt;p class="first last"&gt;Trying out the solutions&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Once you &lt;a class="reference external" href="https://www.nostarch.com/download/doingmath_code.zip"&gt;download&lt;/a&gt; the solutions ZIP file, and extract it you will
+find the solutions for each chapter in the corresponding sub-directory.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Extracted ZIP archive" src="http://doingmathwithpython.github.io/images/zip-extracted.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;strong&gt;PDF&lt;/strong&gt; file contains explanations for each of the solutions
+similar to the explanations for the programs in the book.&lt;/p&gt;
+&lt;p&gt;Before you can try the programs out, you will have to open them first in IDLE.
+Let's consider the solution to a challenge posed in Chapter 6 to draw
+the Mandelbrot set - &lt;tt class="docutils literal"&gt;mandelbrot.py&lt;/tt&gt;. Start &lt;tt class="docutils literal"&gt;IDLE&lt;/tt&gt; and click on the menu item &lt;tt class="docutils literal"&gt;File &amp;gt;
+Open&lt;/tt&gt; and navigate to the location where you extracted the directory
+above and open the file &lt;tt class="docutils literal"&gt;mandelbrot.py&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="IDLE window" src="http://doingmathwithpython.github.io/images/idle-1.png" /&gt;
+&lt;p class="caption"&gt;Snapshot of the source code&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="running-the-program"&gt;
+&lt;h2&gt;Running the program&lt;/h2&gt;
+&lt;p&gt;To run the program, click on &lt;tt class="docutils literal"&gt;Run &amp;gt; Run Module&lt;/tt&gt; and you should see
+the Mandelbrot set in the matplotlib window.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Mandelbrot Set" src="http://doingmathwithpython.github.io/images/idle-2.png" /&gt;
+&lt;p class="caption"&gt;Mandelbrot set&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;All the solutions should be ready to run, try them out, make changes
+to experiment and let me know what you come up with!&lt;/p&gt;
+&lt;p&gt;Email me at &lt;tt class="docutils literal"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/tt&gt; or post your query/tip to any of the
+following community forums:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="updates"></category></entry><entry><title>Breaking long lines in Python</title><link href="http://doingmathwithpython.github.io/breaking-long-lines-in-python.html" rel="alternate"></link><published>2015-11-04T12:00:00+10:00</published><updated>2015-11-04T12:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-11-04:/breaking-long-lines-in-python.html</id><summary type="html">&lt;p class="first last"&gt;Breaking long lines in Python&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;In some of the programs discussed in the book including the sample solutions, you will see statements like:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.
+           format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;This is really the following single statement:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up.&lt;/p&gt;
+&lt;p&gt;In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in &lt;a class="reference external" href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that the examples below will for illustrative purposes break lines waaaaay less than 80 characters.&lt;/p&gt;
+&lt;div class="section" id="how-do-you-break"&gt;
+&lt;h2&gt;How do you break?&lt;/h2&gt;
+&lt;div class="section" id="when-not-calling-function"&gt;
+&lt;h3&gt;When not calling function&lt;/h3&gt;
+&lt;p&gt;When you are not calling a function, you essentially have two choices:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use paranthesis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is exactly how we break the long statement in the example we started this article with. For the moment ignore the call to &lt;tt class="docutils literal"&gt;print()&lt;/tt&gt; and assume that the statement is:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s = 'Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points))
+&lt;/pre&gt;
+&lt;p&gt;This essentially just creates the string &lt;tt class="docutils literal"&gt;s&lt;/tt&gt;. If we were to split this statement over multiple lines, we would do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s = ('Area: {0}, Estimated ({1}): {2}'
+     .format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;Note the extra beginning and the ending parenthesis.&lt;/p&gt;
+&lt;p&gt;Here is another example:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s1 = x + x**2/2 + x**3/3 + x**4/4 + x**5/5 + x**6/6 + x**7/7 + x**8/8
+&lt;/pre&gt;
+&lt;p&gt;Here is how we can use split the above statment into multiple lines using parentheses:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s3 = (x + x**2/2 + x**3/3
+     + x**4/4 + x**5/5
+     + x**6/6 + x**7/7
+     + x**8/8)
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Use the line continuation operator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The line continuation operator, &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; can be used to split long statements over multiple lines. Here is how we could split the above statement using &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; instead:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s3 = x + x**2/2 + x**3/3 \
+    + x**4/4 + x**5/5 \
+    + x**6/6 + x**7/7 \
+    + x**8/8
+&lt;/pre&gt;
+&lt;p&gt;At the end of every line (except the last), we just add a &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; indicating that the next line is also a part of the same statement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Breaking up those long if statements&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Often I have to break long &lt;tt class="docutils literal"&gt;if&lt;/tt&gt; statements and is in fact one of the most common cases I face at work where I have to break the statement into multiple lines. Here is an example using both the approaches above:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+# Using parenthesis
+if (cond1 and cond2 and cond3
+    and cond4):
+    # True block
+else:
+    # False block
+
+# Using line continuation operator
+if cond1 and cond2 and cond3 \
+   and cond4:
+    # True block
+else:
+    # False block
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="when-calling-functions"&gt;
+&lt;h3&gt;When calling functions&lt;/h3&gt;
+&lt;p&gt;By default, when calling functions you can just press enter and without doing anything more keep writing your statement over multiple lines. For example:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+x = 1
+print(x,
+      x)
+&lt;/pre&gt;
+&lt;p&gt;Hence, we &lt;cite&gt;could&lt;/cite&gt; have broken the first example we saw as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle,
+                                              points,
+                                              estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;When calling &lt;tt class="docutils literal"&gt;format()&lt;/tt&gt; we put the arguments over separate lines.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="learning-more-about-python-coding-style"&gt;
+&lt;h2&gt;Learning more about Python coding style&lt;/h2&gt;
+&lt;p&gt;If you liked reading this article, you may also find it worth your time going over the &lt;a class="reference external" href="https://www.python.org/dev/peps/pep-0008/"&gt;Python style guide&lt;/a&gt;. You may even find instances where I have not followed a guideline when writing the programs in the book. If you find one, let me know.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="getting-in-touch"&gt;
+&lt;h2&gt;Getting in touch&lt;/h2&gt;
+&lt;p&gt;Stay updated or get in touch:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me directly via:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter: &lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;&amp;#64;mathwithpython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email : &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="articles"></category></entry><entry><title>Chapter code and Errata</title><link href="http://doingmathwithpython.github.io/chapter-code-errata.html" rel="alternate"></link><published>2015-09-11T08:20:00+10:00</published><updated>2015-09-11T08:20:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-09-11:/chapter-code-errata.html</id><summary type="html">&lt;p class="first last"&gt;Chapter code and errata&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;You can find the chapter programs and snippets linked from the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;programs&lt;/a&gt; page. They should be free
+from any error mentioned on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/errata.html"&gt;errata&lt;/a&gt; page.&lt;/p&gt;
+&lt;div class="section" id="stay-in-touch"&gt;
+&lt;h2&gt;Stay in touch&lt;/h2&gt;
+&lt;p&gt;You can stay connected with the book, its readers and me via the
+following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me directly via:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter: &lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;&amp;#64;mathwithpython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email : &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="updates"></category></entry><entry><title>Set operations with Python set compared to SymPy's FiniteSet</title><link href="http://doingmathwithpython.github.io/Sets-in-SymPy-and-built-in-Python-sets.html" rel="alternate"></link><published>2015-09-05T23:00:00+10:00</published><updated>2015-09-05T23:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-09-05:/Sets-in-SymPy-and-built-in-Python-sets.html</id><summary type="html">&lt;p class="first last"&gt;Sets in SymPy and built-in Python sets&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;cite&gt;Chapter 5&lt;/cite&gt; (&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt;) of the book discusses working with mathematical sets in
+Python. While writing the chapter, I had a choice of whether to
+use Python 3's built-in &lt;a class="reference external" href="https://docs.python.org/3.3/library/stdtypes.html?highlight=union#set-types-set-frozenset"&gt;set&lt;/a&gt;  data
+structure or use SymPy's (0.7.6 +) &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class. I decided to go ahead
+with the latter. My choice is briefly explained towards the end of
+this post, but hopefully it will be clear before that.&lt;/p&gt;
+&lt;p&gt;Next, I describe how you can use Python 3's built-in set data
+structure to create sets and perform set operations such as finding
+the union, intersection or cartesian product of sets. For comparison,
+I also show how you can do the same using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class.&lt;/p&gt;
+&lt;div class="section" id="creating-a-set"&gt;
+&lt;h2&gt;Creating a set&lt;/h2&gt;
+&lt;p&gt;We can create a set consisting of the elements &lt;cite&gt;{1, 2, 3}&lt;/cite&gt; in Python 3
+as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create a set when the elements are already in a list (for
+example), we would use the following syntax:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The comparative operations using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create an &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Empty_set"&gt;empty set&lt;/a&gt;,
+in Python 3 you would use create an empty &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; object:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In SymPy, an empty set is represented by an &lt;tt class="docutils literal"&gt;EmptySet&lt;/tt&gt; object. Thus,
+you can either create an empty set by directly creating an
+&lt;tt class="docutils literal"&gt;EmptySet&lt;/tt&gt; object or by creating a &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; object without
+specifying any set members, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;EmptySet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cardinality-and-membership"&gt;
+&lt;h2&gt;Cardinality and Membership&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;len()&lt;/tt&gt; function returns the number of set members for sets
+created using either of the above approaches.&lt;/p&gt;
+&lt;p&gt;Similarly, to check if an item &lt;tt class="docutils literal"&gt;x&lt;/tt&gt; is present in a set, &lt;tt class="docutils literal"&gt;s&lt;/tt&gt;
+created using any of the above approaches, we can use the statement,
+&lt;tt class="docutils literal"&gt;x in s&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="union-and-intersection"&gt;
+&lt;h2&gt;Union and intersection&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;union()&lt;/tt&gt; method can be used in both cases to find the union of
+two or more sets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similary in the case of SymPy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;intersection()&lt;/tt&gt; method can be used to find the intersection of
+two or more sets created using either of the above approaches. Continuing
+with the above three sets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similary, in SymPy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cartesian-product"&gt;
+&lt;h2&gt;Cartesian product&lt;/h2&gt;
+&lt;p&gt;To find the cartesian product of sets created via the built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt;
+data structure, we have to use the &lt;tt class="docutils literal"&gt;product()&lt;/tt&gt; function in the
+&lt;a class="reference external" href="https://docs.python.org/3/library/itertools.html#itertools.product"&gt;itertools&lt;/a&gt;
+module:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10418c990&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However considering that the &lt;cite&gt;cartesian product&lt;/cite&gt; of two sets &lt;a class="reference external" href="http://mathinsight.org/definition/cartesian_product"&gt;should&lt;/a&gt; be another set,
+the &lt;tt class="docutils literal"&gt;product()&lt;/tt&gt; function doesn't really then return the
+cartesian product itself, but (an iterator to) the elements in it. Hence, if we
+try to apply the result returned by the function directly to a method or
+function which is expected to be applicable to a set, it will fail. For
+example, &lt;tt class="docutils literal"&gt;itertools.product(s1, &lt;span class="pre"&gt;s2).union(s3)&lt;/span&gt;&lt;/tt&gt; will result in an error, but
+&lt;tt class="docutils literal"&gt;set(itertools.product(s1, &lt;span class="pre"&gt;s2)).union(s3)&lt;/span&gt;&lt;/tt&gt; will work.&lt;/p&gt;
+&lt;p&gt;Using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;, you can use the &lt;tt class="docutils literal"&gt;*&lt;/tt&gt;
+(multiplication or product) operator to find the cartesian product
+and the result is a set itself. Thus, it is closer to what
+a cartesian product is mathematically. An example follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;U&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Cartesian product of a set with itself&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To find the cartesian product of a set with itself, i.e. &lt;cite&gt;s1*s1&lt;/cite&gt; for
+example, we pass in a keyword argument, &lt;tt class="docutils literal"&gt;repeat&lt;/tt&gt; while calling the
+&lt;tt class="docutils literal"&gt;itertools.product()&lt;/tt&gt; function. The value of &lt;tt class="docutils literal"&gt;repeat&lt;/tt&gt; is the
+&lt;cite&gt;power&lt;/cite&gt; we want to raise the set to. Thus, &lt;tt class="docutils literal"&gt;itertools.product(s1,
+repeat=2)&lt;/tt&gt; will calculate the cartesian product, &lt;cite&gt;s1*s1&lt;/cite&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;repeat&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;{(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In SymPy, the &lt;tt class="docutils literal"&gt;**&lt;/tt&gt; operator can be used for finding the cartesian
+product of a set with itself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="subset-super-set-proper-subset-checking"&gt;
+&lt;h2&gt;Subset/super set/proper subset  checking&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;issubset()&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;issuperset()&lt;/tt&gt; methods are available for sets
+created via either approaches to check if a set is a subset and super
+set of another, respectively. Thus, &lt;tt class="docutils literal"&gt;s1.issubset(s2)&lt;/tt&gt; will check if
+&lt;cite&gt;s1&lt;/cite&gt; is a subset of &lt;cite&gt;s2&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Checking for proper subset and superset&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To check if a set, &lt;cite&gt;s1&lt;/cite&gt; is a &lt;a class="reference external" href="http://mathworld.wolfram.com/ProperSubset.html"&gt;proper subset&lt;/a&gt; of another set,
+&lt;cite&gt;s2&lt;/cite&gt; when using built-in set, we can do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;issubset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can do something similar for &lt;a class="reference external" href="http://mathinsight.org/definition/proper_superset"&gt;proper superset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In SymPy, we have &lt;tt class="docutils literal"&gt;is_proper_subset()&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;is_proper_superset()&lt;/tt&gt;
+methods which can be used to check if a set is a proper subset or
+superset of another, respectively. Thus, the above would be written as
+&lt;tt class="docutils literal"&gt;s1.is_proper_subset(s2)&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="calculating-the-powerset"&gt;
+&lt;h2&gt;Calculating the powerset&lt;/h2&gt;
+&lt;p&gt;For sets created via built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data structure, there is no
+direct method available to create the &lt;a class="reference external" href="https://www.mathsisfun.com/sets/power-set.html"&gt;power set&lt;/a&gt;. However, you can use the
+&lt;tt class="docutils literal"&gt;powerset&lt;/tt&gt; recipe described in the &lt;a class="reference external" href="https://docs.python.org/3/library/itertools.html#recipes"&gt;itertools documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On the other hand, in SymPy, there is a &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method
+available which returns the power set:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;powerset&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see that the &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method returns the power &lt;cite&gt;set&lt;/cite&gt; and not the
+elements in it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="choice-of-sympy-s-finiteset-over-set"&gt;
+&lt;h2&gt;Choice of SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; over &lt;tt class="docutils literal"&gt;set&lt;/tt&gt;&lt;/h2&gt;
+&lt;p&gt;From the above comparison, we can see that SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;
+provides us with nice features such as being able to use the &lt;tt class="docutils literal"&gt;*&lt;/tt&gt;
+operator to find the cartesian product, &lt;tt class="docutils literal"&gt;**&lt;/tt&gt; operator to calculate
+the cartesian product with itself and &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method for calculating the
+power set. These are not present when using the built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data
+structure. This was certainly a big driving factor in my choice,
+since SymPy was also being used in other chapters of the book.&lt;/p&gt;
+&lt;p&gt;However, a &lt;em&gt;key&lt;/em&gt; reason for my choice was that I wanted to show how we
+can create sets which did not allow addition or removal once created -
+like mathematical sets. This need was fulfilled by SymPy's
+&lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; since it used Python's &lt;tt class="docutils literal"&gt;frozenset&lt;/tt&gt; data structure and
+not the &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data sturcture.&lt;/p&gt;
+&lt;p&gt;The alternative to that would have
+been to use &lt;tt class="docutils literal"&gt;frozenset&lt;/tt&gt; directly, but I just did not like the idea
+of it and I would have also missed out on the nice features
+&lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; would provide (eventually). I should note here that once
+I had made the decision to go with  &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;, I &lt;a class="reference external" href="https://github.com/amitsaha/sympy/commits?author=amitsaha"&gt;contributed&lt;/a&gt; patches
+to SymPy to make the methods of &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; more compatible with Python's built in set
+and also implement minor features I discussed above.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="articles"></category></entry><entry><title>Doing Math with Python Available now!</title><link href="http://doingmathwithpython.github.io/available-now.html" rel="alternate"></link><published>2015-09-02T08:00:00+10:00</published><updated>2015-09-02T08:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-09-02:/available-now.html</id><summary type="html">&lt;p class="first last"&gt;Available now!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Hi all, I am very excited to announce that the book is now available for
+purchase in print and electronic formats from various online stores
+including &lt;a class="reference external" href="http://www.amazon.com/Doing-Math-Python-Programming-Statistics/dp/1593276400"&gt;Amazon&lt;/a&gt;
+and &lt;a class="reference external" href="https://www.nostarch.com/doingmathwithpython"&gt;No Starch Press&lt;/a&gt;.
+Please see the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/buy.html"&gt;Buy&lt;/a&gt; page for others.&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="http://doingmathwithpython.github.io/images/cover.png" /&gt;&lt;/a&gt;
+&lt;p&gt;If you are keen to take a look at the contents and read a sample
+chapter, please head over to &lt;a class="reference external" href="https://www.nostarch.com/doingmathwithpython"&gt;No Starch's book page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Alternatively, if you are keen to recieve a review copy, please email
+&lt;cite&gt;doingmathwithpython&amp;#64;gmail.com&lt;/cite&gt; and I will try to request one from the
+publishers.&lt;/p&gt;
+&lt;div class="section" id="stay-in-touch"&gt;
+&lt;h2&gt;Stay in touch&lt;/h2&gt;
+&lt;p&gt;You can stay connected with the book, its readers and me via the
+following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me directly via:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter: &lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;&amp;#64;mathwithpython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email : &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="updates"></category></entry><entry><title>All chapters completed, off to the printers</title><link href="http://doingmathwithpython.github.io/off-to-printers.html" rel="alternate"></link><published>2015-08-15T23:27:00+10:00</published><updated>2015-08-15T23:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-08-15:/off-to-printers.html</id><summary type="html">&lt;p class="first last"&gt;off to printers!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I am very excited to write that all the chapters has been completed
+and the book is currently with the printers! You can find out more
+about the contents (including a detailed table of contents) from the
+&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;You can stay connected with the book, its readers and me via the
+following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="updates"></category></entry><entry><title>Introduction to "Doing Math with Python"</title><link href="http://doingmathwithpython.github.io/hello-world.html" rel="alternate"></link><published>2015-05-24T23:27:00+10:00</published><updated>2015-05-24T23:27:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-05-24:/hello-world.html</id><summary type="html">&lt;p class="first last"&gt;Hello World&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Hi all, this is the blog for my book &amp;quot;Doing Math with Python&amp;quot;.&lt;/p&gt;
+&lt;a class="reference external image-reference" href="http://www.nostarch.com/doingmathwithpython"&gt;&lt;img alt="Book cover" class="align-center" src="http://doingmathwithpython.github.io/images/cover.png" /&gt;&lt;/a&gt;
+&lt;p&gt;The first six chapters of the book are already available via the
+publisher's early access program. You can learn briefly about each
+chapter on the &lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt; page.
+Going forward, I will be sharing updates regarding the book and posting
+original content related to that discussed in the book.&lt;/p&gt;
+&lt;p&gt;You can stay connected with the book, its readers and me via the
+following channels:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="updates"></category></entry></feed>

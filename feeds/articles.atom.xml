@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing Math with Python - articles</title><link href="http://doingmathwithpython.github.io/" rel="alternate"></link><link href="http://doingmathwithpython.github.io/feeds/articles.atom.xml" rel="self"></link><id>http://doingmathwithpython.github.io/</id><updated>2020-01-02T19:50:00+10:00</updated><entry><title>Number of trailing zeros in the factorial of an integer</title><link href="http://doingmathwithpython.github.io/trailing-zeros-factorial.html" rel="alternate"></link><published>2020-01-02T19:50:00+10:00</published><updated>2020-01-02T19:50:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2020-01-02:/trailing-zeros-factorial.html</id><summary type="html">&lt;p class="first last"&gt;Use Python to find the number of trailing zeros in the factorial of an integer&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I recently learned about a cool formula to calculate the number of
+trailing zeros in the factorial of a number. It has been a while since I
+wrote a program to do something like this. So, I decided to change that and
+write this blog post. Let's jump in.&lt;/p&gt;
+&lt;p&gt;In the spirit of wring various &amp;quot;calculators&amp;quot; in the book, we will
+write a &amp;quot;number of trailing zero&amp;quot; calculator. First up though, let's refresh
+some key relevant concepts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Factorial&lt;/strong&gt;: The factorial of a number, &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; denoted by &lt;tt class="docutils literal"&gt;n!&lt;/tt&gt; is the product &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;n*(n-1)*(n-2)...*1&lt;/span&gt;&lt;/tt&gt;.
+For example, &lt;tt class="docutils literal"&gt;5! = 5*4*3*2*1 = 120&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Trailing zeros&lt;/strong&gt;: The trailing zeros of a number is the number of zeros at the end of a number. For example,
+the number 567100 has &lt;strong&gt;two&lt;/strong&gt; trailing zeros.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Floor&lt;/strong&gt;: The floor of a number is the greatest integer less than or equal to x. That is floor of 3.2 is 3
+and that of 3.5 is 3 and the floor of 3 is 3 as well.&lt;/p&gt;
+&lt;p&gt;Now, coming back to the focus of this post, this document at brilliant.org wiki
+explains the process in &lt;a class="reference external" href="https://brilliant.org/wiki/trailing-number-of-zeros/"&gt;detail&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The key bit there in is this formula:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://doingmathwithpython.github.io/images/trailing_zeros_formula.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;where, &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; is the number for whose factorial we want to find the number of trailing zeros.&lt;/p&gt;
+&lt;p&gt;The following Python program implements the above formula:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+import math
+
+
+def is_positive_integer(x):
+    try:
+        x = float(x)
+    except ValueError:
+        return False
+    else:
+        if x.is_integer() and x &amp;gt; 0:
+            return True
+        else:
+            return False
+
+
+def trailing_zeros(num):
+    if is_positive_integer(num):
+        # The above function call has done all the sanity checks for us
+        # so we can just convert this into an integer here
+        num = int(num)
+
+        k = math.floor(math.log(num, 5))
+        zeros = 0
+        for i in range(1, k + 1):
+            zeros = zeros + math.floor(num/math.pow(5, i))
+        return zeros
+    else:
+        print(&amp;quot;Factorial of a non-positive non-integer is undefined&amp;quot;)
+
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    fact_num = input(
+        &amp;quot;Enter the number whose factorial's trailing zeros you want to find: &amp;quot;
+    )
+    num_zeros = trailing_zeros(fact_num)
+    print(&amp;quot;Number of trailing zeros: {0}&amp;quot;.format(num_zeros))
+&lt;/pre&gt;
+&lt;p&gt;When we run this program using Python 3, it will ask for the number whose factorial's number of trailing
+zeros we want to find and then print it out, like so:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+Enter the number whose factorial's trailing zeros you want to find: 5
+Number of trailing zeros: 1
+&lt;/pre&gt;
+&lt;p&gt;If you enter a number which is not a positive integer, you will get an error message:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+Enter the number whose factorial's trailing zeros you want to find: 5.1
+Factorial of a non-positive integer is undefined
+Number of trailing zeros: None
+&lt;/pre&gt;
+&lt;p&gt;Some key standard library functions we use in the above program are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.floor&lt;/tt&gt;: This function is used to find the floor of a number&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.log&lt;/tt&gt;: This function is used to find the logarithm of a number for a specified base (defaults to 10)&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;math.pow&lt;/tt&gt;: This function is used to find out the power of a number raised to another&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The above functions are defined in the &lt;a class="reference external" href="https://docs.python.org/3/library/math.html"&gt;math module&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Besides the above, we use the &lt;cite&gt;is_integer()&lt;/cite&gt; function defined on a floating point object to check
+if the floating point object is actually an integer.&lt;/p&gt;
+&lt;p&gt;The latest version of the code is available &lt;a class="reference external" href="https://github.com/doingmathwithpython/code/blob/master/explorations/trailing_zeros/trailing_zeros.py"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content><category term="articles"></category></entry><entry><title>Breaking long lines in Python</title><link href="http://doingmathwithpython.github.io/breaking-long-lines-in-python.html" rel="alternate"></link><published>2015-11-04T12:00:00+10:00</published><updated>2015-11-04T12:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-11-04:/breaking-long-lines-in-python.html</id><summary type="html">&lt;p class="first last"&gt;Breaking long lines in Python&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;In some of the programs discussed in the book including the sample solutions, you will see statements like:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.
+           format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;This is really the following single statement:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up.&lt;/p&gt;
+&lt;p&gt;In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in &lt;a class="reference external" href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that the examples below will for illustrative purposes break lines waaaaay less than 80 characters.&lt;/p&gt;
+&lt;div class="section" id="how-do-you-break"&gt;
+&lt;h2&gt;How do you break?&lt;/h2&gt;
+&lt;div class="section" id="when-not-calling-function"&gt;
+&lt;h3&gt;When not calling function&lt;/h3&gt;
+&lt;p&gt;When you are not calling a function, you essentially have two choices:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use paranthesis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is exactly how we break the long statement in the example we started this article with. For the moment ignore the call to &lt;tt class="docutils literal"&gt;print()&lt;/tt&gt; and assume that the statement is:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s = 'Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points))
+&lt;/pre&gt;
+&lt;p&gt;This essentially just creates the string &lt;tt class="docutils literal"&gt;s&lt;/tt&gt;. If we were to split this statement over multiple lines, we would do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s = ('Area: {0}, Estimated ({1}): {2}'
+     .format(area_of_circle, points, estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;Note the extra beginning and the ending parenthesis.&lt;/p&gt;
+&lt;p&gt;Here is another example:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s1 = x + x**2/2 + x**3/3 + x**4/4 + x**5/5 + x**6/6 + x**7/7 + x**8/8
+&lt;/pre&gt;
+&lt;p&gt;Here is how we can use split the above statment into multiple lines using parentheses:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s3 = (x + x**2/2 + x**3/3
+     + x**4/4 + x**5/5
+     + x**6/6 + x**7/7
+     + x**8/8)
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Use the line continuation operator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The line continuation operator, &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; can be used to split long statements over multiple lines. Here is how we could split the above statement using &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; instead:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+s3 = x + x**2/2 + x**3/3 \
+    + x**4/4 + x**5/5 \
+    + x**6/6 + x**7/7 \
+    + x**8/8
+&lt;/pre&gt;
+&lt;p&gt;At the end of every line (except the last), we just add a &lt;tt class="docutils literal"&gt;\&lt;/tt&gt; indicating that the next line is also a part of the same statement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Breaking up those long if statements&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Often I have to break long &lt;tt class="docutils literal"&gt;if&lt;/tt&gt; statements and is in fact one of the most common cases I face at work where I have to break the statement into multiple lines. Here is an example using both the approaches above:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+# Using parenthesis
+if (cond1 and cond2 and cond3
+    and cond4):
+    # True block
+else:
+    # False block
+
+# Using line continuation operator
+if cond1 and cond2 and cond3 \
+   and cond4:
+    # True block
+else:
+    # False block
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="when-calling-functions"&gt;
+&lt;h3&gt;When calling functions&lt;/h3&gt;
+&lt;p&gt;By default, when calling functions you can just press enter and without doing anything more keep writing your statement over multiple lines. For example:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+x = 1
+print(x,
+      x)
+&lt;/pre&gt;
+&lt;p&gt;Hence, we &lt;cite&gt;could&lt;/cite&gt; have broken the first example we saw as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle,
+                                              points,
+                                              estimate(radius, points)))
+&lt;/pre&gt;
+&lt;p&gt;When calling &lt;tt class="docutils literal"&gt;format()&lt;/tt&gt; we put the arguments over separate lines.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="learning-more-about-python-coding-style"&gt;
+&lt;h2&gt;Learning more about Python coding style&lt;/h2&gt;
+&lt;p&gt;If you liked reading this article, you may also find it worth your time going over the &lt;a class="reference external" href="https://www.python.org/dev/peps/pep-0008/"&gt;Python style guide&lt;/a&gt;. You may even find instances where I have not followed a guideline when writing the programs in the book. If you find one, let me know.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="getting-in-touch"&gt;
+&lt;h2&gt;Getting in touch&lt;/h2&gt;
+&lt;p&gt;Stay updated or get in touch:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can contact me directly via:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Twitter: &lt;a class="reference external" href="https://twitter.com/mathwithpython"&gt;&amp;#64;mathwithpython&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email : &lt;a class="reference external" href="mailto:doingmathwithpython&amp;#64;gmail.com"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="articles"></category></entry><entry><title>Set operations with Python set compared to SymPy's FiniteSet</title><link href="http://doingmathwithpython.github.io/Sets-in-SymPy-and-built-in-Python-sets.html" rel="alternate"></link><published>2015-09-05T23:00:00+10:00</published><updated>2015-09-05T23:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2015-09-05:/Sets-in-SymPy-and-built-in-Python-sets.html</id><summary type="html">&lt;p class="first last"&gt;Sets in SymPy and built-in Python sets&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;cite&gt;Chapter 5&lt;/cite&gt; (&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/about.html"&gt;About&lt;/a&gt;) of the book discusses working with mathematical sets in
+Python. While writing the chapter, I had a choice of whether to
+use Python 3's built-in &lt;a class="reference external" href="https://docs.python.org/3.3/library/stdtypes.html?highlight=union#set-types-set-frozenset"&gt;set&lt;/a&gt;  data
+structure or use SymPy's (0.7.6 +) &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class. I decided to go ahead
+with the latter. My choice is briefly explained towards the end of
+this post, but hopefully it will be clear before that.&lt;/p&gt;
+&lt;p&gt;Next, I describe how you can use Python 3's built-in set data
+structure to create sets and perform set operations such as finding
+the union, intersection or cartesian product of sets. For comparison,
+I also show how you can do the same using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class.&lt;/p&gt;
+&lt;div class="section" id="creating-a-set"&gt;
+&lt;h2&gt;Creating a set&lt;/h2&gt;
+&lt;p&gt;We can create a set consisting of the elements &lt;cite&gt;{1, 2, 3}&lt;/cite&gt; in Python 3
+as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create a set when the elements are already in a list (for
+example), we would use the following syntax:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The comparative operations using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; class are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create an &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Empty_set"&gt;empty set&lt;/a&gt;,
+in Python 3 you would use create an empty &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; object:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In SymPy, an empty set is represented by an &lt;tt class="docutils literal"&gt;EmptySet&lt;/tt&gt; object. Thus,
+you can either create an empty set by directly creating an
+&lt;tt class="docutils literal"&gt;EmptySet&lt;/tt&gt; object or by creating a &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; object without
+specifying any set members, like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;EmptySet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cardinality-and-membership"&gt;
+&lt;h2&gt;Cardinality and Membership&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;len()&lt;/tt&gt; function returns the number of set members for sets
+created using either of the above approaches.&lt;/p&gt;
+&lt;p&gt;Similarly, to check if an item &lt;tt class="docutils literal"&gt;x&lt;/tt&gt; is present in a set, &lt;tt class="docutils literal"&gt;s&lt;/tt&gt;
+created using any of the above approaches, we can use the statement,
+&lt;tt class="docutils literal"&gt;x in s&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="union-and-intersection"&gt;
+&lt;h2&gt;Union and intersection&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;union()&lt;/tt&gt; method can be used in both cases to find the union of
+two or more sets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similary in the case of SymPy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;intersection()&lt;/tt&gt; method can be used to find the intersection of
+two or more sets created using either of the above approaches. Continuing
+with the above three sets:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Similary, in SymPy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intersection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cartesian-product"&gt;
+&lt;h2&gt;Cartesian product&lt;/h2&gt;
+&lt;p&gt;To find the cartesian product of sets created via the built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt;
+data structure, we have to use the &lt;tt class="docutils literal"&gt;product()&lt;/tt&gt; function in the
+&lt;a class="reference external" href="https://docs.python.org/3/library/itertools.html#itertools.product"&gt;itertools&lt;/a&gt;
+module:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10418c990&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However considering that the &lt;cite&gt;cartesian product&lt;/cite&gt; of two sets &lt;a class="reference external" href="http://mathinsight.org/definition/cartesian_product"&gt;should&lt;/a&gt; be another set,
+the &lt;tt class="docutils literal"&gt;product()&lt;/tt&gt; function doesn't really then return the
+cartesian product itself, but (an iterator to) the elements in it. Hence, if we
+try to apply the result returned by the function directly to a method or
+function which is expected to be applicable to a set, it will fail. For
+example, &lt;tt class="docutils literal"&gt;itertools.product(s1, &lt;span class="pre"&gt;s2).union(s3)&lt;/span&gt;&lt;/tt&gt; will result in an error, but
+&lt;tt class="docutils literal"&gt;set(itertools.product(s1, &lt;span class="pre"&gt;s2)).union(s3)&lt;/span&gt;&lt;/tt&gt; will work.&lt;/p&gt;
+&lt;p&gt;Using SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;, you can use the &lt;tt class="docutils literal"&gt;*&lt;/tt&gt;
+(multiplication or product) operator to find the cartesian product
+and the result is a set itself. Thus, it is closer to what
+a cartesian product is mathematically. An example follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;union&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;U&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Cartesian product of a set with itself&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To find the cartesian product of a set with itself, i.e. &lt;cite&gt;s1*s1&lt;/cite&gt; for
+example, we pass in a keyword argument, &lt;tt class="docutils literal"&gt;repeat&lt;/tt&gt; while calling the
+&lt;tt class="docutils literal"&gt;itertools.product()&lt;/tt&gt; function. The value of &lt;tt class="docutils literal"&gt;repeat&lt;/tt&gt; is the
+&lt;cite&gt;power&lt;/cite&gt; we want to raise the set to. Thus, &lt;tt class="docutils literal"&gt;itertools.product(s1,
+repeat=2)&lt;/tt&gt; will calculate the cartesian product, &lt;cite&gt;s1*s1&lt;/cite&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;repeat&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;{(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In SymPy, the &lt;tt class="docutils literal"&gt;**&lt;/tt&gt; operator can be used for finding the cartesian
+product of a set with itself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="subset-super-set-proper-subset-checking"&gt;
+&lt;h2&gt;Subset/super set/proper subset  checking&lt;/h2&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;issubset()&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;issuperset()&lt;/tt&gt; methods are available for sets
+created via either approaches to check if a set is a subset and super
+set of another, respectively. Thus, &lt;tt class="docutils literal"&gt;s1.issubset(s2)&lt;/tt&gt; will check if
+&lt;cite&gt;s1&lt;/cite&gt; is a subset of &lt;cite&gt;s2&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Checking for proper subset and superset&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To check if a set, &lt;cite&gt;s1&lt;/cite&gt; is a &lt;a class="reference external" href="http://mathworld.wolfram.com/ProperSubset.html"&gt;proper subset&lt;/a&gt; of another set,
+&lt;cite&gt;s2&lt;/cite&gt; when using built-in set, we can do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;issubset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+&lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can do something similar for &lt;a class="reference external" href="http://mathinsight.org/definition/proper_superset"&gt;proper superset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In SymPy, we have &lt;tt class="docutils literal"&gt;is_proper_subset()&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;is_proper_superset()&lt;/tt&gt;
+methods which can be used to check if a set is a proper subset or
+superset of another, respectively. Thus, the above would be written as
+&lt;tt class="docutils literal"&gt;s1.is_proper_subset(s2)&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="calculating-the-powerset"&gt;
+&lt;h2&gt;Calculating the powerset&lt;/h2&gt;
+&lt;p&gt;For sets created via built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data structure, there is no
+direct method available to create the &lt;a class="reference external" href="https://www.mathsisfun.com/sets/power-set.html"&gt;power set&lt;/a&gt;. However, you can use the
+&lt;tt class="docutils literal"&gt;powerset&lt;/tt&gt; recipe described in the &lt;a class="reference external" href="https://docs.python.org/3/library/itertools.html#recipes"&gt;itertools documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On the other hand, in SymPy, there is a &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method
+available which returns the power set:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;FiniteSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;powerset&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;EmptySet&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see that the &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method returns the power &lt;cite&gt;set&lt;/cite&gt; and not the
+elements in it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="choice-of-sympy-s-finiteset-over-set"&gt;
+&lt;h2&gt;Choice of SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; over &lt;tt class="docutils literal"&gt;set&lt;/tt&gt;&lt;/h2&gt;
+&lt;p&gt;From the above comparison, we can see that SymPy's &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;
+provides us with nice features such as being able to use the &lt;tt class="docutils literal"&gt;*&lt;/tt&gt;
+operator to find the cartesian product, &lt;tt class="docutils literal"&gt;**&lt;/tt&gt; operator to calculate
+the cartesian product with itself and &lt;tt class="docutils literal"&gt;powerset()&lt;/tt&gt; method for calculating the
+power set. These are not present when using the built-in &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data
+structure. This was certainly a big driving factor in my choice,
+since SymPy was also being used in other chapters of the book.&lt;/p&gt;
+&lt;p&gt;However, a &lt;em&gt;key&lt;/em&gt; reason for my choice was that I wanted to show how we
+can create sets which did not allow addition or removal once created -
+like mathematical sets. This need was fulfilled by SymPy's
+&lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; since it used Python's &lt;tt class="docutils literal"&gt;frozenset&lt;/tt&gt; data structure and
+not the &lt;tt class="docutils literal"&gt;set&lt;/tt&gt; data sturcture.&lt;/p&gt;
+&lt;p&gt;The alternative to that would have
+been to use &lt;tt class="docutils literal"&gt;frozenset&lt;/tt&gt; directly, but I just did not like the idea
+of it and I would have also missed out on the nice features
+&lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; would provide (eventually). I should note here that once
+I had made the decision to go with  &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt;, I &lt;a class="reference external" href="https://github.com/amitsaha/sympy/commits?author=amitsaha"&gt;contributed&lt;/a&gt; patches
+to SymPy to make the methods of &lt;tt class="docutils literal"&gt;FiniteSet&lt;/tt&gt; more compatible with Python's built in set
+and also implement minor features I discussed above.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="articles"></category></entry></feed>

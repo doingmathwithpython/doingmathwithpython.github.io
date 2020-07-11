@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing Math with Python - tips</title><link href="http://doingmathwithpython.github.io/" rel="alternate"></link><link href="http://doingmathwithpython.github.io/feeds/tips.atom.xml" rel="self"></link><id>http://doingmathwithpython.github.io/</id><updated>2016-10-05T09:00:00+10:00</updated><entry><title>Trying out the code on Ubuntu 16.04</title><link href="http://doingmathwithpython.github.io/install-on-ubuntu16.04.html" rel="alternate"></link><published>2016-10-05T09:00:00+10:00</published><updated>2016-10-05T09:00:00+10:00</updated><author><name>Amit Saha</name></author><id>tag:doingmathwithpython.github.io,2016-10-05:/install-on-ubuntu16.04.html</id><summary type="html">&lt;p class="first last"&gt;Code on Ubuntu 15.04&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;If you are using Ubuntu 16.04 and don't want to install the Anaconda
+Python distribution for trying out the book's
+&lt;a class="reference external" href="http://doingmathwithpython.github.io/pages/programs.html"&gt;programs&lt;/a&gt; or
+the &lt;a class="reference external" href="http://doingmathwithpython.github.io/trying-out-solutions.html"&gt;sample solutions&lt;/a&gt;, this
+post is for you.&lt;/p&gt;
+&lt;p&gt;Ubuntu 16.04 already comes with Python 3 installed, so we only need to install
+the following packages - matplotlib, matplotlib-venn, sympy and idle3.&lt;/p&gt;
+&lt;p&gt;Open a terminal and do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+$ sudo apt-get update
+$ sudo apt-get install python3-matplotlib python3-matplotlib-venn python3-sympy idle3
+&lt;/pre&gt;
+&lt;p&gt;It's worth noting that this will install sympy 0.7.6 and matplotlib 1.5.1 which are
+both sufficient for the book's programs.&lt;/p&gt;
+&lt;div class="section" id="starting-idle-editor"&gt;
+&lt;h2&gt;Starting IDLE editor&lt;/h2&gt;
+&lt;p&gt;You can now start the IDLE editor by typing in &amp;quot;idle3&amp;quot; from the terminal and then it's ready
+for your programs!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="contact"&gt;
+&lt;h2&gt;Contact&lt;/h2&gt;
+&lt;p&gt;If you find any issues please email me at
+&lt;tt class="docutils literal"&gt;doingmathwithpython&amp;#64;gmail.com&lt;/tt&gt; or post your query/tip to any of the
+following community forums:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.facebook.com/doingmathwithpython"&gt;Facebook page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://plus.google.com/u/0/communities/113121562865298236232"&gt;G+ Community&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="tips"></category></entry></feed>

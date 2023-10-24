@@ -9,7 +9,7 @@ Doing Math with Python in Data Science Humble Bundle
 running for the next 19 days. Your purchases will help support EFF!
 
 
-.. figure:: {filename}/images/humble-bundle-data-science.png
+.. figure:: {filename}/images/Screenshot 2023-10-25 at 9.36.03 am.png.png
    :align: center
    :alt: Humble Bundle
    :scale: 10%

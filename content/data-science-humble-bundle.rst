@@ -1,5 +1,5 @@
 Doing Math with Python in Data Science Humble Bundle
-==================================================
+====================================================
 :date: 2023-10-25 13:20
 :category: updates
 :slug: humble-bundle-data-science

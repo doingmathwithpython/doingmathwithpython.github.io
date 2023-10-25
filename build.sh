@@ -10,3 +10,9 @@ docker build \
     -t amitsaha/pelican  .
 
 docker run -v `pwd`:/site:Z -t amitsaha/pelican
+
+# publish 
+
+# cp output to /tmp/
+# git checkout master
+# cp -r /tmp/output/* .

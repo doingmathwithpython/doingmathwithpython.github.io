@@ -144,3 +144,20 @@ On page 195, an import is missing - `SympifyError` used later in the
 On page 204, in the first paragraph, the first property should be "..the function value for x is always greater then or equal 0".
 
 (Thanks to Elmar Bucher for pointing this out)
+
+Appendix B
+==========
+
+
+On page 226, in "Multiple Return Values", the code snippet to call the `components()`
+functions should be:
+
+.. code::
+
+   if __name__ == '__main__':
+       u = 5
+       theta = math.radians(45)
+       x, y = components(u, theta)
+
+(Thanks to a reader for pointing it out)
+

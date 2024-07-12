@@ -121,6 +121,18 @@ from sympy import Derivative, Symbol, sympify, SympifyError
 <p>On page 204, in the first paragraph, the first property should be &quot;..the function value for x is always greater then or equal 0&quot;.</p>
 <p>(Thanks to Elmar Bucher for pointing this out)</p>
 </div>
+<div class="section" id="appendix-b">
+<h2>Appendix B</h2>
+<p>On page 226, in &quot;Multiple Return Values&quot;, the code snippet to call the <cite>components()</cite>
+functions should be:</p>
+<pre class="code literal-block">
+if __name__ == '__main__':
+    u = 5
+    theta = math.radians(45)
+    x, y = components(u, theta)
+</pre>
+<p>(Thanks to a reader for pointing it out)</p>
+</div>
 
 </section>
         <section id="extras" class="body">

@@ -17,11 +17,11 @@
 /***** Global *****/
 /* Body */
 body {
-    background: #F5F4EF;
-    color: #000305;
+    background: #f7fbff;
+    color: #173c5f;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 1.429;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -44,21 +44,21 @@ h1, h2, h3, h4, h5, h6 {
 
 h3, h4, h5, h6 { margin-top: .8em; }
 
-hr { border: 2px solid #EEEEEE; }
+hr { border: 2px solid #e3eff9; }
 
 /* Anchors */
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: #C74350;
+	color: #1f7fbf;
 	padding: 0 1px;
 	text-decoration: underline;
 }
 a:hover, a:active {
-	background-color: #C74350;
+	background-color: #ffdd75;
 	color: #fff;
 	text-decoration: none;
-	text-shadow: 1px 1px 1px #333;
+	text-shadow: none;
 }
 
 h1 a:hover {
@@ -104,12 +104,15 @@ dl {margin: 0 0 1.5em 0;}
 dt {font-weight: bold;}
 dd {margin-left: 1.5em;}
 
-pre{background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow: auto;}
+pre{background-color: #eff7ff; padding: 10px; margin: 10px; overflow: auto;}
 
 /* Quotes */
 blockquote {
     margin: 20px;
     font-style: italic;
+    border-left: 4px solid #ffdd75;
+    background: #fffef6;
+    padding: 0.75em 1em;
 }
 cite {}
 
@@ -183,7 +186,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	}
 
 	#banner h1 a:link, #banner h1 a:visited {
-		color: #000305;
+		color: #173c5f;
 		display: block;
 		font-weight: bold;
 		margin: 0 0 0 .2em;
@@ -191,7 +194,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	}
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
-		color: #C74350;
+		color: #1f7fbf;
 		text-shadow: none;
 	}
 
@@ -199,7 +202,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 	/* Main Nav */
 	#banner nav {
-		background: #000305;
+		background: #e8f3fc;
 		font-size: 1.143em;
 		overflow: auto;
 		line-height: 30px;
@@ -208,6 +211,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 		text-align: center;
 		max-width: 800px;
 
+		border: 1px solid #d0e4f5;
 		border-radius: 5px;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
@@ -217,7 +221,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	#banner nav li {float: left; display: inline; margin: 0;}
 
 	#banner nav a:link, #banner nav a:visited {
-		color: #fff;
+		color: #173c5f;
 		display: inline-block;
 		height: 30px;
 		padding: 5px 1.5em;
@@ -225,7 +229,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	}
 	#banner nav a:hover, #banner nav a:active,
 	#banner nav .active a:link, #banner nav .active a:visited {
-		background: #C74451;
+		background: #1f7fbf;
 		color: #fff;
 		text-shadow: none !important;
 	}
@@ -250,20 +254,22 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	padding: 20px;
 	max-width: 760px;
 
+	border: 1px solid #dcecf9;
+	box-shadow: 0 10px 30px rgba(23, 60, 95, 0.06);
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
 
 #featured figure {
-	border: 2px solid #eee;
+	border: 2px solid #e7f2fb;
 	float: right;
 	margin: 0.786em 2em 0 5em;
 	max-width: 248px;
 }
 #featured figure img {display: block; float: right;}
 
-#featured h2 {color: #C74451; font-size: 1.714em; margin-bottom: 0.333em;}
+#featured h2 {color: #1f7fbf; font-size: 1.714em; margin-bottom: 0.333em;}
 #featured h3 {font-size: 1.429em; margin-bottom: .5em;}
 
 #featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
@@ -279,6 +285,8 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	padding: 20px 20px;
 	max-width: 760px;
 
+	border: 1px solid #dcecf9;
+	box-shadow: 0 10px 30px rgba(23, 60, 95, 0.05);
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -292,16 +300,16 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 #extras ul {list-style: none; margin: 0;}
 #extras li {border-bottom: 1px solid #fff;}
 #extras h2 {
-	color: #C74350;
+	color: #1f7fbf;
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;
 }
 
 #extras a:link, #extras a:visited {
-	color: #444;
+	color: #173c5f;
 	display: block;
-	border-bottom: 1px solid #F4E3E3;
+	border-bottom: 1px solid #e6f1fb;
 	text-decoration: none;
 	padding: .3em .25em;
 }
@@ -367,6 +375,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	text-align: left;
 	max-width: 760px;
 
+	border: 1px solid #dcecf9;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -390,7 +399,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 .hentry {
 	display: block;
 	clear: both;
-	border-top: 1px solid #eee;
+	border-top: 1px solid #e6f1fb;
 	padding: 1.5em 0;
 }
 li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
@@ -421,7 +430,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 	/* About the Author */
 	#about-author {
-		background: #f9f9f9;
+		background: #f5faff;
 		clear: both;
 		font-style: normal;
 		margin: 2em 0;
@@ -433,7 +442,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	}
 
 	#about-author strong {
-		color: #C64350;
+		color: #1f7fbf;
 		clear: both;
 		display: block;
 		font-size: 1.429em;
@@ -444,7 +453,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	/* Comments */
 	#comments-list {list-style: none; margin: 0 1em;}
 	#comments-list blockquote {
-		background: #f8f8f8;
+		background: #f6fbff;
 		clear: both;
 		font-style: normal;
 		margin: 0;
@@ -456,7 +465,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	}
 	#comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
 
-	#comments-list li:nth-child(2n) blockquote {background: #F5f5f5;}
+	#comments-list li:nth-child(2n) blockquote {background: #fffef6;}
 
 	/* Add a Comment */
 	#add-comment label {clear: left; float: left; text-align: left; max-width: 150px;}

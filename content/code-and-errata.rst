@@ -13,14 +13,6 @@ from any error mentioned on the `errata <{filename}pages/errata.rst>`__ page.
 Stay in touch
 ~~~~~~~~~~~~~
 
-You can stay connected with the book, its readers and me via the
-following channels:
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__
-- `Twitter <https://twitter.com/mathwithpython>`__
-
 You can contact me directly via:
 
-- Twitter: `@mathwithpython <https://twitter.com/mathwithpython>`__
-- Email : doingmathwithpython@gmail.com
+- Email : mail@echorand.me

@@ -20,14 +20,7 @@ book in an `episode <http://pythonpodcast.com/aaron-meurer-sympy.html>`__ of
 Podcast.__init__ titled "SymPy with Aaron Meurer". If you are curious
 to learn more about SymPy, I would recommend listening to it.
 
-I am curious to hear more. If you want to get in touch personally,
-please do so via any of the following channels:
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__
-- `Twitter <https://twitter.com/mathwithpython>`__
-
-You can email me at doingmathwithpython@gmail.com.
+I am curious to hear more. You can email me at mail@echorand.me.
 
 Alternatively, if you just plan to write a review, please do so on
 Amazon, O'Reilly or your personal blog.

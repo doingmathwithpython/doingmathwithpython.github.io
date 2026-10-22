@@ -134,13 +134,6 @@ If you liked reading this article, you may also find it worth your time going ov
 Getting in touch
 ================
 
-Stay updated or get in touch:
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__
-- `Twitter <https://twitter.com/mathwithpython>`__
-
 You can contact me directly via:
 
-- Twitter: `@mathwithpython <https://twitter.com/mathwithpython>`__
-- Email : doingmathwithpython@gmail.com
+- Email : mail@echorand.me

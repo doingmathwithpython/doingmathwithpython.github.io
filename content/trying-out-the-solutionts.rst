@@ -42,9 +42,3 @@ the Mandelbrot set in the matplotlib window.
 
 All the solutions should be ready to run, try them out, make changes
 to experiment and let me know what you come up with!
-
-Email me at ``doingmathwithpython@gmail.com`` or post your query/tip to any of the
-following community forums:
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__

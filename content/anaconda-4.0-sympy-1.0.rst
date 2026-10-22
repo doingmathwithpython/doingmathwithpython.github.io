@@ -24,8 +24,4 @@ your existing Anaconda installation:
 
 I have so far verified both on Mac OS X and Linux. If you find any
 issues on Windows, please email me at
-``doingmathwithpython@gmail.com`` or post your query/tip to any of the  
-following community forums: 
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__
+``mail@echorand.me``.

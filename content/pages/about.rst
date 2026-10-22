@@ -109,16 +109,9 @@ required for the programs in the book.
 Stay in touch
 =============
 
-You can stay connected with the book, its readers and me via the
-following channels:
-
-- `Facebook page <https://www.facebook.com/doingmathwithpython>`__
-- `G+ Community <https://plus.google.com/u/0/communities/113121562865298236232>`__
-- `Twitter <https://twitter.com/mathwithpython>`__
 
 You can contact me directly via:
 
-- Twitter: `@mathwithpython <https://twitter.com/mathwithpython>`__
-- Email : doingmathwithpython@gmail.com
+- Email : mail@echorand.me
 
-`Page last updated: August 29, 2015`
+`Page last updated: October 23, 2026`

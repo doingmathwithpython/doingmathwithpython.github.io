@@ -31,7 +31,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pelican pelican-youtube markdown pelican-gist beautifulsoup4
-          git clone --recursive https://github.com/getpelican/pelican-plugins /pelican-plugins
+          git clone --recursive https://github.com/getpelican/pelican-plugins /tmp/pelican-plugins
 
       - name: Build site
         run: |

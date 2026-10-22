@@ -1,9 +1,7 @@
 # Notes for future self
 
+Publishing is handled by GitHub Actions.
 
-1. Edit on site
-2. build using ./build.sh
-3. copy output somewhere
-4. git checkout master
-5. copy the output from somewhere to master
-6. git push
+1. Edit content on the `site` branch
+2. Push changes
+3. GitHub Actions builds the Pelican site and deploys to GitHub Pages

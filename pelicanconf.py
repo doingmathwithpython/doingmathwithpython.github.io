@@ -13,5 +13,5 @@ DISPLAY_CATEGORIES_ON_MENU = False
 #THEME='theme/blue-penguin/'
 PAGE_ORDER_BY = 'pageno'
 STATIC_PATHS = ['images']
-PLUGIN_PATHS = ['/pelican-plugins']
+PLUGIN_PATHS = ['/tmp/pelican-plugins']
 PLUGINS = ['share_post', 'pelican_youtube', 'pelican_render_math']

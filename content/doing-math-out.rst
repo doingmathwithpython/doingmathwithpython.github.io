@@ -23,7 +23,7 @@ chapter, please head over to `No Starch's book page
 <https://www.nostarch.com/doingmathwithpython>`__.
 
 Alternatively, if you are keen to recieve a review copy, please email
-`mail@echorand.me` and I will try to request one from the
+`amitsaha.in@gmail.com` and I will try to request one from the
 publishers.
 
 Stay in touch
@@ -31,4 +31,4 @@ Stay in touch
 
 You can contact me directly via:
 
-- Email : mail@echorand.me
+- Email : amitsaha.in@gmail.com

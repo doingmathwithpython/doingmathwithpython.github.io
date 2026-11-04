@@ -20,10 +20,10 @@ This is really the following single statement:
 .. code::
 
    print('Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points)))
-              
-The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up. 
 
-In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`__. 
+The first code snippet above is an example of breaking a long line into two (or more) lines so that we don't end up with really long lines in our code. How long should a line be when you should think about breaking it? If your statement's length is more than 80 characters, you should think about breaking it up.
+
+In the book, we often had to do so because of layout reasons even though the statement may not have exceeded 80 characters, and in your projects you will want to do it so that your statements are easier to read and on the average all lines have a similar length. This is formalized (among other things) in `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`__.
 
 Note that the examples below will for illustrative purposes break lines waaaaay less than 80 characters.
 
@@ -33,7 +33,7 @@ How do you break?
 When not calling function
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you are not calling a function, you essentially have two choices: 
+When you are not calling a function, you essentially have two choices:
 
 **Use paranthesis**
 
@@ -42,7 +42,7 @@ This is exactly how we break the long statement in the example we started this a
 .. code::
 
     s = 'Area: {0}, Estimated ({1}): {2}'.format(area_of_circle, points, estimate(radius, points))
-    
+
 This essentially just creates the string ``s``. If we were to split this statement over multiple lines, we would do the following:
 
 .. code::
@@ -77,8 +77,8 @@ The line continuation operator, ``\`` can be used to split long statements over 
       + x**4/4 + x**5/5 \
       + x**6/6 + x**7/7 \
       + x**8/8
-      
-      
+
+
 At the end of every line (except the last), we just add a ``\`` indicating that the next line is also a part of the same statement.
 
 **Breaking up those long if statements**
@@ -113,8 +113,8 @@ By default, when calling functions you can just press enter and without doing an
    x = 1
    print(x,
          x)
-   
-   
+
+
 Hence, we `could` have broken the first example we saw as:
 
 .. code::
@@ -128,7 +128,7 @@ When calling ``format()`` we put the arguments over separate lines.
 Learning more about Python coding style
 =======================================
 
-If you liked reading this article, you may also find it worth your time going over the `Python style guide <https://www.python.org/dev/peps/pep-0008/>`__. You may even find instances where I have not followed a guideline when writing the programs in the book. If you find one, let me know. 
+If you liked reading this article, you may also find it worth your time going over the `Python style guide <https://www.python.org/dev/peps/pep-0008/>`__. You may even find instances where I have not followed a guideline when writing the programs in the book. If you find one, let me know.
 
 
 Getting in touch
@@ -136,4 +136,4 @@ Getting in touch
 
 You can contact me directly via:
 
-- Email : mail@echorand.me
+- Email : amitsaha.in@gmail.com

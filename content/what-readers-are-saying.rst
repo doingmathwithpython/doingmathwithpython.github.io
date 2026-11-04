@@ -20,7 +20,7 @@ book in an `episode <http://pythonpodcast.com/aaron-meurer-sympy.html>`__ of
 Podcast.__init__ titled "SymPy with Aaron Meurer". If you are curious
 to learn more about SymPy, I would recommend listening to it.
 
-I am curious to hear more. You can email me at mail@echorand.me.
+I am curious to hear more. You can email me at amitsaha.in@gmail.com.
 
 Alternatively, if you just plan to write a review, please do so on
 Amazon, O'Reilly or your personal blog.

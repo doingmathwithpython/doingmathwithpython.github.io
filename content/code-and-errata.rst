@@ -15,4 +15,4 @@ Stay in touch
 
 You can contact me directly via:
 
-- Email : mail@echorand.me
+- Email : amitsaha.in@gmail.com

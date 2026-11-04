@@ -3,7 +3,7 @@
 
 `Doing Math with Python` is written by `Amit Saha
 <https://echorand.me>`__ and published by `No
-Starch Press <http://www.nostarch.com/doingmathwithpython>`__. 
+Starch Press <http://www.nostarch.com/doingmathwithpython>`__.
 It has been translated to French, Simplified Chinese, Korean and Japanese.
 
 The English version of the book is now available in print and electronic formats (including
@@ -112,6 +112,6 @@ Stay in touch
 
 You can contact me directly via:
 
-- Email : mail@echorand.me
+- Email : amitsaha.in@gmail.com
 
 `Page last updated: October 23, 2026`

@@ -2,7 +2,7 @@
 :pageno: 5
 
 If you have any specific issue while following the book, please get in
-touch via email at mail@echorand.me.
+touch via email at amitsaha.in@gmail.com.
 
 Chapter specific Resources
 ==========================

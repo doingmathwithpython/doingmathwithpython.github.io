@@ -53,4 +53,4 @@ for earlier versions.
 
 I have so far verified both on Mac OS X and Linux. If you find any
 issues on Windows, please email me at
-``mail@echorand.me``.
+``amitsaha.in@gmail.com``.

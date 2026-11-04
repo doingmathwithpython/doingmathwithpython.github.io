@@ -4,6 +4,22 @@ Code and Solutions Refresh
 :date: 2026-11-03 08:20
 :category: updates
 
+It's been 11 years, since **Doing Math With Python** was published. The world of software
+learning has changed drastically. I hope you are still continuing to learn using books, writing
+programs and the educators among you, i hope you are doing the same! We must persist.
+
+I am going to be doing a bit of a refresh as needed for the various code in the book and solutions
+as needed to ensure that they are all working with currently latest versions of the `Python`
+programming language and the third party packages that's used for the code: `sympy`, `matplotlib`
+and `matplotlib_venn`.
+
+This will take a while, so here's the software versions i will be working with:
+
+1. Python 3.14
+2. sympy 1.14.0
+3. matplotlib 3.11.0
+4. matplotlib_venn 1.1.2
+
 *This post is in progress*
 
 Chapter 2

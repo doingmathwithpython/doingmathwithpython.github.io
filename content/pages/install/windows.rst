@@ -1,7 +1,8 @@
 :Title: Software Installation on Windows 7
 :status: hidden
 
-`Download <http://continuum.io/downloads#py34>`__ the Anaconda GUI
+`Download <https://www.anaconda.com/download/success?reg=skipped
+>`__ the Anaconda GUI
 installer for Python 3. Start the installation by double clicking on
 the installer.
 
@@ -52,15 +53,16 @@ Click on “Install” to start the installation:
 
 Click on “Finish” to complete the installation.
 
-Open a Windows command prompt and carry out the following steps.
+Open the Anaconda Windows Powershell command window and carry out the following steps.
+
+
+
 
 Installing sympy
 ~~~~~~~~~~~~~~~~
 
-The installation may come with ``sympy`` already installed, but we want to
-make sure that we have at least ``0.7.6``, so we will install it using the
-command ``conda install sympy=0.7.6``. This should update (if already
-installed) or install sympy to the 0.7.6 version.
+Install `sympy` using the command ``conda install sympy==1.14.0``. This will install sympy to 
+the version `1.14.0`.
 
 Installing matplotlib-venn
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,9 +74,11 @@ Your computer is now setup to run all the programs.
 Starting Python shell
 ~~~~~~~~~~~~~~~~~~~~~
 
-Open a windows command prompt and type ``idle`` to start the IDLE shell or
-python to start the Python 3 default shell.
+Open a windows command prompt and type ``idle`` to start the IDLE shell:
 
-.. figure:: {filename}/images/install/windows9.png
+.. figure:: {filename}/images/install/windows11.png
    :scale: 30 %
    :alt: windows4
+
+We can also see the versions of `matplotlib`, `sympy` and `matplotlib_venn` - the packages We
+will be using.

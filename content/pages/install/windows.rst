@@ -60,11 +60,9 @@ Your computer is now setup to run all the programs.
 Starting Python shell
 ~~~~~~~~~~~~~~~~~~~~~
 
-Open a windows command prompt and type ``idle`` to start the IDLE shell:
+Open a windows command prompt and type ``idle`` to start the IDLE shell and examine
+the versions of the different third party libraries we will be using:
 
 .. figure:: {filename}/images/install/windows7.png
-   :scale: 30 %
-   :alt: windows4
-
-We can also see the versions of `matplotlib`, `sympy` and `matplotlib_venn` - the packages We
-will be using.
+   :scale: 80 %
+   :alt: windows7

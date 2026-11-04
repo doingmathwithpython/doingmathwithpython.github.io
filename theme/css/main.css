@@ -19,9 +19,9 @@
 body {
     background: #f7fbff;
     color: #173c5f;
-    font-size: 87.5%; /* Base font size: 14px */
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 1.6;
+    font-size: 100%; /* Base font size: 16px */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.1;
 	margin-bottom: .8em;
-    font-family: 'Yanone Kaffeesatz', arial, serif;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 h3, h4, h5, h6 { margin-top: .8em; }
@@ -88,9 +88,9 @@ li { margin-top: 0.5em;
      margin-bottom: 1em; }
 
 .post-info {
-    float:right;
-    margin:10px;
-    padding:5px;
+    float: none;
+    margin: 0 0 1em 0;
+    padding: 0;
 }
 
 .post-info p{
@@ -421,11 +421,11 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#posts-list .hentry {padding-left: 10px; position: relative;}
 
 	#posts-list footer {
-		left: 10px;
-		position: relative;
-        float: left;
-		top: 0.5em;
-		max-width: 190px;
+		left: auto;
+		position: static;
+        float: none;
+		top: auto;
+		max-width: none;
 	}
 
 	/* About the Author */

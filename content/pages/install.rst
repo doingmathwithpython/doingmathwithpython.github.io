@@ -28,7 +28,8 @@ available freely for Microsoft Windows, Linux and Mac OS X.
 Updating your existing installation
 ===================================
 
-Once you have installed Anaconda, over time you can keep it updated to the latest version using the following commands from your terminal::
+Once you have installed Anaconda, over time you can keep it updated to the
+latest version using the following commands from your terminal::
 
     $  conda update conda
     $  conda update anaconda

@@ -1,7 +1,7 @@
-:Title: Software Installation on Windows 10
+:Title: Software Installation on Windows 11
 :status: hidden
 
-`Download <https://www.anaconda.com/download/success?reg=skipped >`__ the Anaconda GUI
+`Download <https://www.anaconda.com/download/success?reg=skipped>`__ the Anaconda GUI
 installer for Python 3. Start the installation by double clicking on
 the installer.
 

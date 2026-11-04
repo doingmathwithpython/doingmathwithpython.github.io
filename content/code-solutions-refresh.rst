@@ -66,6 +66,13 @@ First download the data by:
 4. On the top right you can change the temperature units
 5. Click on ``Download CSV data``
 
+
+.. figure:: {filename}/images/download-forecast-data.png
+   :align: left
+   :alt: Download Forecast Data
+   :scale: 80%
+
+
 A file will be downloaded which will have the data in the following format::
 
     "Local Date & Time","Temperature"

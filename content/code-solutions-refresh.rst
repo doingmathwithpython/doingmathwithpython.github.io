@@ -1,5 +1,5 @@
 Code and Solutions Refresh
-==========================
+##########################
 
 :date: 2026-11-03 08:20
 :category: updates
@@ -7,10 +7,10 @@ Code and Solutions Refresh
 *This post is in progress*
 
 Chapter 2
-=========
+----------------------
 
 Programming challenges
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 2. How does the temperature vary during the day?
 

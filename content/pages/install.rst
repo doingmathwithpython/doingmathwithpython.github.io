@@ -9,9 +9,16 @@ programs should also work with higher versions of the
 software. However, if there is any change, it will be noted
 accordingly here.
 
+As of November/December 2026, I am updating the programs to work with:
+
+1. Python 3.14
+2. sympy 1.14.0
+3. matplotlib 3.11.0
+4. matplotlib_venn 1.1.2
+
 There are various ways of installing these required software but one
 of the easiest is to use the `Anaconda
-<http://continuum.io/downloads>`__ Python 3 software distribution
+<https://www.anaconda.com/download>`__ Python 3 software distribution
 available freely for Microsoft Windows, Linux and Mac OS X.
 
 - `Windows <{filename}install/windows.rst>`__
@@ -29,7 +36,8 @@ Once you have installed Anaconda, over time you can keep it updated to the lates
 Related blog posts
 ==================
 
+- `Code and Solutions Refresh <https://doingmathwithpython.github.io/code-and-solutions-refresh.html>`__
 - `Anaconda 5.0 release <https://doingmathwithpython.github.io/anaconda-5.0.html>`__
 - `SymPy 1.0 and Anaconda 4.0 releases <http://doingmathwithpython.github.io/sympy-1.0-anaconda-4.0.html>`__
 
-`Page last updated: April 11, 2016`
+`Page last updated: November 11, 2026`

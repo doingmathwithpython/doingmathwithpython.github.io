@@ -15,53 +15,39 @@ Click Next and accept the License Agreement on the next screen:
 .. figure:: {filename}/images/install/windows2.png
    :scale: 50 %
    :alt: windows2
-         
+
 You can choose to install the distribution either for your user only
 or for all users using this computer. We will go with the former:
 
 .. figure:: {filename}/images/install/windows3.png
    :scale: 50 %
    :alt: windows3
-         
+
 Next, choose the folder where you want Anaconda to install the programs:
 
 .. figure:: {filename}/images/install/windows4.png
    :scale: 50 %
    :alt: windows4
 
-Check the next two boxes so that you can invoke the Python shell and
-other programs from anywhere on the command prompt and any other
-programs will use the Python installed by Anaconda as the default:
-
 .. figure:: {filename}/images/install/windows5.png
    :scale: 50 %
    :alt: windows5
-         
+
 Click on “Install” to start the installation:
 
 .. figure:: {filename}/images/install/windows6.png
    :scale: 50 %
    :alt: windows6
-         
-.. figure:: {filename}/images/install/windows7.png
-   :scale: 50 %
-   :alt: windows7
-         
-.. figure:: {filename}/images/install/windows8.png
-   :scale: 50 %
-   :alt: windows8
 
 Click on “Finish” to complete the installation.
 
 Open the Anaconda Windows Powershell command window and carry out the following steps.
 
 
-
-
 Installing sympy
 ~~~~~~~~~~~~~~~~
 
-Install `sympy` using the command ``conda install sympy==1.14.0``. This will install sympy to 
+Install `sympy` using the command ``conda install sympy==1.14.0``. This will install sympy to
 the version `1.14.0`.
 
 Installing matplotlib-venn
@@ -76,7 +62,7 @@ Starting Python shell
 
 Open a windows command prompt and type ``idle`` to start the IDLE shell:
 
-.. figure:: {filename}/images/install/windows11.png
+.. figure:: {filename}/images/install/windows7.png
    :scale: 30 %
    :alt: windows4
 

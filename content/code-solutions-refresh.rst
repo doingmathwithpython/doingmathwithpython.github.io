@@ -8,8 +8,11 @@ It's been 11 years, since **Doing Math With Python** was published. The world of
 learning has changed drastically. I hope you are still continuing to learn using books, writing
 programs and the educators among you, i hope you are doing the same! We must persist.
 
-I am going to be doing a bit of a refresh as needed for the various code in the book and solutions
-as needed to ensure that they are all working with currently latest versions of the `Python`
+The book has also ended up being part of the `Anthropic copyright settlement <https://echorand.me/posts/dmwp-and-ai-notes/>`__.
+I think it's just a sign of the times and I have become part of the history it appears!
+
+Alright, so, I am going to be doing a bit of a refresh as needed for the various code in the book and solutions
+to ensure that they are all working with currently latest versions of the `Python`
 programming language and the third party packages that's used for the code: `sympy`, `matplotlib`
 and `matplotlib_venn`.
 
